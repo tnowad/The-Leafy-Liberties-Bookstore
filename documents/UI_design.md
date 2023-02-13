@@ -38,6 +38,6 @@ Color:
 
 ## Reference
 
-- https://bookworm.madrasthemes.com/
-- https://bookland.dexignzone.com/react/demo/
-- http://demo2.pavothemes.com/bookory/
+- <https://bookworm.madrasthemes.com/>
+- <https://bookland.dexignzone.com/react/demo/>
+- <http://demo2.pavothemes.com/bookory/>
