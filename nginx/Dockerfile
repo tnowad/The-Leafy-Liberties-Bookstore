@@ -1,8 +1,11 @@
-# Use the official Nginx image as the base image
-FROM nginx
+# Use an official Nginx image as the base image
+FROM nginx:alpine
 
-# Copy the custom Nginx configuration file to the container
-COPY nginx.conf /etc/nginx/nginx.conf
+# Copy the Nginx configuration file to the appropriate location
+# COPY nginx.conf /etc/nginx/nginx.conf
 
-# Expose port 80
+# Expose port 80 to the host machine
 EXPOSE 80
+
+# Start Nginx when the container is run
+CMD ["nginx", "-g", "daemon off;"]
