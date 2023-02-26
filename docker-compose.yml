@@ -3,6 +3,8 @@ services:
   database:
     container_name: bookstore-database
     image: mysql:8.0.32-debian
+    user:
+      "1000:1000"
     environment:
       MYSQL_ROOT_PASSWORD: root123
       MYSQL_DATABASE: bookstore
@@ -28,10 +30,13 @@ services:
     image: php:8.0.13-apache
     volumes:
       - ./backend:/var/www/html
-    # install dependencies for mysql
     command: >
       bash -c "
+        apt-get update && apt-get install -y libzip-dev zip && docker-php-ext-install zip
         docker-php-ext-install mysqli pdo pdo_mysql && docker-php-ext-enable pdo_mysql
+        curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+        composer install
+        chown -R 1000 /var/www/html
         apache2-foreground
       "
     links:
