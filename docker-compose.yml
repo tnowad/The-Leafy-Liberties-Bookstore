@@ -4,10 +4,10 @@ services:
     container_name: bookstore-database
     image: mysql:8.0.32-debian
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: test
-      MYSQL_USER: test
-      MYSQL_PASSWORD: test
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: bookstore
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin123
     volumes:
       - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
     networks:
@@ -17,8 +17,8 @@ services:
     image: phpmyadmin:5.2.1-apache
     environment:
       PMA_HOST: database
-      PMA_USER: test
-      PMA_PASSWORD: test
+      PMA_USER: admin
+      PMA_PASSWORD: admin123
     links:
       - database
     networks:
@@ -28,6 +28,12 @@ services:
     image: php:8.0.13-apache
     volumes:
       - ./backend:/var/www/html
+    # install dependencies for mysql
+    command: >
+      bash -c "
+        docker-php-ext-install mysqli pdo pdo_mysql && docker-php-ext-enable pdo_mysql
+        apache2-foreground
+      "
     links:
       - database
     environment:
