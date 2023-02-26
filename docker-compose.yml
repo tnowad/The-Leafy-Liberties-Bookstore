@@ -3,8 +3,6 @@ services:
   database:
     container_name: bookstore-database
     image: mysql:8.0.32-debian
-    ports:
-      - 3306:3306
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: test
@@ -12,22 +10,22 @@ services:
       MYSQL_PASSWORD: test
     volumes:
       - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    networks:
+      - bookstore-network
   phpmyadmin:
     container_name: bookstore-phpmyadmin
     image: phpmyadmin:5.2.1-apache
-    ports:
-      - 8080:80
     environment:
       PMA_HOST: database
       PMA_USER: test
       PMA_PASSWORD: test
     links:
       - database
+    networks:
+      - bookstore-network
   backend:
     container_name: bookstore-backend
     image: php:8.0.13-apache
-    ports:
-      - 8081:80
     volumes:
       - ./backend:/var/www/html
     links:
@@ -37,19 +35,21 @@ services:
       MYSQL_USER: admin
       MYSQL_PASSWORD: admin
       MYSQL_DATABASE: bookstore
+    networks:
+      - bookstore-network
   frontend:
     container_name: bookstore-frontend
     image: node:19-alpine3.16
-    ports:
-      - 8082:3000
     volumes:
       - ./frontend:/app
     working_dir: /app
     command: npm start
     environment:
-      REACT_APP_API_URL: http://localhost:8081
+      - REACT_APP_BACKEND_URL=http://backend:80
     links:
       - backend
+    networks:
+      - bookstore-network
   nginx:
     container_name: bookstore-nginx
     image: nginx:1.23.3
@@ -62,3 +62,8 @@ services:
       - backend
       - frontend
       - phpmyadmin
+    networks:
+      - bookstore-network
+networks:
+  bookstore-network:
+    driver: bridge
