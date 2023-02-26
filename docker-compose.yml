@@ -1,23 +1,58 @@
 version: "3"
 services:
-  nginx:
-    build: ./nginx
-    ports:
-      - 80:80
-    # links:
-    #   - frontend
-    #   - backend
-  react:
-    build: ./frontend
-    ports:
-      - 3000:3000
-  # php:
-  #   build: ./backend
-  #   ports:
-  #     - 9000:9000
-  #   links:
-  #     - mysql
   database:
-    build: ./database
+    image: mysql:8.0.32-debian
     ports:
-      - "3306:3306"
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: test
+      MYSQL_USER: test
+      MYSQL_PASSWORD: test
+    volumes:
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+  phpmyadmin:
+    image: phpmyadmin:5.2.1-apache
+    ports:
+      - 8080:80
+    environment:
+      PMA_HOST: database
+      PMA_USER: test
+      PMA_PASSWORD: test
+    links:
+      - database
+  backend:
+    image: php:8.0.13-apache
+    ports:
+      - 8081:80
+    volumes:
+      - ./backend:/var/www/html
+    links:
+      - database
+    environment:
+      MYSQL_HOST: database
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+      MYSQL_DATABASE: bookstore
+  frontend:
+    image: node:19-alpine3.16
+    ports:
+      - 8082:3000
+    volumes:
+      - ./frontend:/app
+    working_dir: /app
+    command: npm start
+    environment:
+      REACT_APP_API_URL: http://localhost:8081
+    links:
+      - backend
+  nginx:
+    image: nginx:1.23.3
+    ports:
+      - 8083:80
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+      - ./frontend/build:/usr/share/nginx/html
+    links:
+      - backend
+      - frontend
