@@ -1,6 +1,7 @@
 version: "3"
 services:
   database:
+    container_name: bookstore-database
     image: mysql:8.0.32-debian
     ports:
       - 3306:3306
@@ -12,6 +13,7 @@ services:
     volumes:
       - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
   phpmyadmin:
+    container_name: bookstore-phpmyadmin
     image: phpmyadmin:5.2.1-apache
     ports:
       - 8080:80
@@ -22,6 +24,7 @@ services:
     links:
       - database
   backend:
+    container_name: bookstore-backend
     image: php:8.0.13-apache
     ports:
       - 8081:80
@@ -35,6 +38,7 @@ services:
       MYSQL_PASSWORD: admin
       MYSQL_DATABASE: bookstore
   frontend:
+    container_name: bookstore-frontend
     image: node:19-alpine3.16
     ports:
       - 8082:3000
@@ -47,12 +51,14 @@ services:
     links:
       - backend
   nginx:
+    container_name: bookstore-nginx
     image: nginx:1.23.3
     ports:
-      - 8083:80
+      - 80:80
     volumes:
-      - ./nginx:/etc/nginx/conf.d
-      - ./frontend/build:/usr/share/nginx/html
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./frontend/build:/usr/share/nginx/html:ro
     links:
       - backend
       - frontend
+      - phpmyadmin
