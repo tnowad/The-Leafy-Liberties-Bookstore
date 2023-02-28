@@ -1,7 +1,7 @@
-import * as React from "react";
+import { ReactElement } from "react";
 import { Routes, Route, Outlet, Link, useParams } from "react-router-dom";
 
-export default function App() {
+export default function App(): ReactElement {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
@@ -18,7 +18,7 @@ export default function App() {
   );
 }
 
-function Layout() {
+function Layout(): ReactElement {
   return (
     <div>
       <nav>
