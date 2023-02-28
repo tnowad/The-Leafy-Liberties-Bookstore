@@ -57,6 +57,7 @@ services:
     command: npm start
     environment:
       - REACT_APP_BACKEND_URL=http://backend:80
+      - PORT=80
     links:
       - backend
     networks:
