@@ -31,7 +31,8 @@ export default function App() {
         <Route path="/reset-password/:token" element={<ResetPassword />} />
       </Route>
       <Route path="/dashboard" element={<LayoutDashboard />}>
-        <Route index element={<DashboardLogin />} />
+        <Route index element={<Dashboard />} />
+        <Route path="/dashboard/login" element={<DashboardLogin />} />
         <Route path="/dashboard/orders" element={<Orders />} />
         <Route path="/dashboard/orders/:id" element={<Order />} />
       </Route>
