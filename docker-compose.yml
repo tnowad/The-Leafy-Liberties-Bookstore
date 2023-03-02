@@ -40,7 +40,6 @@ services:
     links:
       - database
     environment:
-      docker: "true"
       MYSQL_HOST: database
       MYSQL_USER: admin
       MYSQL_PASSWORD: admin

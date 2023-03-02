@@ -1,0 +1,53 @@
+{
+    "name": "faapz/pdo",
+    "description": "Just another PDO database library",
+    "type": "library",
+    "keywords": ["pdo", "sql", "database"],
+    "homepage": "https://github.com/FaaPz/PDO",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fabian de Laender",
+            "email": "fabian@faapz.productions",
+            "homepage": "https://faapz.productions",
+            "role": "Owner"
+        },
+        {
+            "name": "Alexander Barker",
+            "email": "alex@1stleg.com",
+            "homepage": "https://github.com/kwhat/",
+            "role": "Collaborator"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/FaaPz/PDO/issues",
+        "docs": "https://github.com/FaaPz/PDO/blob/master/docs/README.md"
+    },
+    "require": {
+        "php": ">=7.2.0",
+        "ext-pdo": "*"
+    },
+    "require-dev": {
+        "phan/phan": "^5",
+        "phpunit/phpunit": "^8",
+        "squizlabs/php_codesniffer": "3.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "FaaPz\\PDO\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "FaaPz\\PDO\\Test\\": "tests/"
+        }
+    },
+    "minimum-stability": "stable",
+    "scripts": {
+        "lint": [
+            "phpcs -s --standard=phpcs.xml",
+            "phan"
+        ],
+        "test": "phpunit -v --coverage-html build/coverage tests/"
+    }
+}
