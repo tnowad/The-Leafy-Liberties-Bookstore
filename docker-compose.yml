@@ -12,6 +12,8 @@ services:
       MYSQL_PASSWORD: admin123
     volumes:
       - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    logging:
+      driver: none
     networks:
       - bookstore-network
   phpmyadmin:
@@ -23,6 +25,8 @@ services:
       PMA_PASSWORD: admin123
     links:
       - database
+    logging:
+      driver: none
     networks:
       - bookstore-network
   backend:
