@@ -11,6 +11,8 @@ import Profile from '~/pages/Profile'
 import Dashboard from '~/pages/Dashboard'
 import Cart from '~/pages/Cart'
 import Checkout from '~/pages/Checkout'
+import NotFound from '~/pages/NotDound'
+
 export default function App() {
   return (
     <Router>
@@ -19,7 +21,8 @@ export default function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/cart/checkout" element={<Checkout />} />s
+        <Route path="/cart/checkout" element={<Checkout />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   )
