@@ -4,7 +4,6 @@ CREATE TABLE IF NOT EXISTS accounts (
   username VARCHAR(255) NOT NULL,
   hash VARCHAR(255) NOT NULL,
   salt VARCHAR(255) NOT NULL,
-  -- status is enum active, suspended, or deleted
   status ENUM('active', 'suspended', 'deleted') NOT NULL DEFAULT 'active',
   PRIMARY KEY (id)
 );
