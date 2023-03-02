@@ -37,6 +37,7 @@ services:
         curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
         composer install
         chown -R 1000 /var/www/html
+        if command -v a2enmod >/dev/null 2>&1; then a2enmod rewrite headers;fi
         apache2-foreground
       "
     links:
