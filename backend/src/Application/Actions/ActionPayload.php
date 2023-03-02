@@ -45,7 +45,7 @@ class ActionPayload implements JsonSerializable
     return $this->error;
   }
 
-  #[\ReturnTypeWillChange]
+  // #[\ReturnTypeWillChange]
   public function jsonSerialize(): array
   {
     $payload = [

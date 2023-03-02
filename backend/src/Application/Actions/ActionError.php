@@ -50,7 +50,7 @@ class ActionError implements JsonSerializable
     return $this;
   }
 
-  #[\ReturnTypeWillChange]
+  // #[\ReturnTypeWillChange]
   public function jsonSerialize(): array
   {
     return [
