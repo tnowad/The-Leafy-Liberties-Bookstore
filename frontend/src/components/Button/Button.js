@@ -1,14 +1,8 @@
-function Button({
-  to,
-  href,
-  children,
-  className,
-  leftIcon,
-  rightIcon,
-  onClick,
-  ...passProps
-}) {
-  return <button>{children}</button>
+// Purpose: Button component
+export default function Button({ children }) {
+  return (
+    <button className="flex items-center justify-center w-10 h-10 text-white bg-primary rounded-full">
+      {children}
+    </button>
+  )
 }
-
-export default Button
