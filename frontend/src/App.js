@@ -1,28 +1,32 @@
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Outlet,
-  Link,
-} from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { publicRoutes } from './routes/routes'
+import DefaultLayout from '~/layouts'
 
-import Home from '~/pages/Home'
-import Profile from '~/pages/Profile'
-import Dashboard from '~/pages/Dashboard'
-import Cart from '~/pages/Cart'
-import Checkout from '~/pages/Checkout'
-import NotFound from '~/pages/NotDound'
+import { Fragment } from 'react'
 
 export default function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/cart/checkout" element={<Checkout />} />
-        <Route path="*" element={<NotFound />} />
+        {publicRoutes.map((route, index) => {
+          const Page = route.component
+          let Layout = DefaultLayout
+
+          if (route.layout) Layout = route.layout
+          else if (route.layout === null) Layout = Fragment
+
+          return (
+            <Route
+              key={index}
+              path={route.path}
+              element={
+                <Layout>
+                  <Page />
+                </Layout>
+              }
+            />
+          )
+        })}
       </Routes>
     </Router>
   )

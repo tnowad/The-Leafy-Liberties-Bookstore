@@ -1,11 +1,7 @@
 import Button from '~/components/Button/Button'
 
 function Home() {
-  return (
-    <div>
-      <h2>Home page</h2>
-    </div>
-  )
+  return <h2>Home page</h2>
 }
 
 export default Home

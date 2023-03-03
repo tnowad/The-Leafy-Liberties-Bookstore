@@ -8,13 +8,15 @@ import Home from '~/pages/Home'
 import Dashboard from '~/pages/Dashboard'
 import Search from '~/pages/Search'
 import Profile from '~/pages/Profile'
+import NotFound from '~/pages/NotDound'
 
 // Public routes
 const publicRoutes = [
   { path: config.routes.home, component: Home },
-  { path: config.routes.following, component: Dashboard },
+  { path: config.routes.search, component: Search },
   { path: config.routes.profile, component: Profile },
-  { path: config.routes.search, component: Search, layout: null },
+  { path: config.routes.dashboard, component: Dashboard, layout: null },
+  { path: '*', component: NotFound },
 ]
 
 const privateRoutes = []
