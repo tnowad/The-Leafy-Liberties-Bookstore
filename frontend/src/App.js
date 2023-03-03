@@ -6,7 +6,7 @@ import { Fragment } from 'react'
 
 export default function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
         {publicRoutes.map((route, index) => {
           const Page = route.component
@@ -28,6 +28,6 @@ export default function App() {
           )
         })}
       </Routes>
-    </Router>
+    </BrowserRouter>
   )
 }
