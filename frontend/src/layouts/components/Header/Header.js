@@ -1,13 +1,10 @@
+import Container from '../Container/Container'
+
 function Header() {
   return (
-    <div>
-      {/* <h1 className= "text-3xl">Hello</h1> */}
-      <div className="container">
-        <div className="footer-wrapper">
-          <div className="left-container">Header</div>
-        </div>
-      </div>
-    </div>
+    <Container>
+      <h1>Header</h1>
+    </Container>
   )
 }
 
