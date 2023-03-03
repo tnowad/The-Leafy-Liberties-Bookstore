@@ -2,7 +2,7 @@ import { logo } from '../../../assets/images'
 function Header() {
   return (
     <header className="flex justify-center w-full sticky top-0 bg-white">
-      <div className="container flex justify-between">
+      <div className="container flex justify-between bg-primary-600">
         <div>
           <img src={logo} alt="logo" className="h-20" />
         </div>
