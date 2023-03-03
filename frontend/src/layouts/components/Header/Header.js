@@ -1,6 +1,6 @@
 function Header() {
   return (
-    <header>
+    <header className="flex justify-center w-full border-solid border-0 border-b-[1px] border-blue-900">
       <div className="container">
         <h1>Header</h1>
       </div>
