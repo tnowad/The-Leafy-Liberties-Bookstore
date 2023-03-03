@@ -8,7 +8,7 @@ function Button({
   onClick,
   ...passProps
 }) {
-  return <button></button>
+  return <button>{children}</button>
 }
 
 export default Button
