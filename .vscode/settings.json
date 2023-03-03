@@ -4,5 +4,9 @@
       406
     ],
     "backend/vendor/": true,
-  }
+  },
+  "cSpell.words": [
+    "fontawesome",
+    "fortawesome"
+  ]
 }

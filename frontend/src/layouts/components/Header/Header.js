@@ -1,4 +1,8 @@
 import { logo } from '../../../assets/images'
+import { faUser, faHeart } from '@fortawesome/free-regular-svg-icons'
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 function Header() {
   return (
     <header className="flex justify-center w-full sticky top-0 bg-white">
@@ -22,7 +26,11 @@ function Header() {
         </form>
 
         {/* List icons */}
-        <h1>List icons</h1>
+        <div>
+          <FontAwesomeIcon icon={faHeart} />
+          <FontAwesomeIcon icon={faShoppingCart} />
+          <FontAwesomeIcon icon={faUser} />
+        </div>
       </div>
     </header>
   )
