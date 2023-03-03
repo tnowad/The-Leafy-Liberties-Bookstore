@@ -1,4 +1,4 @@
-import config from '~/config'
+import config from '../config'
 
 // Layouts
 import { HeaderOnly } from '../layouts'
