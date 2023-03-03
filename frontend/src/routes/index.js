@@ -1,4 +1,4 @@
-export * from './routes'
+import routes from '../config/routes'
 
 const config = {
   routes,
