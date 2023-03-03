@@ -1,14 +1,14 @@
 import config from '~/config'
 
 // Layouts
-import { HeaderOnly } from '~/layouts'
+import { HeaderOnly } from '../layouts'
 
 // Pages
-import Home from '~/pages/Home'
-import Dashboard from '~/pages/Dashboard'
-import Search from '~/pages/Search'
-import Profile from '~/pages/Profile'
-import NotFound from '~/pages/NotDound'
+import Home from '../pages/Home'
+import Dashboard from '../pages/Dashboard'
+import Search from '../pages/Search'
+import Profile from '../pages/Profile'
+import NotFound from '../pages/NotFound'
 
 // Public routes
 const publicRoutes = [

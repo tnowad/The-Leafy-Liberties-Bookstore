@@ -1,12 +1,13 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { publicRoutes } from './routes/routes'
-import { DefaultLayout } from './layouts'
-
 import { Fragment } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+import { publicRoutes } from './routes/routes'
+
+import { DefaultLayout } from './layouts'
 
 export default function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
         {publicRoutes.map((route, index) => {
           const Page = route.component
@@ -28,6 +29,6 @@ export default function App() {
           )
         })}
       </Routes>
-    </Router>
+    </BrowserRouter>
   )
 }

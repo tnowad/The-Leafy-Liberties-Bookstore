@@ -1,8 +1,7 @@
-import PropTypes from 'prop-types'
 import Header from '../components/Header'
 import Footer from '../components/footer/Footer'
 
-function DefaultLayout({ children }) {
+export default function DashboardLayout({ children }) {
   return (
     <div>
       <Header />
@@ -11,9 +10,3 @@ function DefaultLayout({ children }) {
     </div>
   )
 }
-
-DefaultLayout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
-
-export default DefaultLayout
