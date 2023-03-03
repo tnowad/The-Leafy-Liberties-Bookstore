@@ -11,7 +11,7 @@ import Profile from '~/pages/Profile'
 import Dashboard from '~/pages/Dashboard'
 import Cart from '~/pages/Cart'
 import Checkout from '~/pages/Checkout'
-import NotFound from '~/pages/NotDound'
+import NotFound from '~/pages/NotFound'
 
 export default function App() {
   return (
