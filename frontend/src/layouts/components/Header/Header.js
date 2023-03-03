@@ -9,7 +9,7 @@ function Header() {
           test
         </button>
         {/* List icons */}
-        <h1>Header</h1>
+        <h1>Header </h1>
       </div>
     </header>
   )
