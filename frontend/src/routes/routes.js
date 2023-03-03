@@ -1,12 +1,12 @@
-import config from './index'
+import config from '../config'
 // Pages
-import Home from '../pages/Home/index'
-import Dashboard from '../pages/Dashboard/index'
-import Search from '../pages/Search/index'
-import Profile from '../pages/Profile/index'
-import Cart from '../pages/Cart/index'
+import Home from '../pages/Home'
+import Dashboard from '../pages/Dashboard'
+import Profile from '../pages/Profile'
+import Cart from '../pages/Cart'
+import Search from '../pages/Search'
 
-import NotFound from '../pages/NotFound/index'
+import NotFound from '../pages/NotFound'
 
 // Public routes
 const publicRoutes = [

@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { Router, Routes, Route } from 'react-router-dom'
 import { publicRoutes } from './routes/routes'
 import DefaultLayout from './layouts/DefaultLayout/index'
 
@@ -6,7 +6,7 @@ import { Fragment } from 'react'
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
         {publicRoutes.map((route, index) => {
           const Page = route.component
@@ -28,6 +28,6 @@ export default function App() {
           )
         })}
       </Routes>
-    </BrowserRouter>
+    </Router>
   )
 }

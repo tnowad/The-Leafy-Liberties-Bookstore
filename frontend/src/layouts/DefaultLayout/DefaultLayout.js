@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
-import Header from '../components/Header/index'
-import Footer from '../components/Footer/index'
+import Header from '../components/Header/Header'
+import Footer from '../components/footer/Footer'
 
 function DefaultLayout({ children }) {
   return (
