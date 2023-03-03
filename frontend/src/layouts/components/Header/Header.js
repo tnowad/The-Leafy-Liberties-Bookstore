@@ -8,8 +8,20 @@ function Header() {
         <button className="flex items-center justify-center w-10 h-10 text-white bg-primary rounded-full">
           test
         </button>
+        {/* Search form */}
+        <form className="flex items-center justify-center w-1/2 h-10 bg-gray-100 rounded-full">
+          <input type="text" className="w-full h-full bg-transparent" />
+          <button className="flex items-center justify-center w-10 h-10 text-white bg-primary rounded-full">
+            test
+          </button>
+        </form>
+
         {/* List icons */}
+<<<<<<< HEAD
         <h1>Header </h1>
+=======
+        <h1>List icons</h1>
+>>>>>>> 51ab5f9f568bd7e43e5dcd4cfbd3ad87e3d8e404
       </div>
     </header>
   )
