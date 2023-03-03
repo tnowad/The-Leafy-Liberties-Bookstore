@@ -17,11 +17,7 @@ function Header() {
         </form>
 
         {/* List icons */}
-<<<<<<< HEAD
-        <h1>Header </h1>
-=======
         <h1>List icons</h1>
->>>>>>> 51ab5f9f568bd7e43e5dcd4cfbd3ad87e3d8e404
       </div>
     </header>
   )
