@@ -1,3 +1,3 @@
 import logo from './Logo.svg'
-
-export { logo }
+import bigLogo from './bigLogo.png'
+export { logo, bigLogo}
