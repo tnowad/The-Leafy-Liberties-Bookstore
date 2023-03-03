@@ -17,7 +17,7 @@ function Header() {
         {/* button dropdown */}
         <ButtonPill>
           <FontAwesomeIcon icon={faList} />
-          <p>Categories</p>
+          <p className="px-4">Categories</p>
         </ButtonPill>
         {/* Search form */}
         <form className="flex items-center justify-center w-1/2 h-10 bg-gray-100 rounded-full">
