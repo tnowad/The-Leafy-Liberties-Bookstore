@@ -4,11 +4,11 @@ import Footer from '../components/Footer'
 
 function DefaultLayout({ children }) {
   return (
-    <div>
+    <>
       <Header />
       {children}
       <Footer />
-    </div>
+    </>
   )
 }
 

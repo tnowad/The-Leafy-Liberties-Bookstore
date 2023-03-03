@@ -1,18 +1,14 @@
-import Container from '../Container/Container'
-import Logo from '../../../assets/icons/Logo.png'
-
+import { logo } from '../../../assets/images'
 function Header() {
   return (
-    <Container>
-      <header className="flex justify-between">
-        <img src={Logo} />
-        <div className="">
-          <select name="categories" className="">
-            <option value="">Trinh thám</option>
-          </select>
+    <header className="flex justify-center w-full sticky top-0 bg-white">
+      <div className="container flex justify-between bg-primary-600">
+        <div>
+          <img src={logo} alt="logo" className="h-20" />
         </div>
-      </header>
-    </Container>
+        <h1>Header</h1>
+      </div>
+    </header>
   )
 }
 

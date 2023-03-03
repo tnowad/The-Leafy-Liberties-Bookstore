@@ -1,11 +1,12 @@
 import React from 'react'
-import Container from '../Container'
 
 function Footer() {
   return (
-    <Container>
-      <div className="left-container">Footer</div>
-    </Container>
+    <footer className="flex justify-center w-full">
+      <div className="container h-[200vh]">
+        <h1>Footer</h1>
+      </div>
+    </footer>
   )
 }
 
