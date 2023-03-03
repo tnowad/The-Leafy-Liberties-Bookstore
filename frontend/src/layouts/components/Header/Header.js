@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom'
 import { logo } from '../../../assets/images'
 import ButtonPill from '../../../components/Button/ButtonPill'
 import Dropdown from '../../../components/Dropdown/Dropdown'
+import MenuLinks from '../../../components/Menu/MenuLinks'
 
 function Header() {
   return (
@@ -26,20 +27,13 @@ function Header() {
           }
           menu={
             <div className="absolute top-32 h-full bg-white">
-              <ul className="flex flex-col justify-center items-center h-full">
-                <li className="w-full h-20 flex justify-center items-center">
-                  <Link to="/category/1">Category 1</Link>
-                </li>
-                <li className="w-full h-20 flex justify-center items-center">
-                  <Link to="/category/2">Category 2</Link>
-                </li>
-                <li className="w-full h-20 flex justify-center items-center">
-                  <Link to="/category/3">Category 3</Link>
-                </li>
-                <li className="w-full h-20 flex justify-center items-center">
-                  <Link to="/category/4">Category 4</Link>
-                </li>
-              </ul>
+              <MenuLinks
+                items={[
+                  { name: 'Category 1', link: '/category-1' },
+                  { name: 'Category 2', link: '/category-2' },
+                  { name: 'Category 3', link: '/category-3' },
+                ]}
+              />
             </div>
           }
         />
@@ -50,7 +44,7 @@ function Header() {
             className="pl-5 w-full h-full bg-transparent"
             placeholder="Search products..."
           />
-          <button className="flex items-center justify-center w-10 h-10 text-white bg-primary rounded-full">
+          <button className="flex items-center justify-center w-10 h-10">
             <FontAwesomeIcon icon={faSearch} />
           </button>
         </form>
