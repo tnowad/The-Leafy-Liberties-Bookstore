@@ -1,5 +1,8 @@
-import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFacebookF, faInstagram, faTwitter,faYoutube } from '@fortawesome/free-brands-svg-icons';
+import React, { useState } from 'react'
 import { bigLogo } from '../../../assets/images'
+// import MenuLinks from '../../../components/Menu/MenuLinks'
 
 function Footer() {
   return (
@@ -23,9 +26,12 @@ function Footer() {
               Phat ,Chinh, Bao
             </p>
           </div>
-          <div className="social-media flex">
-            <div className="col-1">
-
+          <div className="w-full h-12 mt-6 pl-3">
+            <div className = "flex justify-evenly">
+              <FontAwesomeIcon icon={faFacebookF} size="2x" color='#999999'/>
+              <FontAwesomeIcon icon={faYoutube} size="2x" color='#999999'/>
+              <FontAwesomeIcon icon={faInstagram} size="2x" color='#999999'/>
+              <FontAwesomeIcon icon={faTwitter} size="2x" color='#999999'/>
             </div>
           </div>
         </div>
