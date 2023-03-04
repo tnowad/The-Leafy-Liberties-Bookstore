@@ -5,8 +5,6 @@ import { avatar, overview, user, payment, order } from '../../assets/images'
 function Profile() {
   return (
     <div className="p-10 h-screen flex justify-around">
-      <input type="radio" className="block border-slate-800" value="Male" />
-
       {/* //? information */}
       <div className="w-3/12">
         <div className="pb-10">
