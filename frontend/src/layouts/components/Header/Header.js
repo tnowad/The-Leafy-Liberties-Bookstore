@@ -5,7 +5,6 @@ import {
   faSearch,
   faShoppingCart,
 } from '@fortawesome/free-solid-svg-icons'
-import { Link } from 'react-router-dom'
 
 import { logo } from '../../../assets/images'
 import ButtonPill from '../../../components/Button/ButtonPill'
