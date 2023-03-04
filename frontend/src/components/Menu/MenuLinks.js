@@ -9,7 +9,7 @@ export default function MenuLinks({ className, items, ...props }) {
       {items.map((item, index) => (
         <li
           key={index}
-          className="w-full h-20 flex justify-center items-center"
+          className="w-full h-12 flex items-center"
         >
           <Link to={item.link}>{item.name}</Link>
         </li>
