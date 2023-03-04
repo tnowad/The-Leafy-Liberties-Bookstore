@@ -1,5 +1,8 @@
 function Profile() {
-    return <h2>Profile page</h2>;
+    return <div className="flex justify-around">
+        <div>Information</div>
+        <div>Information detail</div>
+    </div>;
 }
 
 export default Profile;
