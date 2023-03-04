@@ -54,9 +54,11 @@ function Header() {
         </form>
 
         {/* List icons */}
-        <div className="w-20 flex justify-around">
+        <div className="w-20 flex justify-between">
           <FontAwesomeIcon icon={faUser} />
+          <span className="relative bottom-1.5">|</span>
           <FontAwesomeIcon icon={faHeart} />
+          <span className="relative bottom-1.5">|</span>
           <FontAwesomeIcon icon={faShoppingCart} />
         </div>
       </div>
