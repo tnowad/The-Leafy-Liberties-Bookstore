@@ -21,7 +21,12 @@ function Header() {
           trigger={
             <ButtonPill>
               <FontAwesomeIcon icon={faList} />
-              <p className="px-4">Categories</p>
+              <select className="px-4 bg-primary">
+                <option>Categories</option>
+                <option>A</option>
+                <option>B</option>
+                <option>C</option>
+              </select>
             </ButtonPill>
           }
           menu={
