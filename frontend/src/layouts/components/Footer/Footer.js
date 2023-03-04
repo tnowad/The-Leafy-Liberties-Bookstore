@@ -15,9 +15,9 @@ function Footer() {
     <footer className="flex justify-center w-full flex-col items-center">
       <div className="container flex">
         <div className="left-container w-[50%] border-0 border-solid border-r-2 border-gray-400 pr-3">
-          <div className="grid grid-cols-1 lg:flex">
-            <div className="w-28">
-              <img src={bigLogo} alt="" />
+          <div className="grid grid-cols-1 sm:flex">
+            <div className="">
+              <img src={bigLogo} alt="logo" />
             </div>
             <div className="flex flex-col justify-center">
               <p className="text-3xl border-0 border-solid border-b-2 border-gray-400 pb-1">
@@ -90,7 +90,7 @@ function Footer() {
               className="text-gray-600"
               items={[
                 { name: 'SGU University', link: '/' },
-                { name: 'HCM City,VietNam', link: '/' },
+                { name: 'HCM City, VietNam', link: '/' },
                 { name: '0123456789', link: '/' },
                 { name: '0123456789', link: '/' },
                 { name: 'sgu@edu.vn', link: '/' },
@@ -101,7 +101,7 @@ function Footer() {
       </div>
       <div className="w-full border-0 border-solid border-t-2 border-gray-400 text-center pt-4 mt-6 text-gray-500">
         <p>
-          LeafLiberty Book Store Ecommerce Website - © 2023 All Rights Reserved
+          The Leaf Liberty Bookstore E-commerce Website - © 2023 All Rights Reserved
         </p>
       </div>
     </footer>
