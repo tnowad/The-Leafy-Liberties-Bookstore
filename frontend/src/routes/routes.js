@@ -5,8 +5,9 @@ import Dashboard from '../pages/Dashboard'
 import Profile from '../pages/Profile'
 import Cart from '../pages/Cart'
 import Search from '../pages/Search'
-
 import NotFound from '../pages/NotFound'
+
+import Product from '../components/Product'
 
 // Public routes
 const publicRoutes = [
@@ -15,6 +16,7 @@ const publicRoutes = [
   { path: config.routes.profile, component: Profile },
   { path: config.routes.cart, component: Cart },
   { path: config.routes.dashboard, component: Dashboard, layout: null },
+  { path: config.routes.product, component: Product, layout: null },
   { path: '*', component: NotFound },
 ]
 

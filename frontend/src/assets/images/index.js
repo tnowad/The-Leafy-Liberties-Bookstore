@@ -6,5 +6,6 @@ import user from './user.svg'
 import payment from './check.svg'
 import order from './bars.svg'
 import homeImg from './mainHomeImg.png'
-
-export { logo, bigLogo, avatar, overview, user, payment, order, homeImg }
+import productImg from './productImg.png'
+import star from './Star.png'
+export { logo, bigLogo, avatar, overview, user, payment, order, homeImg, productImg, star }
