@@ -2,9 +2,16 @@
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
+    screens: {
+      'sm': '576px',
+      'md': '768px',
+      'lg': '992px',
+      'xl': '1200px',
+      '2xl': '1440px',
+    },
     extend: {
       colors: {
-        primary: '#315854',
+        'primary': '#315854',
         'primary-100': '#eff6f5',
         'primary-200': '#cee4e1',
         'primary-300': '#add1ce',
