@@ -8,4 +8,6 @@ import order from './bars.svg'
 import homeImg from './mainHomeImg.png'
 import productImg from './productImg.png'
 import star from './Star.png'
-export { logo, bigLogo, avatar, overview, user, payment, order, homeImg, productImg, star }
+import bestOffer from './bestOffer.png'
+import genresHorror from './genresHorror.png'
+export { logo, bigLogo, avatar, overview, user, payment, order, homeImg, productImg, star, bestOffer, genresHorror }

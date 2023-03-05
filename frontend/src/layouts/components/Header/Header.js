@@ -13,7 +13,7 @@ import MenuLinks from '../../../components/Menu/MenuLinks'
 
 function Header() {
   return (
-    <header className="flex justify-center w-full sticky top-0 bg-white">
+    <header className="flex justify-center w-full sticky top-0 bg-white z-10">
       <div className="mt-5 container flex justify-between items-center">
         <img src={logo} alt="logo" className="h-20" />
         {/* button dropdown */}
