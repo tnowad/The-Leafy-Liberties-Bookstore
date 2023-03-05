@@ -19,7 +19,7 @@ function Header() {
         {/* button dropdown */}
         <Dropdown
           trigger={
-            <ButtonPill>
+            <ButtonPill className="hidden lg:flex">
               <FontAwesomeIcon icon={faList} />
               <select className="px-4 bg-primary">
                 <option>Categories</option>
