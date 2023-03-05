@@ -4,11 +4,11 @@ const routes = {
   register: '/register',
   dashboard: '/dashboard',
   profile: '/profile',
-  product: '/product',
-  cart: '/cart',
-  upload: '/upload',
-  search: '/search',
   bookDetail: '/book_detail',
+  product: '/product',
+  upload: '/upload',
+  cart: '/cart',
+  search: '/search',
 }
 
 export default routes
