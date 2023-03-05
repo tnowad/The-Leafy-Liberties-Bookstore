@@ -2,7 +2,7 @@ import { avatar, overview, user, payment, order } from '../../assets/images'
 
 function Profile() {
   return (
-    <div className="p-40 h-screen flex justify-around">
+    <div className="p-40 mb-40 h-screen flex justify-around border-b-green-800 border-solid">
       {/* //? information */}
       <div className="w-3/12">
         <div className="pb-10">
@@ -120,7 +120,7 @@ function Profile() {
           </div>
           <label className="ml-10 mt-10">Password change</label>
           <div className="p-10 flex flex-col border border-solid border-teal-800 rounded">
-            <div className="w-5/12">
+            <div className="w-3/4">
               <label>Current password (leave blank to leave unchanged)</label>
               {/* <label>First name *</label> */}
               <input
@@ -128,7 +128,7 @@ function Profile() {
                 className="h-9 p-5 w-full border border-solid border-teal-900 rounded-3xl"
               />
             </div>
-            <div className="w-5/12">
+            <div className="w-3/4">
               <label>Current password (leave blank to leave unchanged)</label>
               {/* <label>Last name *</label> */}
               <input
@@ -136,7 +136,7 @@ function Profile() {
                 className="h-9 p-5 w-full border border-solid border-teal-900 rounded-3xl"
               />
             </div>
-            <div className="w-5/12">
+            <div className="w-3/4">
               {/* <label>Last name *</label> */}
               <label>Confirm new password</label>
               <input
