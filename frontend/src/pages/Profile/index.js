@@ -4,7 +4,7 @@ import { avatar, overview, user, payment, order } from '../../assets/images'
 
 function Profile() {
   return (
-    <div className="p-10 h-screen flex justify-around">
+    <div className="p-40 h-screen flex justify-around">
       {/* //? information */}
       <div className="w-3/12">
         <div className="pb-10">
@@ -31,7 +31,7 @@ function Profile() {
       </div>
       {/* //? information detail */}
       <div className="flex-1">
-        <form className="pr-56 flex flex-col">
+        <form className="w-3/4 flex flex-col">
           {/* //? group full name */}
           <div className="flex flex-row justify-between">
             <div className="w-4/12 flex flex-col">
