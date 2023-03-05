@@ -5,4 +5,6 @@ import overview from './overview.svg'
 import user from './user.svg'
 import payment from './check.svg'
 import order from './bars.svg'
-export { logo, bigLogo, avatar, overview, user, payment, order }
+import homeImg from './mainHomeImg.png'
+
+export { logo, bigLogo, avatar, overview, user, payment, order, homeImg }

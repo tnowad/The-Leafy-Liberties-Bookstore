@@ -22,6 +22,9 @@ module.exports = {
         'primary-800': '#2e524e',
         'primary-900': '#1b312f',
       },
+      height: {
+        'h1px' : 'height: 1px'
+      },
     },
   },
   plugins: [],
