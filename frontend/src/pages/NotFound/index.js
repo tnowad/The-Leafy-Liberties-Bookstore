@@ -1,8 +1,10 @@
 function NotFound() {
   return (
-    <div>
-      <h1>404 - Page Not Found</h1>
-      <p>Sorry, the page you requested could not be found.</p>
+    <div className="flex flex-col h-96 justify-center">
+      <label className="text-center text-9xl">404</label>
+      <h1 className="mt-20 text-center text-3xl">
+        Trang web bạn tìm kiếm không tồn tại
+      </h1>
     </div>
   )
 }

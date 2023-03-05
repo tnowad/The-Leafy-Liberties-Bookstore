@@ -6,6 +6,7 @@ const routes = {
   cart: '/cart',
   upload: '/upload',
   search: '/search',
+  bookDetail: '/book_detail',
 }
 
 export default routes

@@ -10,4 +10,20 @@ import productImg from './productImg.png'
 import star from './Star.png'
 import bestOffer from './bestOffer.png'
 import genresHorror from './genresHorror.png'
-export { logo, bigLogo, avatar, overview, user, payment, order, homeImg, productImg, star, bestOffer, genresHorror }
+import infoBookDetail from './demo_info_book_detail.png'
+
+export {
+  logo,
+  bigLogo,
+  avatar,
+  overview,
+  user,
+  payment,
+  order,
+  homeImg,
+  productImg,
+  star,
+  bestOffer,
+  genresHorror,
+  infoBookDetail,
+}
