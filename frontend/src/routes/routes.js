@@ -4,8 +4,10 @@ import Home from '../pages/Home'
 import Dashboard from '../pages/Dashboard'
 import Profile from '../pages/Profile'
 import Cart from '../pages/Cart'
-import Search from '../pages/Search'
 import BookDetail from '../pages/BookDetail'
+import Login from '../pages/Login'
+import Register from '../pages/Register'
+
 import NotFound from '../pages/NotFound'
 
 import Product from '../components/Product'
@@ -13,7 +15,8 @@ import Product from '../components/Product'
 // Public routes
 const publicRoutes = [
   { path: config.routes.home, component: Home },
-  { path: config.routes.search, component: Search },
+  { path: config.routes.login, component: Login },
+  { path: config.routes.register, component: Register },
   { path: config.routes.profile, component: Profile },
   { path: config.routes.bookDetail, component: BookDetail },
   { path: config.routes.cart, component: Cart },
