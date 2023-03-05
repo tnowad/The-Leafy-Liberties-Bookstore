@@ -55,11 +55,11 @@ function Header() {
 
         {/* List icons */}
         <div className="w-20 flex justify-between">
-          <FontAwesomeIcon icon={faUser} />
+          <FontAwesomeIcon className="cursor-pointer" icon={faUser} />
           <span className="relative bottom-1.5">|</span>
-          <FontAwesomeIcon icon={faHeart} />
+          <FontAwesomeIcon className="cursor-pointer" icon={faHeart} />
           <span className="relative bottom-1.5">|</span>
-          <FontAwesomeIcon icon={faShoppingCart} />
+          <FontAwesomeIcon className="cursor-pointer-p" icon={faShoppingCart} />
         </div>
       </div>
     </header>

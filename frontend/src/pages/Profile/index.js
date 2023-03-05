@@ -1,5 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
 import { avatar, overview, user, payment, order } from '../../assets/images'
 
 function Profile() {
@@ -63,33 +61,44 @@ function Profile() {
             className="h-9 p-5 w-full border border-solid border-teal-900 rounded-3xl"
           />
           <label>Phone number *</label>
-          <input
-            type="number"
+          {/* <input
+            type="tel"
             required
             className="h-9 p-5 w-full border border-solid border-teal-900 rounded-3xl"
-          />
+          /> */}
+          <input
+            type="tel"
+            className="h-9 p-5 w-full border border-solid border-teal-900 rounded-3xl"
+            name="phone"
+            placeholder="+84XXXXXXXXX"
+            pattern="^(\+84|0)(1\d{9}|3\d{8}|5\d{8}|7\d{8}|8\d{8}|9\d{8})$"
+            required
+          ></input>
           <label>Gender *</label>
           <div className="flex justify-around w-3/12">
             <input
               type="radio"
+              name="gender"
               value="Male"
               className="h-5 w-6 inline-block border border-solid border-teal-900 rounded-3xl"
             />
             <label className="">Male</label>
             <input
-              name="male"
               type="radio"
+              name="gender"
               value="Male"
               className="h-5 w-6 inline-block border border-solid border-teal-900 rounded-3xl"
             />
             <label className="">Female</label>
             <input
               type="radio"
+              name="gender"
               value="Male"
               className="h-5 w-6 inline-block border border-solid border-teal-900 rounded-3xl"
             />
             <label className="">Other</label>
           </div>
+
           <label>Birthday *</label>
           {/* <input type="month" /> */}
           <div className="w-2/4 flex justify-between">
@@ -119,7 +128,6 @@ function Profile() {
               {/* <label>First name *</label> */}
               <input
                 type="text"
-                required
                 className="h-9 p-5 w-full border border-solid border-teal-900 rounded-3xl"
               />
             </div>
@@ -128,7 +136,6 @@ function Profile() {
               {/* <label>Last name *</label> */}
               <input
                 type="text"
-                required
                 className="h-9 p-5 w-full border border-solid border-teal-900 rounded-3xl"
               />
             </div>
@@ -137,7 +144,6 @@ function Profile() {
               <label>Confirm new password</label>
               <input
                 type="text"
-                required
                 className="h-9 p-5 w-full border border-solid border-teal-900 rounded-3xl"
               />
             </div>
