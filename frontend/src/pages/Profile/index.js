@@ -104,24 +104,21 @@ function Profile() {
           <div className="w-2/4 flex justify-between">
             <input
               type="number"
-              className="p-1 pl-6 text-2xl border border-solid border-teal-900 rounded"
               min="1"
               max="31"
-            />
-            <input
-              type="number"
-              min="1"
-              max="12"
               className="p-1 pl-6 text-2xl border border-solid border-teal-900 rounded"
             />
-            <input
-              type="number"
-              min="1"
-              max="2023"
-              className="p-1 pl-6 text-2xl border border-solid border-teal-900 rounded"
-            />
+            <div className="p-1 border border-solid border-teal-900 rounded">
+              <span>Month</span>
+              <input type="number" className="pl-2" min="1" max="12" />
+            </div>
+
+            <div className="p-1 border border-solid border-teal-900 rounded">
+              <span>Year</span>
+              <input type="number" className="pl-2" min="1900" max="2023" />
+            </div>
           </div>
-          <label>Password change</label>
+          <label className="ml-10 mt-10">Password change</label>
           <div className="p-10 flex flex-col border border-solid border-teal-800 rounded">
             <div className="w-5/12">
               <label>Current password (leave blank to leave unchanged)</label>
