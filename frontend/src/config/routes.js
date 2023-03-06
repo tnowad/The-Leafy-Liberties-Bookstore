@@ -6,7 +6,7 @@ const routes = {
   profile: '/profile',
   product: '/product',
   bookDetail: '/book_detail',
-  checkOut: '/check_out',
+  checkOut: '/checkout',
   upload: '/upload',
   cart: '/cart',
   search: '/search',

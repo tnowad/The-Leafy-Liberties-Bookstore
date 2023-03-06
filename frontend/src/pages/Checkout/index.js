@@ -1,5 +1,1 @@
-function Checkout() {
-  return <div>Checkout</div>
-}
-
-export default Checkout
+export { default } from './Checkout'
