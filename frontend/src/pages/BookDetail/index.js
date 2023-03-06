@@ -45,7 +45,6 @@ function BookDetail() {
                 <span>1</span>
                 <button>+</button>
               </div>
-
               <ButtonPill>
                 <FontAwesomeIcon className="mr-1" icon={faShoppingCart} />
                 Add to cart
@@ -91,7 +90,7 @@ function BookDetail() {
             </a>
           </li>
         </ul>
-        <div className="h-72 py-10 px-60 icon={faTwitterr} border border-solid border-gray-400 rounded-3xl box-border">
+        <div className="h-72 py-10 px-60 border border-solid border-gray-400 rounded-3xl box-border">
           <p>
             Ut earum iure dolor tenetur. Et sit et est deserunt. Cumque
             voluptatum recusandae molestiae recusandae velit. Eaque quam
