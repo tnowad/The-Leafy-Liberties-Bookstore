@@ -20,7 +20,7 @@ const publicRoutes = [
   { path: config.routes.profile, component: Profile },
   { path: config.routes.bookDetail, component: BookDetail },
   { path: config.routes.cart, component: Cart },
-  { path: config.routes.checkOut, component: Checkout },
+  { path: config.routes.checkout, component: Checkout },
   { path: config.routes.dashboard, component: Dashboard, layout: null },
   { path: config.routes.product, component: Product, layout: null },
   { path: '*', component: NotFound },
