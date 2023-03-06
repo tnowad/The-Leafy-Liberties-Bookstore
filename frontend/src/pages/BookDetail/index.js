@@ -15,11 +15,11 @@ function BookDetail() {
   return (
     <div className="p-36 pt-20 box-border">
       {/* // ? option */}
-      <div className="flex flex-row justify-around ">
-        <div className="p-5 w-5/12 border border-solid border-gray-400 rounded-3xl box-border">
+      <div className="flex flex-col justify-around lg:flex-row">
+        <div className="p-5 w-auto border border-solid border-gray-400 rounded-3xl box-border">
           <img src={infoBookDetail} alt="book_detail" />
         </div>
-        <div className="p-10 w-5/12 h-4/6 border border-solid border-gray-400 rounded-3xl box-border">
+        <div className="p-10 mt-10 w-auto h-4/6 border border-solid border-gray-400 rounded-3xl box-border">
           <p className="p-1 mb-6 text-sm text-green-400 bg-gray-200 inline-block">
             IN STOCK
           </p>
@@ -90,7 +90,7 @@ function BookDetail() {
             </a>
           </li>
         </ul>
-        <div className="h-72 py-10 px-60 border border-solid border-gray-400 rounded-3xl box-border">
+        <div className="p-2 border border-solid border-gray-400 rounded-3xl box-border sm:h-auto sm:py-10 sm:px-20">
           <p>
             Ut earum iure dolor tenetur. Et sit et est deserunt. Cumque
             voluptatum recusandae molestiae recusandae velit. Eaque quam
