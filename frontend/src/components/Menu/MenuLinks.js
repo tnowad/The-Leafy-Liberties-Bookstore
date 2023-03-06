@@ -7,7 +7,7 @@ export default function MenuLinks({ className, items, ...props }) {
       {...props}
     >
       {items.map((item, index) => (
-        <li key={index} className="h-12 flex items-center">
+        <li key={index} className="h-12 flex items-center hover:text-green-800">
           <Link to={item.link}>{item.name}</Link>
         </li>
       ))}

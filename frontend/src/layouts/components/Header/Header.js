@@ -20,12 +20,15 @@ function Header() {
         <Dropdown
           trigger={
             <ButtonPill className="hidden lg:flex">
-              <FontAwesomeIcon icon={faList} />
+              <FontAwesomeIcon className="mr-1" icon={faList} />
               Categories
             </ButtonPill>
           }
           menu={
-            <div className="absolute top-32 h-full bg-white">
+            <div
+              className="p-5 absolute top-24 h-full bg-white box-border
+            border border-solid border-gray-400 rounded-lg"
+            >
               <MenuLinks
                 items={[
                   { name: 'Category 1', link: '/category-1' },
@@ -44,17 +47,29 @@ function Header() {
             placeholder="Search products..."
           />
           <button className="flex items-center justify-center w-10 h-10">
-            <FontAwesomeIcon icon={faSearch} />
+            <FontAwesomeIcon
+              className=' className="cursor-pointer  hover:text-green-800 "'
+              icon={faSearch}
+            />
           </button>
         </form>
 
         {/* List icons */}
         <div className="w-20 flex justify-between">
-          <FontAwesomeIcon className="cursor-pointer" icon={faUser} />
+          <FontAwesomeIcon
+            className="cursor-pointer hover:text-green-800"
+            icon={faUser}
+          />
           <span className="relative bottom-1.5">|</span>
-          <FontAwesomeIcon className="cursor-pointer" icon={faHeart} />
+          <FontAwesomeIcon
+            className="cursor-pointer  hover:text-green-800"
+            icon={faHeart}
+          />
           <span className="relative bottom-1.5">|</span>
-          <FontAwesomeIcon className="cursor-pointer-p" icon={faShoppingCart} />
+          <FontAwesomeIcon
+            className="cursor-pointer  hover:text-green-800 "
+            icon={faShoppingCart}
+          />
         </div>
       </div>
     </header>

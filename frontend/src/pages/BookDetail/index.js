@@ -15,7 +15,7 @@ function BookDetail() {
   return (
     <div className="p-36 pt-20 box-border">
       {/* // ? option */}
-      <div className="flex flex-row justify-around">
+      <div className="flex flex-row justify-around ">
         <div className="p-5 w-5/12 border border-solid border-gray-400 rounded-3xl box-border">
           <img src={infoBookDetail} alt="book_detail" />
         </div>
@@ -31,7 +31,7 @@ function BookDetail() {
           <span className="ml-5">
             <img className="inline-block" src={star} alt="" />
           </span>
-          <p className="ml-5 mr-1 inline-block text-xs">BKU :</p>
+          <p className="ml-5 mr-1 inline-block text-xs text-gray-400">BKU :</p>
           <p className="inline-block text-xs">65377017</p>
           <div className="border border-solid border-gray-400  box-border border-x-0">
             <span className="text-green-800 text-2xl">150.000 VNĐ</span>

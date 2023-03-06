@@ -7,10 +7,10 @@ import Cart from '../pages/Cart'
 import BookDetail from '../pages/BookDetail'
 import Login from '../pages/Login'
 import Register from '../pages/Register'
+import Product from '../components/Product'
+import Checkout from '../pages/Checkout'
 
 import NotFound from '../pages/NotFound'
-
-import Product from '../components/Product'
 
 // Public routes
 const publicRoutes = [
@@ -20,6 +20,7 @@ const publicRoutes = [
   { path: config.routes.profile, component: Profile },
   { path: config.routes.bookDetail, component: BookDetail },
   { path: config.routes.cart, component: Cart },
+  { path: config.routes.checkOut, component: Checkout },
   { path: config.routes.dashboard, component: Dashboard, layout: null },
   { path: config.routes.product, component: Product, layout: null },
   { path: '*', component: NotFound },
