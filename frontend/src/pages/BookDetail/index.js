@@ -4,10 +4,12 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import { faHeart } from '@fortawesome/free-regular-svg-icons'
 import {
   faFacebook,
-  faFacebookF,
   faInstagram,
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons'
+
+import ButtonPill from '../../components/Button/ButtonPill'
+import { star } from '../../assets/images'
 
 function BookDetail() {
   return (
@@ -24,11 +26,13 @@ function BookDetail() {
           <br />
           <label className="text-4xl">DIRE WOLF STAKES</label>
           <br />
-          <p className="mt-10 mb-10 mr-1 inline-block">Author :</p>
-          <p className="inline-block"> JESSICA MUNOZ</p>
-          <span className="pl-20">*****</span>
-          <p className="pl-32 mr-1 inline-block">BKU :</p>
-          <p className="inline-block">65377017</p>
+          <p className="mt-10 mb-10 mr-1 inline-block text-xs">Author :</p>
+          <p className="inline-block text-xs"> JESSICA MUNOZ</p>
+          <span className="ml-5">
+            <img className="inline-block" src={star} alt="" />
+          </span>
+          <p className="ml-5 mr-1 inline-block text-xs">BKU :</p>
+          <p className="inline-block text-xs">65377017</p>
           <div className="border border-solid border-gray-400  box-border border-x-0">
             <span className="text-green-800 text-2xl">150.000 VNĐ</span>
             <p className="mt-8 text-xs">
@@ -41,15 +45,11 @@ function BookDetail() {
                 <span>1</span>
                 <button>+</button>
               </div>
-              <div
-                className="p-2 text-white bg-green-800 w-3/12
-              border border-solid border-gray-400 rounded-3xl box-border
-              flex justify-around
-              "
-              >
-                <FontAwesomeIcon className="pt-1" icon={faShoppingCart} />
-                <span className="pt-1 text-xs">Add to cart</span>
-              </div>
+
+              <ButtonPill>
+                <FontAwesomeIcon className="mr-1" icon={faShoppingCart} />
+                Add to cart
+              </ButtonPill>
               <div className="p-2 w-3/12 flex justify-around border border-solid border-gray-400 rounded-3xl box-border">
                 <FontAwesomeIcon className="pt-1" icon={faHeart} />
                 <a href="/wishlist" src="" alt="" className="pt-1 text-xs">

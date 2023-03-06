@@ -215,16 +215,20 @@ function Home() {
               <div className="list-top-product-by-author mt-2">
                 <ul className="grid grid-flow-col grid-rows-2">
                   <li>
-                    <Product class="flex mb-3" width="w-80" flex="flex flex-col"/>
+                    <Product
+                      class="flex mb-3"
+                      width="w-80"
+                      flex="flex flex-col"
+                    />
                   </li>
                   <li>
                     <Product class="flex" width="w-80" />
                   </li>
                   <li>
-                    <Product class="flex" width="w-80"/>
+                    <Product class="flex" width="w-80" />
                   </li>
                   <li>
-                    <Product class="flex" width="w-80"/>
+                    <Product class="flex" width="w-80" />
                   </li>
                 </ul>
               </div>

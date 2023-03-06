@@ -21,12 +21,7 @@ function Header() {
           trigger={
             <ButtonPill className="hidden lg:flex">
               <FontAwesomeIcon icon={faList} />
-              <select className="px-4 bg-primary">
-                <option>Categories</option>
-                <option>A</option>
-                <option>B</option>
-                <option>C</option>
-              </select>
+              Categories
             </ButtonPill>
           }
           menu={
