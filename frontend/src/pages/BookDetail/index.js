@@ -13,10 +13,14 @@ import { star } from '../../assets/images'
 
 function BookDetail() {
   return (
-    <div className="p-36 pt-20 box-border">
+    <div className="pt-3 p-5 sm:pt-10 sm:p-12 md:p-25 md:pt-12 lg:p-36 lg:pt-20 box-border">
       {/* // ? option */}
       <div className="flex flex-col justify-around lg:flex-row">
-        <div className="p-5 w-auto border border-solid border-gray-400 rounded-3xl box-border">
+        <div
+          className="p-5 w-auto border border-solid border-gray-400 rounded-3xl box-border
+          flex justify-center
+        "
+        >
           <img src={infoBookDetail} alt="book_detail" />
         </div>
         <div className="p-10 mt-10 w-auto h-4/6 border border-solid border-gray-400 rounded-3xl box-border">
@@ -75,17 +79,32 @@ function BookDetail() {
       <div className="mt-20">
         <ul className="flex justify-center box-content">
           <li className="mr-10 mb-5">
-            <a href="/book_detail" src="" alt="" className="text-2xl">
+            <a
+              href="/book_detail"
+              src=""
+              alt=""
+              className="text-base sm:text-2xl"
+            >
               Description
             </a>
           </li>
           <li className="mr-10 mb-5">
-            <a href="/book_detail" src="" alt="" className="text-2xl">
+            <a
+              href="/book_detail"
+              src=""
+              alt=""
+              className="text-base sm:text-2xl"
+            >
               Review
             </a>
           </li>
-          <li className="mr-10 mb-5">
-            <a href="/book_detail" src="" alt="" className="text-2xl">
+          <li className="mr-5 mb-2 sm:mr-10 sm:mb-5">
+            <a
+              href="/book_detail"
+              src=""
+              alt=""
+              className="text-base sm:text-2xl"
+            >
               Vendor
             </a>
           </li>
