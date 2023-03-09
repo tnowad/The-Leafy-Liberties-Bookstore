@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import {
   homeImg,
   bestOffer,
@@ -9,6 +8,7 @@ import {
 } from '../../assets/images'
 import Product from '../../components/Product/index'
 import Author from '../../components/Author/index'
+import Bodyheader from '../../components/Body_Header'
 function Home() {
   return (
     <div className="home flex justify-center w-full flex-col items-center">
@@ -16,13 +16,7 @@ function Home() {
         <img src={homeImg} alt="homeImg" />
       </div>
       <div className="container">
-        <div className="best-selling flex justify-between items-center text-center">
-          <h2 className="text-3xl my-4">Bestselling Books </h2>
-          <span className="w-3/4 h-px bg-gray-600"></span>
-          <Link className="w-32 text-base bg-primary-900 text-white p-2 rounded-3xl">
-            View All
-          </Link>
-        </div>
+        <Bodyheader name="Bestselling Books" class="bestlling-books" text_size="text-3xl" width="w-3/4"/>
         <div className="bestselling-products w-full overflow-x-scroll relative">
           <ul className="list-products grid grid-flow-col gap-5">
             <li>
@@ -57,13 +51,7 @@ function Home() {
             </li>
           </ul>
         </div>
-        <div className="popular-books flex justify-between items-center text-center">
-          <h2 className="text-3xl my-4">Popular Books </h2>
-          <span className="w-3/4 h-px bg-gray-600"></span>
-          <Link className="w-32 text-base bg-primary-900 text-white p-2 rounded-3xl">
-            View All
-          </Link>
-        </div>
+        <Bodyheader name="Popular Books" class="popular-books" text_size="text-3xl" width="w-3/4"/>
         <div className="popular-products flex">
           <div className="grid-content w-3/4">
             <ul className="list grid grid-rows-2 grid-flow-col">
@@ -106,13 +94,7 @@ function Home() {
             </div>
           </div>
         </div>
-        <div className="genres-books flex justify-between items-center text-center">
-          <h2 className="text-3xl my-4">Genres Books </h2>
-          <span className="w-3/4 h-px bg-gray-600"></span>
-          <Link className="w-32 text-base bg-primary-900 text-white p-2 rounded-3xl">
-            View All
-          </Link>
-        </div>
+        <Bodyheader name="Genres Books" class="genres-books"text_size="text-3xl" width="w-3/4"/>
         <div className="genres-books-detail grid grid-flow-col grid-cols-3 mb-10 gap-6">
           <div className="genres-detail relative overflow-hidden rounded-3xl cursor-pointer">
             <div className="img">
@@ -183,13 +165,7 @@ function Home() {
             </div>
           </div>
           <div className="author-bestselling w-3/4">
-            <div className="author-bestselling-books flex justify-between items-center text-center">
-              <h2 className="text-2xl my-4">Bestselling Books </h2>
-              <span className="w-2/3 h-px bg-gray-600"></span>
-              <Link className="w-32 text-base bg-primary-900 text-white p-2 rounded-3xl">
-                View All
-              </Link>
-            </div>
+            <Bodyheader name="Bestselling Books" class="bestselling-books-author" text_size="text-2xl" width="w-2/3"/>
             <div className="list-author-bestselling">
               <div className="top-product flex">
                 <div className="top-img w-1/2 h-max">
