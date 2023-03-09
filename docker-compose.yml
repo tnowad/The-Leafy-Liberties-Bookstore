@@ -30,8 +30,10 @@ services:
     networks:
       - bookstore-network
   backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
     container_name: bookstore-backend
-    image: php:8.2.3-alpine3.17
     working_dir: /var/www
     volumes:
       - ./backend:/var/www
@@ -44,6 +46,27 @@ services:
       MYSQL_USER: admin
       MYSQL_PASSWORD: admin123
       MYSQL_DATABASE: bookstore
+    networks:
+      - bookstore-network
+
+  artisan:
+    container_name: bookstore-artisan
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    volumes:
+      - ./backend:/var/www
+    working_dir: /var/www
+    entrypoint: ["/var/www/artisan"]
+    networks:
+      - bookstore-network
+  composer:
+    container_name: bookstore-composer
+    image: composer:2.5.4
+    volumes:
+      - ./backend:/var/www
+    working_dir: /var/www
+    entrypoint: ["/usr/bin/composer"]
     networks:
       - bookstore-network
   frontend:
