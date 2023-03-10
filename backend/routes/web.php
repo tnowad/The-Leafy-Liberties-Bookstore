@@ -16,29 +16,24 @@ use Symfony\Component\Routing\RouteCollection;
 
 
 Route::get('/', function () {
-  return view('welcome');
+  return redirect('/api');
 });
 
 Route::get('/api', function () {
   $routeCollection = Route::getRoutes();
-  echo "<table style='width:100%'>";
-  echo "<tr>";
-  echo "<td ><h4>HTTP Method</h4></td>";
-  echo "<td ><h4>Route</h4></td>";
-  echo "<td ><h4>Name</h4></td>";
-  echo "<td ><h4>Corresponding Action</h4></td>";
-  echo "<td ><h4>Middleware</h4></td>";
-  echo "<td ><h4>Prefix</h4></td>";
-  echo "</tr>";
+  $routes = [];
+
   foreach ($routeCollection as $value) {
-    echo "<tr>";
-    echo "<td>" . $value->methods()[0] . "</td>";
-    echo "<td>" . $value->uri() . "</td>";
-    echo "<td>" . $value->getName() . "</td>";
-    echo "<td>" . $value->getActionName() . "</td>";
-    echo "<td>" . implode(", ", $value->middleware()) . "</td>";
-    echo "<td>" . $value->getPrefix() . "</td>";
-    echo "</tr>";
+    $route = [
+      'http_method' => $value->methods()[0],
+      'uri' => $value->uri(),
+      'name' => $value->getName(),
+      'action' => $value->getActionName(),
+      'middleware' => $value->middleware(),
+      'prefix' => $value->getPrefix()
+    ];
+    $routes[] = $route;
   }
-  echo "</table>";
+
+  return response()->json(['routes' => $routes]);
 });
