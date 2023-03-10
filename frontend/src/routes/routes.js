@@ -25,7 +25,7 @@ const publicRoutes = [
   { path: config.routes.cart, component: Cart },
   { path: config.routes.checkout, component: Checkout },
   { path: config.routes.dashboard, component: Dashboard, layout: null },
-  { path: '/routes', component: RouteBackend, layout: null },
+  { path: config.routes.routes, component: RouteBackend, layout: null },
   { path: '*', component: NotFound },
 ]
 

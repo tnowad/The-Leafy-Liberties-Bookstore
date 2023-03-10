@@ -10,6 +10,7 @@ const routes = {
   upload: '/upload',
   cart: '/cart',
   search: '/search',
+  routes: '/routes',
 }
 
 export default routes
