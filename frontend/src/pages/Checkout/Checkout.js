@@ -6,13 +6,13 @@ import { Link } from 'react-router-dom'
 export default function Checkout() {
   return (
     <div className="w-full flex justify-center items-center mt-10">
-      <div className="container flex md:flex-wrap xl:flex-nowrap">
+      <div className="container flex flex-wrap sm:flex-wrap md:flex-wrap xl:flex-nowrap">
         <div className="left-container w-full flex flex-col justify-center">
           <div className="bill-container p-5 border-0 rounded-2xl shadow-lg shadow-gray-300 w-full">
             <h2 className="bill-header font-bold text-xl mb-5">
               Billing Address
             </h2>
-            <form action="//" className="md:w-full lg:px-0 xl:px-5 ">
+            <form action="//" className="sm:w-full md:w-full lg:px-0 xl:px-5 ">
               <div className="full-name flex">
                 <fieldset className="border-[1px] border-gray-600 border-solid rounded-md p-1 mr-10 w-full">
                   <legend className="px-1">First Name</legend>
@@ -124,11 +124,11 @@ export default function Checkout() {
             </div>
           </div>
         </div>
-        <div className="right-container flex flex-col justify-start items-end md:w-full mb-10 xl:w-3/4">
-          <div className="order-preview p-5 border-0 rounded-2xl shadow-lg shadow-gray-300 mt-5 md:w-full xl:w-3/4">
+        <div className="right-container flex flex-col justify-start items-end w-full sm:w-full md:w-full mb-10 xl:w-3/4">
+          <div className="order-preview p-5 border-0 rounded-2xl shadow-lg shadow-gray-300 mt-5 w-full md:w-full xl:w-3/4">
             <div className="header flex justify-between">
               <div className="left">
-                <h2 className="font-bold text-xl mb-2">Order review</h2>
+                <h2 className="font-bold text-xl">Order review</h2>
                 <p className="number-items pl-2 pt-1">3 items in cart</p>
               </div>
               <div className="right w-3 h-3">
@@ -136,7 +136,7 @@ export default function Checkout() {
               </div>
             </div>
           </div>
-          <div className="discount-container flex justify-between items-start p-5 border-0 rounded-2xl shadow-lg shadow-gray-300 mt-5 md:w-full xl:w-3/4">
+          <div className="discount-container flex justify-between items-start p-5 border-0 rounded-2xl shadow-lg shadow-gray-300 mt-5 w-full md:w-full xl:w-3/4">
             <div className="discount-code font-bold text-xl mb-5">
               <h2>Discount Codes</h2>
             </div>
@@ -144,7 +144,7 @@ export default function Checkout() {
               <FontAwesomeIcon icon={faChevronDown} />
             </div>
           </div>
-          <div className="billing-summary p-5 border-0 rounded-2xl shadow-lg shadow-gray-300 mt-5 md:w-full xl:w-3/4">
+          <div className="billing-summary p-5 border-0 rounded-2xl shadow-lg shadow-gray-300 mt-5 w-full md:w-full xl:w-3/4">
             <div className="header flex justify-between items-start">
               <div className="font-bold text-xl mb-5">
                 <h2>Billing Summary</h2>
@@ -181,17 +181,17 @@ export default function Checkout() {
                   <h2 className="grand-total text-lg font-bold">Grand Total</h2>
                   <div className="grand-money font-bold">$3,439.00</div>
                 </div>
-                <fieldset className="border-[1px] border-gray-600 border-solid rounded-md p-1 !w-full mr-10 md:w-full lg:w-3/4 h-24 mt-4">
+                <fieldset className="border-[1px] border-gray-600 border-solid rounded-md p-1 mr-10 w-full h-auto mt-4">
                   <legend className="px-2">Order Comment</legend>
-                  <input
+                  <textarea
                     type="text"
                     name=""
                     id=""
                     placeholder="Type here..."
-                    className="p-1 text-lg"
+                    className="p-1 text-lg w-full"
                   />
                 </fieldset>
-                <div className="btn-pay w-full bg-primary text-center p-2 text-white rounded-lg mt-5">
+                <div className="btn-pay w-full bg-primary text-center p-2 text-white rounded-lg mt-5 cursor-pointer hover:bg-primary-800 hover:transition-all">
                   <Link className="text-xl">
                     Pay $3,439.00
                   </Link>

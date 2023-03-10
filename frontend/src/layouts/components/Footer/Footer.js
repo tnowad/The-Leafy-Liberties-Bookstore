@@ -9,17 +9,17 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 import { bigLogo } from '../../../assets/images'
 import MenuLinks from '../../../components/Menu/MenuLinks'
-
+// import {Button}
 function Footer() {
   return (
-    <footer className="flex justify-center w-full flex-col items-center">
-      <div className="container flex">
-        <div className="left-container w-[50%] border-0 border-solid border-r-2 border-gray-400 pr-3">
-          <div className="grid grid-cols-1 sm:flex">
-            <div className="">
-              <img src={bigLogo} alt="logo" />
+    <footer className="flex justify-center w-full flex-col items-center border-0 border-solid border-t-2 border-gray-400 mt-4 pt-5">
+      <div className="container sm:grid sm:m-auto lg:flex">
+        <div className="left-container border-0 border-solid border-gray-400 pr-3 sm:border-r-0 sm:border-b-2 lg:border-r-2 lg:border-b-0">
+          <div className="sm:justify-center sm:items-center lg:flex lg:justify-start">
+            <div className="flex justify-center items-center">
+              <img src={bigLogo} alt="logo"/>
             </div>
-            <div className="flex flex-col justify-center">
+            <div className="flex flex-col justify-center sm:hidden lg:flex">
               <p className="text-3xl border-0 border-solid border-b-2 border-gray-400 pb-1">
                 Leaf Liberty
               </p>
@@ -27,7 +27,7 @@ function Footer() {
             </div>
           </div>
           <div className="description">
-            <p className="text-base mt-3 p-3 font-normal">
+            <p className="text-base mt-3 p-3 font-normal sm:text-center lg:text-left">
               The LeafLiberty is a Book Store E-commerce Website Designed by
               Tuan, Phat, Chinh, Bao
             </p>
@@ -41,9 +41,9 @@ function Footer() {
             </div>
           </div>
         </div>
-        <div className="right-container w-3/4 grid grid-cols-2 sm:grid-cols-4 justify-center">
+        <div className="right-container grid grid-cols-2 sm:grid-cols-4 justify-center text-center sm:w-full sm:mt-7 lg:w-3/4">
           <div className="explore">
-            <h1 className="text-xl text-center font-medium mb-2">Explore</h1>
+            <button className="text-xl font-medium mb-2">Explore</button>
             <MenuLinks
               className="text-gray-600"
               items={[
@@ -55,9 +55,9 @@ function Footer() {
             />
           </div>
           <div className="our-services">
-            <h1 className="text-xl text-center font-medium mb-2">
+            <button className="text-xl font-medium mb-2">
               Our services
-            </h1>
+            </button>
             <MenuLinks
               className="text-gray-600"
               items={[
@@ -70,7 +70,7 @@ function Footer() {
             />
           </div>
           <div className="categories">
-            <h1 className="text-xl text-center font-medium mb-2">Categories</h1>
+            <button className="text-xl font-medium mb-2">Categories</button>
             <MenuLinks
               className="text-gray-600"
               items={[
@@ -83,9 +83,9 @@ function Footer() {
             />
           </div>
           <div className="contact">
-            <h1 className="text-xl text-center font-medium mb-2">
+            <button className="text-xl font-medium mb-2">
               Get Contact
-            </h1>
+            </button>
             <MenuLinks
               className="text-gray-600"
               items={[
