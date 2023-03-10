@@ -48,7 +48,7 @@ function Header() {
           />
           <button className="flex items-center justify-center w-10 h-10">
             <FontAwesomeIcon
-              className=' className="cursor-pointer  hover:text-green-800 "'
+              className=' className="cursor-pointer text-gray-300 transition-all hover:text-green-800 "'
               icon={faSearch}
             />
           </button>
@@ -57,17 +57,17 @@ function Header() {
         {/* List icons */}
         <div className="w-20 flex justify-between">
           <FontAwesomeIcon
-            className="cursor-pointer hover:text-green-800"
+            className="cursor-pointer text-gray-300 hover:text-green-800 transition-all"
             icon={faUser}
           />
           <span className="relative bottom-1.5">|</span>
           <FontAwesomeIcon
-            className="cursor-pointer  hover:text-green-800"
+            className="cursor-pointer text-gray-300 hover:text-green-800 transition-all"
             icon={faHeart}
           />
           <span className="relative bottom-1.5">|</span>
           <FontAwesomeIcon
-            className="cursor-pointer  hover:text-green-800 "
+            className="cursor-pointer text-gray-300  hover:text-green-800 transition-all"
             icon={faShoppingCart}
           />
         </div>
