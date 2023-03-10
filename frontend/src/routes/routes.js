@@ -10,6 +10,8 @@ import Register from '../pages/Register'
 import Product from '../components/Product'
 import Checkout from '../pages/Checkout'
 
+import { RouteBackend } from '../pages/Routes'
+
 import NotFound from '../pages/NotFound'
 
 // Public routes
@@ -19,10 +21,11 @@ const publicRoutes = [
   { path: config.routes.register, component: Register },
   { path: config.routes.profile, component: Profile },
   { path: config.routes.products, component: Product, layout: null },
-  { path: config.routes.productInfo, component: ProductDetail }, 
+  { path: config.routes.productInfo, component: ProductDetail },
   { path: config.routes.cart, component: Cart },
   { path: config.routes.checkout, component: Checkout },
   { path: config.routes.dashboard, component: Dashboard, layout: null },
+  { path: '/routes', component: RouteBackend, layout: null },
   { path: '*', component: NotFound },
 ]
 

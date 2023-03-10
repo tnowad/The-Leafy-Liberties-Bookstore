@@ -13,7 +13,31 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+  return redirect('/api');
+});
+
 Route::get('/api', function () {
-    echo phpinfo();
-    return view('welcome');
+  $routeCollection = Route::getRoutes();
+  $routes = [];
+
+  foreach ($routeCollection as $value) {
+    $routes[] = [
+      "HTTP Method" => $value->methods()[0],
+      "Route" => $value->uri(),
+      "Name" => $value->getName(),
+      "Corresponding Action" => $value->getActionName(),
+      "Middleware" => $value->middleware(),
+      "Prefix" => $value->getPrefix()
+    ];
+  }
+
+  usort(
+    $routes,
+    function ($a, $b) {
+      return strcmp($a['Prefix'], $b['Prefix']);
+    }
+  );
+
+  return response()->json($routes);
 });
