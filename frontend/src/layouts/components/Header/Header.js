@@ -10,13 +10,18 @@ import { logo } from '../../../assets/images'
 import ButtonPill from '../../../components/Button/ButtonPill'
 import Dropdown from '../../../components/Dropdown/Dropdown'
 import MenuLinks from '../../../components/Menu/MenuLinks'
+import { Link } from 'react-router-dom'
 
 function Header() {
   return (
     <header className="flex justify-center w-full sticky top-0 bg-white z-10">
       <div className="mt-5 container flex justify-between items-center">
+        <Link to="/">
         <img src={logo} alt="logo" className="h-20" />
+        </Link>
         {/* button dropdown */}
+
+
         <Dropdown
           trigger={
             <ButtonPill className="hidden lg:flex">
