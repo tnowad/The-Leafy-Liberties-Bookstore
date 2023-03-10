@@ -11,7 +11,7 @@ import {
 import ButtonPill from '../../components/Button/ButtonPill'
 import { star } from '../../assets/images'
 
-function BookDetail() {
+function ProductDetail() {
   return (
     <div className="pt-3 p-5 sm:pt-10 sm:p-12 md:p-25 md:pt-12 lg:p-36 lg:pt-20 box-border">
       {/* // ? option */}
@@ -132,4 +132,4 @@ function BookDetail() {
   )
 }
 
-export default BookDetail
+export default ProductDetail

@@ -16,19 +16,19 @@ function Profile() {
           <div>
             <div className="mt-5 flex">
               <img src={overview} alt="overview" className="mr-5 w-7 inline" />
-              <h3>Overview</h3>
+              <h3 className='cursor-pointer' >Overview</h3>
             </div>
             <div className="mt-5 flex">
               <img src={user} alt="user" className="mr-5 w-5 inline" />
-              <h3>Account settings</h3>
+              <h3 className='cursor-pointer'>Account settings</h3>
             </div>
             <div className="mt-5 flex">
               <img src={payment} alt="" className="mr-5 w-7 inline" />
-              <h3>Payments</h3>
+              <h3 className='cursor-pointer'>Payments</h3>
             </div>
             <div className="mt-5 flex">
               <img src={order} alt="" className="mr-5 w-6 inline" />
-              <h3>Order</h3>
+              <h3 className='cursor-pointer'>Order</h3>
             </div>
           </div>
         </div>
@@ -42,7 +42,7 @@ function Profile() {
                 <input
                   type="text"
                   required
-                  className="h-9 p-5 w-full border border-solid border-teal-900 rounded-3xl"
+                  className="h-9 p-5 w-full border border-solid border-gray-300 rounded-md"
                 />
               </div>
               <div className="w-4/12 flex flex-col">
@@ -50,7 +50,7 @@ function Profile() {
                 <input
                   type="text"
                   required
-                  className="h-9 p-5 w-full border border-solid border-teal-900 rounded-3xl"
+              className="h-9 p-5 w-full border border-solid border-gray-300 rounded-md"
                 />
               </div>
             </div>
@@ -58,17 +58,17 @@ function Profile() {
             <input
               type="text"
               required
-              className="h-9 p-5 w-full border border-solid border-teal-900 rounded-3xl"
+              className="h-9 p-5 w-full border border-solid border-gray-300 rounded-md"
             />
             <label>Email address *</label>
             <input
               type="text"
-              className="h-9 p-5 w-full border border-solid border-teal-900 rounded-3xl"
+              className="h-9 p-5 w-full border border-solid border-gray-300 rounded-md"
             />
             <label>Phone number *</label>
             <input
               type="tel"
-              className="h-9 p-5 w-full border border-solid border-teal-900 rounded-3xl"
+              className="h-9 p-5 w-full border border-solid border-gray-300 rounded-md"
               name="phone"
               placeholder="+84XXXXXXXXX"
               pattern="^(\+84|0)(1\d{9}|3\d{8}|5\d{8}|7\d{8}|8\d{8}|9\d{8})$"
@@ -80,21 +80,21 @@ function Profile() {
                 type="radio"
                 name="gender"
                 value="Male"
-                className="h-5 w-6 inline-block border border-solid border-teal-900 rounded-3xl"
+                className="h-5 w-6 inline-block border border-solid border-gray-300 rounded-md"
               />
               <label className="">Male</label>
               <input
                 type="radio"
                 name="gender"
                 value="Male"
-                className="h-5 w-6 inline-block border border-solid border-teal-900 rounded-3xl"
+                className="h-5 w-6 inline-block border border-solid border-gray-300 rounded-md"
               />
               <label className="">Female</label>
               <input
                 type="radio"
                 name="gender"
                 value="Male"
-                className="h-5 w-6 inline-block border border-solid border-teal-900 rounded-3xl"
+                className="h-5 w-6 inline-block border border-solid border-gray-300 rounded-md"
               />
               <label className="">Other</label>
             </div>
@@ -105,14 +105,14 @@ function Profile() {
                 type="number"
                 min="1"
                 max="31"
-                className="p-1 pl-6 text-base md:text-2xl border border-solid border-teal-900 rounded"
+                className="p-1 pl-6 text-base md:text-2xl border border-solid border-gray-300 rounded"
               />
-              <div className="p-1 border border-solid border-teal-900 rounded">
+              <div className="p-1 border border-solid border-gray-300 rounded">
                 <span>Month</span>
                 <input type="number" className="pl-2" min="1" max="12" />
               </div>
 
-              <div className="p-1 border border-solid border-teal-900 rounded">
+              <div className="p-1 border border-solid border-gray-300 rounded">
                 <span>Year</span>
                 <input type="number" className="pl-2" min="1900" max="2023" />
               </div>
@@ -123,21 +123,21 @@ function Profile() {
                 <label>Current password (leave blank to leave unchanged)</label>
                 <input
                   type="text"
-                  className="h-9 p-5 w-full border border-solid border-teal-900 rounded-3xl"
+                  className="h-9 p-5 w-full border border-solid border-gray-300 rounded-md"
                 />
               </div>
               <div className="lg:w-3/4">
                 <label>Current password (leave blank to leave unchanged)</label>
                 <input
                   type="text"
-                  className="h-9 p-5 w-full border border-solid border-teal-900 rounded-3xl"
+                  className="h-9 p-5 w-full border border-solid border-gray-300 rounded-md"
                 />
               </div>
               <div className="lg:w-3/4">
                 <label>Confirm new password</label>
                 <input
                   type="text"
-                  className="h-9 p-5 w-full border border-solid border-teal-900 rounded-3xl"
+                  className="h-9 p-5 w-full border border-solid border-gray-300 rounded-md"
                 />
               </div>
             </div>
