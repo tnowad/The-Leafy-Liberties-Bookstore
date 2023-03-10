@@ -2,10 +2,12 @@ FROM php:8.2.3-alpine3.17
 
 WORKDIR /var/www/
 
-# Create user and group
-RUN addgroup -g 1000 -S www && adduser -u 1000 -S www -G www && \
-  mkdir -p /var/www && chown -R www:www /var/www
-# Run as user
-USER www
+RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 
-# RUN docker-php-ext-install pdo pdo_mysql
+RUN docker-php-ext-install pdo pdo_mysql && \
+    docker-php-ext-enable pdo pdo_mysql
+
+RUN addgroup -g 1000 -S www && adduser -u 1000 -S www -G www && \
+    mkdir -p /var/www && chown -R www:www /var/www
+
+USER www
