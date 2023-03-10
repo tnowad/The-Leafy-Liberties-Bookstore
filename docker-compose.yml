@@ -31,8 +31,8 @@ services:
       - bookstore-network
   backend:
     build:
-      context: ./backend
-      dockerfile: Dockerfile
+      context: ./docker
+      dockerfile: backend.Dockerfile
     container_name: bookstore-backend
     working_dir: /var/www
     volumes:
@@ -52,8 +52,8 @@ services:
   artisan:
     container_name: bookstore-artisan
     build:
-      context: ./backend
-      dockerfile: Dockerfile
+      context: ./docker
+      dockerfile: backend.Dockerfile
     volumes:
       - ./backend:/var/www
     working_dir: /var/www

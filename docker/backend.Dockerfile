@@ -5,9 +5,9 @@ WORKDIR /var/www/
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 
 RUN docker-php-ext-install pdo pdo_mysql && \
-    docker-php-ext-enable pdo pdo_mysql
+  docker-php-ext-enable pdo pdo_mysql
 
 RUN addgroup -g 1000 -S www && adduser -u 1000 -S www -G www && \
-    mkdir -p /var/www && chown -R www:www /var/www
+  mkdir -p /var/www && chown -R www:www /var/www
 
 USER www
