@@ -28,8 +28,19 @@ Route::get('/api', function () {
       "Name" => $value->getName(),
       "Corresponding Action" => $value->getActionName(),
       "Middleware" => $value->middleware(),
-      "Prefix" => $value->getPrefix()
+      "Prefix" => $value->getPrefix(),
     ];
+  }
+
+  $prefixHide = array(
+    '_ignition',
+    'sanctum'
+  );
+
+  foreach ($routes as $key => $value) {
+    if (in_array($value['Prefix'], $prefixHide)) {
+      unset($routes[$key]);
+    }
   }
 
   usort(

@@ -18,7 +18,7 @@ const groupRoutesByPrefix = (routes) => {
 const RouteTree = ({ routes }) => {
   const groupedRoutes = groupRoutesByPrefix(routes)
   return (
-    <ul className="space-y-2">
+    <ul className="m-10 space-y-2">
       {groupedRoutes.map((group) => (
         <li key={group.prefix} className="flex items-center space-x-2">
           <span className="font-bold">{group.prefix}</span>
