@@ -2,7 +2,6 @@ const routes = {
   home: '/',
   login: '/login',
   register: '/register',
-  dashboard: '/dashboard',
   profile: '/profile',
   products: '/products',
   productInfo: '/products/:id',
@@ -10,6 +9,14 @@ const routes = {
   upload: '/upload',
   cart: '/cart',
   search: '/search',
+  // * dashboard
+  dashboard: '/dashboard',
+  productsDashboard: '/dashboard/products',
+  customerDashboard: '/dashboard/customer',
+  statisticsDashboard: '/dashboard/statistics',
+  paymentDashboard: '/dashboard/payment',
+  messageDashboard: '/dashboard/message',
+
   routes: '/routes',
 }
 

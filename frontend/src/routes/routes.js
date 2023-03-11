@@ -1,7 +1,6 @@
 import config from '../config'
 // Pages
 import Home from '../pages/Home'
-import Dashboard from '../pages/Dashboard'
 import Profile from '../pages/Profile'
 import Cart from '../pages/Cart'
 import ProductDetail from '../pages/ProductDetail'
@@ -10,9 +9,17 @@ import Register from '../pages/Register'
 import Product from '../components/Product'
 import Checkout from '../pages/Checkout'
 
-import { RouteBackend } from '../pages/Routes'
+// *Dashboard
+import Dashboard from '../pages/Dashboard'
+import Products from '../pages/Dashboard/Products'
+import Customer from '../pages/Dashboard/Customer'
 
 import NotFound from '../pages/NotFound'
+
+import { RouteBackend } from '../pages/Routes'
+import Statistics from '../pages/Dashboard/Statistics'
+import Payment from '../pages/Dashboard/Payment'
+import Message from '../pages/Dashboard/Message'
 
 // Public routes
 const publicRoutes = [
@@ -24,7 +31,34 @@ const publicRoutes = [
   { path: config.routes.productInfo, component: ProductDetail },
   { path: config.routes.cart, component: Cart },
   { path: config.routes.checkout, component: Checkout },
+  // * dashboard routes
   { path: config.routes.dashboard, component: Dashboard, layout: null },
+  {
+    path: config.routes.statisticsDashboard,
+    component: Statistics,
+    layout: null,
+  },
+  {
+    path: config.routes.paymentDashboard,
+    component: Payment,
+    layout: null,
+  },
+  {
+    path: config.routes.productsDashboard,
+    component: Products,
+    layout: null,
+  },
+  {
+    path: config.routes.customerDashboard,
+    component: Customer,
+    layout: null,
+  },
+  {
+    path: config.routes.messageDashboard,
+    component: Message,
+    layout: null,
+  },
+  // * backend routes
   { path: config.routes.routes, component: RouteBackend, layout: null },
   { path: '*', component: NotFound },
 ]
