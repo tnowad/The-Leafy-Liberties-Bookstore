@@ -1,17 +1,19 @@
 <?php
 
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\AuthController;
 
-// Group all routes that do not require authentication here
-Route::group(['middleware' => 'guest:api'], function () {
-  Route::post('/register', [AuthController::class, 'register']);
-  Route::post('/login', [AuthController::class, 'login']);
-});
+/*
+|--------------------------------------------------------------------------
+| API Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register API routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "api" middleware group. Make something great!
+|
+*/
 
-// Group all routes that require authentication here
-Route::group(['middleware' => 'auth:api'], function () {
-  Route::get('/user', [AuthController::class, 'user']);
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+  return $request->user();
 });
