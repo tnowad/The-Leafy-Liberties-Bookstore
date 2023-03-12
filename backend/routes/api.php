@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +21,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::group(['prefix' => 'auth'], function () {
+  Route::post('register', [RegisterController::class, 'register']);
+
   Route::post('login', [LoginController::class, 'login']);
   Route::post('logout', [LoginController::class, 'logout']);
   Route::post('refresh', [LoginController::class, 'refresh']);
