@@ -1,0 +1,141 @@
+[
+  {
+    "_id": "0d2f5355-3f6b-48c8-8170-4d24c6bf182e",
+    "colId": "d8d1f217-ab89-49a2-bd80-ef30d3c72f4c",
+    "containerId": "",
+    "name": "User Login",
+    "url": "{{base_url}}/api/auth/login",
+    "method": "POST",
+    "sortNum": 10000,
+    "created": "2023-03-12T19:42:46.358Z",
+    "modified": "2023-03-12T19:42:46.358Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "application/json"
+      },
+      {
+        "name": "User-Agent",
+        "value": "Thunder Client (https://www.thunderclient.com)",
+        "isDisabled": true
+      }
+    ],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"email\": \"selina.weissnat@example.com\",\n  \"password\": \"password\"\n}",
+      "form": []
+    },
+    "tests": [
+      {
+        "type": "set-env-var",
+        "custom": "json.access_token",
+        "action": "setto",
+        "value": "{{access_token}}"
+      },
+      {
+        "type": "set-env-var",
+        "custom": "json.token_type",
+        "action": "setto",
+        "value": "{{token_type}}"
+      }
+    ]
+  },
+  {
+    "_id": "9cd59661-8909-4b69-8eff-b9cdbdb48e67",
+    "colId": "d8d1f217-ab89-49a2-bd80-ef30d3c72f4c",
+    "containerId": "",
+    "name": "User Profile",
+    "url": "{{base_url}}/api/auth/user-profile",
+    "method": "GET",
+    "sortNum": 30000,
+    "created": "2023-03-12T19:42:46.359Z",
+    "modified": "2023-03-12T19:42:46.359Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "application/json"
+      },
+      {
+        "name": "Authorization",
+        "value": "{{token_type}} {{access_token}}"
+      },
+      {
+        "name": "User-Agent",
+        "value": "Thunder Client (https://www.thunderclient.com)",
+        "isDisabled": true
+      }
+    ],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "3104f298-208d-4a3d-88ef-fbcef29f0c63",
+    "colId": "d8d1f217-ab89-49a2-bd80-ef30d3c72f4c",
+    "containerId": "",
+    "name": "User Logout",
+    "url": "{{base_url}}/api/auth/logout",
+    "method": "POST",
+    "sortNum": 40000,
+    "created": "2023-03-12T19:42:46.360Z",
+    "modified": "2023-03-12T19:42:46.360Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "application/json"
+      },
+      {
+        "name": "Authorization",
+        "value": "{{token_type}} {{access_token}}"
+      },
+      {
+        "name": "User-Agent",
+        "value": "Thunder Client (https://www.thunderclient.com)",
+        "isDisabled": true
+      }
+    ],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "0f52c115-50ca-47c4-94ab-e3ea016143fd",
+    "colId": "d8d1f217-ab89-49a2-bd80-ef30d3c72f4c",
+    "containerId": "",
+    "name": "User Refresh Token",
+    "url": "{{base_url}}/api/auth/refresh",
+    "method": "POST",
+    "sortNum": 50000,
+    "created": "2023-03-12T19:42:46.361Z",
+    "modified": "2023-03-12T19:42:46.361Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "application/json"
+      },
+      {
+        "name": "Authorization",
+        "value": "{{token_type}} {{access_token}}"
+      },
+      {
+        "name": "User-Agent",
+        "value": "Thunder Client (https://www.thunderclient.com)",
+        "isDisabled": true
+      }
+    ],
+    "params": [],
+    "tests": [
+      {
+        "type": "set-env-var",
+        "custom": "json.token_type",
+        "action": "setto",
+        "value": "{{token_type}}"
+      },
+      {
+        "type": "set-env-var",
+        "custom": "json.access_token",
+        "action": "setto",
+        "value": "{{access_token}}"
+      }
+    ]
+  }
+]
