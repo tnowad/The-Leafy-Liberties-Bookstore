@@ -8,7 +8,7 @@
     "method": "POST",
     "sortNum": 10000,
     "created": "2023-03-12T19:42:46.358Z",
-    "modified": "2023-03-12T19:42:46.358Z",
+    "modified": "2023-03-12T21:50:33.667Z",
     "headers": [
       {
         "name": "Accept",
@@ -23,7 +23,7 @@
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"email\": \"selina.weissnat@example.com\",\n  \"password\": \"password\"\n}",
+      "raw": "{\n  \"email\": \"tnowad@gmail.com\",\n  \"password\": \"password\"\n}",
       "form": []
     },
     "tests": [
@@ -135,6 +135,48 @@
         "custom": "json.access_token",
         "action": "setto",
         "value": "{{access_token}}"
+      }
+    ]
+  },
+  {
+    "_id": "bf31fd64-7e73-4012-b509-6af2200395a8",
+    "colId": "d8d1f217-ab89-49a2-bd80-ef30d3c72f4c",
+    "containerId": "",
+    "name": "User Register",
+    "url": "{{base_url}}/api/auth/register",
+    "method": "POST",
+    "sortNum": 60000,
+    "created": "2023-03-12T21:09:27.342Z",
+    "modified": "2023-03-12T21:26:07.502Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "application/json"
+      },
+      {
+        "name": "User-Agent",
+        "value": "Thunder Client (https://www.thunderclient.com)",
+        "isDisabled": true
+      }
+    ],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"first_name\": \"Minh Tuan\",\n  \"last_name\": \"Nguyen\",\n  \"phone\": \"0379713541\",\n  \"username\": \"tnowad\",\n  \"email\": \"tnowad@gmail.com\",\n  \"password\": \"password\",\n  \"password_confirmation\": \"password\"\n}",
+      "form": []
+    },
+    "tests": [
+      {
+        "type": "set-env-var",
+        "custom": "json.access_token",
+        "action": "setto",
+        "value": "{{access_token}}"
+      },
+      {
+        "type": "set-env-var",
+        "custom": "json.token_type",
+        "action": "setto",
+        "value": "{{token_type}}"
       }
     ]
   }
