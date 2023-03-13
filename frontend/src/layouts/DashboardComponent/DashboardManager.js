@@ -40,9 +40,11 @@ function DashboardManager({ ...props }) {
   return (
     <div>
       <div>
-        <Link to="/">
+        <Link to="/" className="flex flex-row box-border">
           <img src={logo} alt="" />
-          <h3>Dashboard</h3>
+          <h3 className="inline-block text-green-800 text-3xl mt-6">
+            Dashboard
+          </h3>
         </Link>
         {/*//* manager  */}
         <div className="flex flex-col">
