@@ -102,11 +102,11 @@
     "colId": "d8d1f217-ab89-49a2-bd80-ef30d3c72f4c",
     "containerId": "",
     "name": "User Refresh Token",
-    "url": "{{base_url}}/api/auth/refresh",
+    "url": "{{base_url}}/api/auth/refresh-token",
     "method": "POST",
     "sortNum": 50000,
     "created": "2023-03-12T19:42:46.361Z",
-    "modified": "2023-03-12T19:42:46.361Z",
+    "modified": "2023-03-13T12:30:56.132Z",
     "headers": [
       {
         "name": "Accept",
