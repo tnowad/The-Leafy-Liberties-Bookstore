@@ -37,6 +37,7 @@ class UserFactory extends Factory
   {
     return $this->afterCreating(
       function ($user) {
+        $user->assignRole('user');
         $user->update(['email_verified_at' => now()]);
       }
     );
