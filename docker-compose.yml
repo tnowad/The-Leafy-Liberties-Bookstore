@@ -1,5 +1,4 @@
 version: "3.9"
-name: bookstore
 services:
   database:
     container_name: bookstore-database
