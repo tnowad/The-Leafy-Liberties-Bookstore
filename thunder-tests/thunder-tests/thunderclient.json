@@ -179,5 +179,33 @@
         "value": "{{token_type}}"
       }
     ]
+  },
+  {
+    "_id": "6028f662-5471-4103-81df-18bab7a86b24",
+    "colId": "be2ce8d4-79a3-4214-95cd-c4067cb4ab94",
+    "containerId": "",
+    "name": "Get All Users",
+    "url": "{{base_url}}/api/user/index",
+    "method": "GET",
+    "sortNum": 20000,
+    "created": "2023-03-14T21:33:28.123Z",
+    "modified": "2023-03-14T21:41:12.122Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "application/json"
+      },
+      {
+        "name": "Authorization",
+        "value": "{{token_type}} {{access_token}}"
+      },
+      {
+        "name": "User-Agent",
+        "value": "Thunder Client (https://www.thunderclient.com)",
+        "isDisabled": true
+      }
+    ],
+    "params": [],
+    "tests": []
   }
 ]
