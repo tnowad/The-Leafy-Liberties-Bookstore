@@ -1,13 +1,15 @@
 import React from 'react'
 import { productImg, star } from '../../assets/images'
 
-export default function Product(props) {
+export function ProductHorizontal(props) {
   return (
-    <div className="product-info w-full">
+    <div className={`product-info h-fit ${props.class} ${props.width}`}>
       <div className="img w-56 h-full">
         <img src={productImg} alt="" />
       </div>
-      <div className={`product-body w-full p-2 text-lg font-medium`}>
+      <div
+        className={`product-body w-full p-2 text-lg font-medium`}
+      >
         <div className={`product-name`}>
           <a href="/book_detail">My Dearest Darkest</a>
         </div>
@@ -23,3 +25,5 @@ export default function Product(props) {
     </div>
   )
 }
+
+
