@@ -6,10 +6,10 @@ export default  function Author() {
       <div className="author-face">
         <img src={author} alt="" />
       </div>
-      <p className="author-name font-normal first-letter:text-2xl">
+      <p className="author-name font-normal whitespace-nowrap first-letter:text-2xl ">
         William Graham
       </p>
-      <div className="detail-arrow cursor-pointer">
+      <div className="detail-arrow cursor-pointer lg:hidden xl:block">
         <img src={arrowIcon} alt="" />
       </div>
     </div>
