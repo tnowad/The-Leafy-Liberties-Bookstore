@@ -14,12 +14,12 @@ function Footer() {
   return (
     <footer className="flex justify-center w-full flex-col items-center border-0 border-solid border-t-2 border-gray-400 mt-4 pt-5">
       <div className="container sm:grid sm:m-auto lg:flex">
-        <div className="left-container border-0 border-solid border-gray-400 pr-3 sm:border-r-0 sm:border-b-2 lg:border-r-2 lg:border-b-0">
+        <div className="left-container border-0 border-solid border-gray-400 pr-3 sm:border-r-0 sm:border-b-2 lg:border-r-2 lg:border-b-0 mobile:p-0">
           <div className="sm:justify-center sm:items-center lg:flex lg:justify-start">
             <div className="flex justify-center items-center">
               <img src={bigLogo} alt="logo"/>
             </div>
-            <div className="flex flex-col justify-center sm:hidden lg:flex">
+            <div className="flex flex-col justify-center lg:flex mobile:hidden">
               <p className="text-3xl border-0 border-solid border-b-2 border-gray-400 pb-1">
                 Leaf Liberty
               </p>
@@ -27,7 +27,7 @@ function Footer() {
             </div>
           </div>
           <div className="description">
-            <p className="text-base mt-3 p-3 font-normal sm:text-center lg:text-left">
+            <p className="text-base mt-3 p-3 font-normal mobile:text-center lg:text-left">
               The LeafLiberty is a Book Store E-commerce Website Designed by
               Tuan, Phat, Chinh, Bao
             </p>

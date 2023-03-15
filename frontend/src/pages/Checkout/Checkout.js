@@ -4,6 +4,10 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 
 export default function Checkout() {
+  const handleClicked = (event) => {
+    // console.log();
+    // event.target
+  }
   return (
     <div className="w-full flex justify-center items-center mt-10">
       <div className="container flex flex-wrap sm:flex-wrap md:flex-wrap xl:flex-nowrap">
@@ -13,8 +17,8 @@ export default function Checkout() {
               Billing Address
             </h2>
             <form action="//" className="sm:w-full md:w-full lg:px-0 xl:px-5 ">
-              <div className="full-name flex">
-                <fieldset className="border-[1px] border-gray-600 border-solid rounded-md p-1 mr-10 w-full">
+              <div className="full-name flex sm:flex-nowrap mobile:flex-wrap">
+                <fieldset className="border-[1px] border-gray-600 border-solid rounded-md p-1 sm:mr-10 w-full mobile:mr-0">
                   <legend className="px-1">First Name</legend>
                   <input
                     type="text"
@@ -49,8 +53,8 @@ export default function Checkout() {
                 <legend className="px-1">Street Address</legend>
                 <input type="email" name="" id="" className="p-1" />
               </fieldset>
-              <div className="city flex justify-center mt-3">
-                <fieldset className="border-[1px] border-gray-600 border-solid rounded-md p-1 mr-10 w-full">
+              <div className="city flex sm:flex-nowrap mobile:flex-wrap justify-center mt-3">
+                <fieldset className="border-[1px] border-gray-600 border-solid rounded-md p-1 sm:mr-10 w-full mobile:mr-0">
                   <legend className="px-1">City</legend>
                   <input
                     type="text"
@@ -73,7 +77,7 @@ export default function Checkout() {
               </div>
               <div className="checkForAddress flex items-center mt-3">
                 <input type="checkbox" name="" id="" className="w-4 h-4" />
-                <span className="ml-1">
+                <span className="ml-1 whitespace-nowrap">
                   My billing and shipping address are the same
                 </span>
               </div>
@@ -85,7 +89,7 @@ export default function Checkout() {
             </h2>
             <div className="choice flex flex-col justify-between gap-5">
               <div className="first-choice border-[1px] border-gray-500 p-3 border-solid rounded-lg flex items-center justify-start">
-                <input type="radio" name="options" id="" />
+                <input type="radio" name="options" id="" onChange={handleClicked}/>
                 <span className="font-bold text-lg ml-2">$2.99</span>
                 <p className="ml-6">
                   USPS 1st Class With Tracking (5 - 13 days) COVID19 Delay

@@ -11,11 +11,33 @@ import Author from '../../components/Author/index'
 import Bodyheader from '../../components/Body_Header'
 import { ProductHorizontal } from '../../components/Product/index'
 import GenresKind from '../../components/GenresKind/GenresKind'
+import { Carousel } from 'flowbite-react'
 function Home() {
   return (
     <div className="home flex justify-center w-full flex-col items-center">
-      <div className="w-full">
-        <img src={homeImg} alt="homeImg" />
+      <div className="h-[400px] w-full">
+        <Carousel slideInterval={3000}>
+          <img
+            src={homeImg}
+            alt="hello"
+          />
+          <img
+            src={homeImg}
+            alt="hello"
+          />
+          <img
+            src={homeImg}
+            alt="hello"
+          />
+          <img
+            src={homeImg}
+            alt="hello"
+          />
+          <img
+            src={homeImg}
+            alt="hello"
+          />
+        </Carousel>
       </div>
       <div className="container">
         <Bodyheader
@@ -171,7 +193,9 @@ function Home() {
                   />
                 </div>
                 <div className="top-product-detail h-56 flex flex-col justify-between">
-                  <p className="top-product-name xl:text-3xl lg:text-2xl">Misty Figueroa</p>
+                  <p className="top-product-name xl:text-3xl lg:text-2xl">
+                    Misty Figueroa
+                  </p>
                   <div className="rate">
                     <img src={star} alt="" />
                   </div>
