@@ -17,10 +17,9 @@ function Header() {
     <header className="flex justify-center w-full sticky top-0 bg-white z-10">
       <div className="mt-5 container flex justify-between items-center">
         <Link to="/">
-        <img src={logo} alt="logo" className="h-20" />
+          <img src={logo} alt="logo" className="h-20" />
         </Link>
         {/* button dropdown */}
-
 
         <Dropdown
           trigger={
@@ -62,17 +61,17 @@ function Header() {
         {/* List icons */}
         <div className="w-20 flex justify-between">
           <FontAwesomeIcon
-            className="cursor-pointer text-gray-300 hover:text-green-800 transition-all"
+            className="cursor-pointer text-gray-800 hover:text-green-800 transition-all"
             icon={faUser}
           />
           <span className="relative bottom-1.5">|</span>
           <FontAwesomeIcon
-            className="cursor-pointer text-gray-300 hover:text-green-800 transition-all"
+            className="cursor-pointer text-gray-800 hover:text-green-800 transition-all"
             icon={faHeart}
           />
           <span className="relative bottom-1.5">|</span>
           <FontAwesomeIcon
-            className="cursor-pointer text-gray-300  hover:text-green-800 transition-all"
+            className="cursor-pointer text-gray-800  hover:text-green-800 transition-all"
             icon={faShoppingCart}
           />
         </div>
