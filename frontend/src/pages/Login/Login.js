@@ -1,12 +1,31 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 export default function Login() {
-  const [username,setUsernname] = useState("")
-  const [password,setPassword] = useState("")
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
+  const [error, setError] = useState('')
 
   const handleLogin = (e) => {
-    e.preventDefault();
+    e.preventDefault()
     console.log(username)
+
+    fetch('/api/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ username, password }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.success) {
+        } else {
+          setError(data.message)
+        }
+      })
+      .catch((error) => {
+        console.error('Error:', error)
+      })
   }
   return (
     <section className="bg-white">
@@ -16,10 +35,14 @@ export default function Login() {
             <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
               Sign in to your account
             </h1>
-            <form className="space-y-4 md:space-y-6" action="#" onSubmit={handleLogin}>
+            <form
+              className="space-y-4 md:space-y-6"
+              action="#"
+              onSubmit={handleLogin}
+            >
               <div>
                 <label
-                  for="email"
+                  htmlFor="username"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Your username
@@ -31,12 +54,14 @@ export default function Login() {
                   className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Enter username"
                   required=""
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
                   // username={this.value}
                 />
               </div>
               <div>
                 <label
-                  for="password"
+                  htmlFor="password"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Password
@@ -48,8 +73,11 @@ export default function Login() {
                   placeholder="••••••••"
                   className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   required=""
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
+              {error && <div className="text-red-500">{error}</div>}
               <div className="flex items-center justify-between">
                 <div className="flex items-start">
                   <div className="flex items-center h-5">
@@ -63,7 +91,7 @@ export default function Login() {
                   </div>
                   <div className="ml-3 text-sm">
                     <label
-                      for="remember"
+                      htmlFor="remember"
                       className="text-gray-500 dark:text-gray-300"
                     >
                       Remember me
