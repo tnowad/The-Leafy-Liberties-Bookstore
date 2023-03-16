@@ -3,13 +3,13 @@ import { productImg, star } from '../../assets/images'
 
 export function ProductHorizontal(props) {
   return (
-    <div className={`product-info h-fit ${props.class} ${props.width}`}>
+    <div
+      className={`product-info h-fit flex ${props.width} sm:w-64 md:w-80`}
+    >
       <div className="img w-56 h-full">
         <img src={productImg} alt="" />
       </div>
-      <div
-        className={`product-body w-full p-2 text-lg font-medium`}
-      >
+      <div className={`product-body w-full p-2 lg:text-lg font-medium md:text-base flex flex-col lg:gap-0 md:gap-2`}>
         <div className={`product-name`}>
           <a href="/book_detail">My Dearest Darkest</a>
         </div>
@@ -25,5 +25,3 @@ export function ProductHorizontal(props) {
     </div>
   )
 }
-
-

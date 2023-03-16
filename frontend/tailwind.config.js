@@ -31,6 +31,8 @@ module.exports = {
       },
       gridTemplateColumns: {
         'popular-books': 'repeat(4, minmax(0,250px))',
+        'mdpopular-books': 'repeat(3, minmax(0,400px))',
+        'smpopular-books':'repeat(2, 250px)'
       },
     },
   },
