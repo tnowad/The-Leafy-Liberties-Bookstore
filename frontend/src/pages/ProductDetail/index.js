@@ -23,7 +23,7 @@ function ProductDetail() {
         >
           <img src={infoBookDetail} alt="book_detail" />
         </div>
-        <div className="p-10 mt-10 w-auto h-4/6 border border-solid border-gray-400 rounded-3xl box-border">
+        <div className="p-10 mt-5 w-auto h-4/6 border border-solid border-gray-400 rounded-3xl box-border">
           <p className="p-1 mb-6 text-sm text-green-400 bg-gray-200 inline-block">
             IN STOCK
           </p>
@@ -38,22 +38,22 @@ function ProductDetail() {
           <p className="ml-5 mr-1 inline-block text-xs text-gray-400">BKU :</p>
           <p className="inline-block text-xs">65377017</p>
           <div className="border border-solid border-gray-400  box-border border-x-0">
-            <span className="text-green-800 text-2xl">150.000 VNĐ</span>
+            <span className="text-green-800 text-3xl">150.000 VNĐ</span>
             <p className="mt-8 text-xs">
               Aliquid nesciunt molestiae totam. Nostrum quidem officia dolores
               quo ut. Autem conse quatur molestiae quos tempore sunt.
             </p>
-            <div className="mt-28 mb-10 flex justify-around">
-              <div className="p-2 w-3/12 flex justify-around border border-solid border-gray-400 rounded-3xl box-border">
+            <div className="mt-28 mb-10 flex flex-wrap sm:flex-row justify-around">
+              <div className="p-2 w-2/4 sm:w-3/12 flex justify-around border border-solid border-gray-400 rounded-3xl box-border">
                 <button>-</button>
                 <span>1</span>
                 <button>+</button>
               </div>
-              <ButtonPill>
+              <ButtonPill className="order-last w-3/4">
                 <FontAwesomeIcon className="mr-1" icon={faShoppingCart} />
                 Add to cart
               </ButtonPill>
-              <div className="p-2 w-3/12 flex justify-around border border-solid border-gray-400 rounded-3xl box-border">
+              <div className="p-2 w-2/4 sm:w-3/12 flex justify-around border border-solid border-gray-400 rounded-3xl box-border">
                 <FontAwesomeIcon className="pt-1" icon={faHeart} />
                 <a href="/wishlist" src="" alt="" className="pt-1 text-xs">
                   Add to wishlist

@@ -16,7 +16,6 @@ function Dashboard() {
               { title: 'Three', value: 20, color: '#6A2135' },
             ]}
           />
-          ;
         </div>
       </div>
     </div>
