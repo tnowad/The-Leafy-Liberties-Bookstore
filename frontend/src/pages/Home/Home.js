@@ -24,6 +24,32 @@ function Home() {
     speed: 1000,
     slidesToShow: 5,
     slidesToScroll: 3,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false,
+        },
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   }
   return (
     <div className="home flex justify-center w-full flex-col items-center">
@@ -122,13 +148,14 @@ function Home() {
           <GenresKind name="Fantasy" />
           <GenresKind name="Fantasy" />
         </div>
-        <div className="bottom-body-content flex mb-5 lg:gap-0 sm:gap-3">
-          <div className="popular-author w-1/4 bg-orange-50 p-5 rounded-2xl xl:mr-10 lg:mr-2">
-            <div className="header-table lg:text-2xl border-0 border-solid border-b-2 mb-6 p-3 whitespace-nowrap md:text-xl md:text-center">
-              <p>Popular Author</p>
+        <div className="bottom-body-content flex mb-5 lg:gap-0 sm:gap-3  lg:flex-row md:flex-col">
+          <div className="popular-author xl:w-1/4 bg-orange-50 lg:p-5 rounded-2xl xl:mr-10 lg:mr-2 md:w-full md:p-2 overflow-hidden overflow-x-scroll">
+            <div className="header-table lg:text-2xl border-0 border-solid border-b-2 mb-6 p-3 whitespace-nowrap md:text-xl md:text-center ">
+              <p>Popular Author
+              </p>
             </div>
             <div>
-              <ul className="author-menu">
+              <ul className="author-menu lg:block lg:gap-0 md:flex md:gap-2">
                 <li className="cursor-pointer">
                   <Author />
                 </li>
