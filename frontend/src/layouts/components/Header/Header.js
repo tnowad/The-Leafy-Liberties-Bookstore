@@ -30,7 +30,7 @@ function Header() {
           }
           menu={
             <div
-              className="p-5 absolute top-24 h-full bg-white box-border
+              className="p-5 absolute top-[85px] h-full bg-white box-border
             border border-solid border-gray-400 rounded-lg"
             >
               <MenuLinks
@@ -47,7 +47,7 @@ function Header() {
         <form className="flex items-center justify-center w-1/2 h-10 bg-gray-100 rounded-full">
           <input
             type="text"
-            className="pl-5 w-full h-full bg-transparent"
+            className="pl-5 w-full h-full bg-transparent rounded-tl-full rounded-bl-full ring-0"
             placeholder="Search products..."
           />
           <button className="flex items-center justify-center w-10 h-10">

@@ -6,7 +6,7 @@ module.exports = {
 
   theme: {
     screens: {
-      mobile: '374px',
+      mobile: '470px',
       sm: '576px',
       md: '768px',
       lg: '992px',
@@ -32,7 +32,10 @@ module.exports = {
       gridTemplateColumns: {
         'popular-books': 'repeat(4, minmax(0,250px))',
         'mdpopular-books': 'repeat(3, minmax(0,400px))',
-        'smpopular-books':'repeat(2, 250px)'
+        'smpopular-books':'repeat(2, 285px)',
+        'mobilepopular-books':'repeat(2, 240px)',
+
+        'auto' : 'auto auto',
       },
     },
   },

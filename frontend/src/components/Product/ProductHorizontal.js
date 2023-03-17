@@ -9,7 +9,7 @@ export function ProductHorizontal(props) {
       <div className="img w-56 h-full">
         <img src={productImg} alt="" />
       </div>
-      <div className={`product-body w-full p-2 lg:text-lg font-medium md:text-base flex flex-col lg:gap-0 md:gap-2`}>
+      <div className={`product-body sm:w-full p-2 lg:text-lg font-medium md:text-base flex flex-col lg:gap-0 md:gap-2 mobile:w-3/4`}>
         <div className={`product-name`}>
           <a href="/book_detail">My Dearest Darkest</a>
         </div>

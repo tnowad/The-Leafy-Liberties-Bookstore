@@ -3,11 +3,11 @@ import { productImg, star } from '../../assets/images'
 
 export default function Product(props) {
   return (
-    <div className="product-info w-full">
-      <div className="img w-56 h-full">
-        <img src={productImg} alt="" />
+    <div className="product-info w-full flex flex-col justify-center items-center p-1">
+      <div className="w-56 h-full object-cover">
+        <img src={productImg} alt="" className="w-full"/>
       </div>
-      <div className={`product-body w-full p-2 text-lg font-medium`}>
+      <div className={`product-body w-full p-1 text-lg font-medium flex flex-col justify-center items-center`}>
         <div className={`product-name`}>
           <a href="/book_detail">My Dearest Darkest</a>
         </div>

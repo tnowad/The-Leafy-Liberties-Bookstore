@@ -18,12 +18,12 @@ function Home() {
     infinite: true,
     cssEase: 'linear',
     autoplay: true,
-    autoplaySpeed: 8000,
+    autoplaySpeed: 5000,
     arrows: false,
     dots: false,
     speed: 1000,
     slidesToShow: 5,
-    slidesToScroll: 3,
+    slidesToScroll: 1,
     responsive: [
       {
         breakpoint: 1200,
@@ -51,10 +51,53 @@ function Home() {
       },
     ],
   }
+  var settingsGenres = {
+    infinite: true,
+    cssEase: 'linear',
+    autoplay: true,
+    autoplaySpeed: 3000,
+    arrows: false,
+    dots: false,
+    speed: 1000,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false,
+        },
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },{
+        breakpoint: 577,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  }
   return (
     <div className="home flex justify-center w-full flex-col items-center">
       <div className="xl:h-96 w-full md:h-80">
-        <Carousel slideInterval={3000}>
+        <Carousel slideInterval={3000} >
           <img src={homeImg} alt="hello" />
           <img src={homeImg} alt="hello" />
           <img src={homeImg} alt="hello" />
@@ -89,9 +132,9 @@ function Home() {
           text_size="text-3xl"
           width="w-3/4"
         />
-        <div className="popular-products flex">
+        <div className="popular-products lg:flex md:block">
           <div className="w-3/4 md:w-full">
-            <ul className="list grid grid-rows-popular-books 2xl:grid-cols-4 xl:grid-cols-popular-books lg:grid-cols-4 md:grid-cols-mdpopular-books">
+            <ul className="list grid grid-rows-popular-books m-auto 2xl:grid-cols-4 xl:grid-cols-popular-books lg:grid-cols-4 md:grid-cols-mdpopular-books sm:grid-cols-smpopular-books mobile:grid-cols-mobilepopular-books">
               <li>
                 <Product></Product>
               </li>
@@ -118,7 +161,7 @@ function Home() {
               </li>
             </ul>
           </div>
-          <div className="best-offer relative w-1/4 xl:block sm:hidden">
+          <div className="best-offer relative w-1/4 xl:block mobile:hidden">
             <div className="w-full h-full">
               <img
                 src={bestOffer}
@@ -143,19 +186,20 @@ function Home() {
           text_size="text-3xl"
           width="w-3/4"
         />
-        <div className="genres-books-detail grid grid-flow-col grid-cols-3 mb-10 gap-6">
-          <GenresKind name="Fantasy" />
-          <GenresKind name="Fantasy" />
-          <GenresKind name="Fantasy" />
+        <div className="w-full relative mb-5">
+          <Slider {...settingsGenres}>
+            <GenresKind name="Fantasy" />
+            <GenresKind name="Fantasy" />
+            <GenresKind name="Fantasy" />
+          </Slider>
         </div>
-        <div className="bottom-body-content flex mb-5 lg:gap-0 sm:gap-3  lg:flex-row md:flex-col">
-          <div className="popular-author xl:w-1/4 bg-orange-50 lg:p-5 rounded-2xl xl:mr-10 lg:mr-2 md:w-full md:p-2 overflow-hidden overflow-x-scroll">
-            <div className="header-table lg:text-2xl border-0 border-solid border-b-2 mb-6 p-3 whitespace-nowrap md:text-xl md:text-center ">
-              <p>Popular Author
-              </p>
+        <div className="bottom-body-content flex mb-5 lg:gap-0 sm:gap-3 lg:flex-row mobile:flex-col">
+          <div className="popular-author lg:w-1/4 bg-orange-50 lg:p-5 rounded-2xl xl:mr-10 lg:mr-2 mobile:w-full md:p-2 overflow-hidden lg:overflow-x-hidden mobile:overflow-x-scroll">
+            <div className="header-table lg:text-2xl border-0 border-solid border-b-2 mb-6 p-3 whitespace-nowrap md:text-xl mobile:text-center mobile:w-screen">
+              <p>Popular Author</p>
             </div>
             <div>
-              <ul className="author-menu lg:block lg:gap-0 md:flex md:gap-2">
+              <ul className="author-menu lg:block lg:gap-0 mobile:flex mobile:gap-2">
                 <li className="cursor-pointer">
                   <Author />
                 </li>
@@ -180,7 +224,7 @@ function Home() {
               </ul>
             </div>
           </div>
-          <div className="author-bestselling w-3/4">
+          <div className="author-bestselling lg:w-3/4 mobile:w-full">
             <Bodyheader
               name="Bestselling Books"
               class="bestselling-books-author"
@@ -188,15 +232,15 @@ function Home() {
               width="w-2/3"
             />
             <div className="list-author-bestselling">
-              <div className="top-product flex">
+              <div className="top-product flex sm:w-full mobile:w-screen sm:gap-0 mobile:gap-2">
                 <div className="h-max w-full 2xl:w-1/2 xl:w-3/4 lg:w-3/5 sm:mr-5 xl:mr-0">
                   <img
                     src={productImg}
                     alt=""
-                    className="2xl:h-64 xl:w-60 xl:h-60 md:w-96 md:h-64"
+                    className="2xl:h-64 xl:w-60 xl:h-60 md:w-72 md:h-64"
                   />
                 </div>
-                <div className="top-product-detail h-56 flex flex-col justify-between">
+                <div className="top-product-detail h-52 flex flex-col justify-between md:max-w-none sm:gap-0 ">
                   <p className="top-product-name xl:text-3xl lg:text-2xl">
                     Misty Figueroa
                   </p>
@@ -204,7 +248,7 @@ function Home() {
                     <img src={star} alt="" />
                   </div>
                   <p className="top-product-author font-bold">Misty Figueroa</p>
-                  <div className="top-product-desc text-ellipsis w-full">
+                  <div className="top-product-desc text-ellipsis sm:w-full pr-20">
                     Est numquam harum aut ut. Pariatur cum blanditiis est
                     delectus accusamus eveniet. Quis fugiat eligendi magni eos
                     dignissimos numquam.Quis ipsum incididunt non minim elit
@@ -216,7 +260,7 @@ function Home() {
                 </div>
               </div>
               <div className="list-top-product-by-author mt-2">
-                <ul className="grid auto-cols-max grid-cols-2 gap-2">
+                <ul className="grid auto-cols-max sm:grid-cols-2 gap-2">
                   <li>
                     <ProductHorizontal width="w-80" />
                   </li>
