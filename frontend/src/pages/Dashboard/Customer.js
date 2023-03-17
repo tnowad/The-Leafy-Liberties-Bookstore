@@ -37,7 +37,7 @@ function Customer({ ...props }) {
 
   return (
     <div className="w-full">
-      <div className="flex m-5 w-full ">
+      <div className="flex m-1 sm:m-5 w-full ">
         <DashboardManager color="Customer" />
         <div className="mt-14 min-h-screen w-full overflow-x-scroll xl:w-4/5 xl:overflow-x-hidden">
           <div className="flex justify-between">
@@ -129,7 +129,6 @@ function Customer({ ...props }) {
                     <label htmlFor="createAt">Create At:</label>
                     <input
                       type="date"
-                      id="createAt"
                       value={createAt}
                       onChange={(e) => setCreateAt(e.target.value)}
                     />

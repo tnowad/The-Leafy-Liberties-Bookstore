@@ -20,6 +20,7 @@ import { RouteBackend } from '../pages/Routes'
 import Statistics from '../pages/Dashboard/Statistics'
 import Payment from '../pages/Dashboard/Payment'
 import Message from '../pages/Dashboard/Message'
+import Shop from '../pages/Shop/Shop'
 
 // Public routes
 const publicRoutes = [
@@ -31,6 +32,7 @@ const publicRoutes = [
   { path: config.routes.productInfo, component: ProductDetail },
   { path: config.routes.cart, component: Cart },
   { path: config.routes.checkout, component: Checkout },
+  { path: config.routes.shop, component: Shop },
   // * dashboard routes
   { path: config.routes.dashboard, component: Dashboard, layout: null },
   {
