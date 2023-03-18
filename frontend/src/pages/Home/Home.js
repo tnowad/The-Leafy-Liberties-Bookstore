@@ -232,23 +232,23 @@ function Home() {
               width="w-2/3"
             />
             <div className="list-author-bestselling">
-              <div className="top-product flex sm:w-full mobile:w-screen sm:gap-0 mobile:gap-2">
-                <div className="h-max w-full 2xl:w-1/2 xl:w-3/4 lg:w-3/5 sm:mr-5 xl:mr-0">
+              <div className=" h-fit top-product flex sm:w-full mobile:w-screen sm:gap-0 mobile:gap-2">
+                <div className="object-cover h-52 xl:w-72 mr-4 md:w-96 mobile:w-full">
                   <img
                     src={productImg}
                     alt=""
-                    className="2xl:h-64 xl:w-60 xl:h-60 md:w-72 md:h-64"
+                    className="w-full h-full"
                   />
                 </div>
-                <div className="top-product-detail h-52 flex flex-col justify-between md:max-w-none sm:gap-0 ">
+                <div className="top-product-detail h-52 flex flex-col xl:justify-between md:max-w-none sm:gap-0 lg:justify-start">
                   <p className="top-product-name xl:text-3xl lg:text-2xl">
                     Misty Figueroa
                   </p>
                   <div className="rate">
-                    <img src={star} alt="" />
+                    <img src={star} alt=""/>
                   </div>
                   <p className="top-product-author font-bold">Misty Figueroa</p>
-                  <div className="top-product-desc text-ellipsis sm:w-full pr-20">
+                  <div className="top-product-desc text-ellipsis sm:w-full pr-20 inline">
                     Est numquam harum aut ut. Pariatur cum blanditiis est
                     delectus accusamus eveniet. Quis fugiat eligendi magni eos
                     dignissimos numquam.Quis ipsum incididunt non minim elit
