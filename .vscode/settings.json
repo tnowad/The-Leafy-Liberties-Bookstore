@@ -6,6 +6,7 @@
     "backend/vendor/": true,
   },
   "cSpell.words": [
+    "flexbox",
     "fontawesome",
     "fortawesome"
   ],
