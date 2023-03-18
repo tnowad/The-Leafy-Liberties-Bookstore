@@ -1,7 +1,10 @@
 const routes = {
-  home: '/',
+  // * account
   login: '/login',
   register: '/register',
+  forgotPassword: '/forgot_password',
+  // * pages
+  home: '/',
   profile: '/profile',
   products: '/products',
   productInfo: '/products/:id',
@@ -10,7 +13,7 @@ const routes = {
   cart: '/cart',
   search: '/search',
   shop: '/shop',
-  category: '/category/:id',
+  wishlist: '/wishlist',
   // * dashboard
   dashboard: '/dashboard',
   productsDashboard: '/dashboard/products',

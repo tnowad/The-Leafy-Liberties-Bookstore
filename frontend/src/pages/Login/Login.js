@@ -3,21 +3,22 @@ import { Link } from 'react-router-dom'
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 export default function Login() {
-  const [username, setUsername] = useState('')
+  const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const [passwordShown, setPasswordShown] = useState(false)
 
   const handleLogin = (e) => {
     e.preventDefault()
-    console.log(username)
+    console.log(email)
 
-    fetch('/api/login', {
+    fetch('/api/auth/login', {
       method: 'POST',
       headers: {
+        'accept': 'application/json',
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify({ email, password }),
     })
       .then((response) => response.json())
       .then((data) => {
@@ -60,9 +61,9 @@ export default function Login() {
                   className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Enter username"
                   required=""
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
-                  // username={this.value}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                // username={this.value}
                 />
               </div>
               <div className="relative">

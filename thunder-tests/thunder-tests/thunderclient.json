@@ -8,7 +8,7 @@
     "method": "POST",
     "sortNum": 10000,
     "created": "2023-03-12T19:42:46.358Z",
-    "modified": "2023-03-12T21:50:33.667Z",
+    "modified": "2023-03-18T13:49:26.773Z",
     "headers": [
       {
         "name": "Accept",
@@ -29,13 +29,13 @@
     "tests": [
       {
         "type": "set-env-var",
-        "custom": "json.access_token",
+        "custom": "json.data.access_token",
         "action": "setto",
         "value": "{{access_token}}"
       },
       {
         "type": "set-env-var",
-        "custom": "json.token_type",
+        "custom": "json.data.token_type",
         "action": "setto",
         "value": "{{token_type}}"
       }
@@ -106,7 +106,7 @@
     "method": "POST",
     "sortNum": 50000,
     "created": "2023-03-12T19:42:46.361Z",
-    "modified": "2023-03-13T12:30:56.132Z",
+    "modified": "2023-03-18T13:49:48.659Z",
     "headers": [
       {
         "name": "Accept",
@@ -126,13 +126,13 @@
     "tests": [
       {
         "type": "set-env-var",
-        "custom": "json.token_type",
+        "custom": "json.data.token_type",
         "action": "setto",
         "value": "{{token_type}}"
       },
       {
         "type": "set-env-var",
-        "custom": "json.access_token",
+        "custom": "json.data.access_token",
         "action": "setto",
         "value": "{{access_token}}"
       }

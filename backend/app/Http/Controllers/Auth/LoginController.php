@@ -36,9 +36,12 @@ class LoginController extends Controller
     }
 
     return response()->json([
-      'access_token' => $token,
-      'token_type' => 'bearer',
-      'expires_in' => auth()->factory()->getTTL() * 60,
+      'message' => 'Successfully logged in',
+      'data' => [
+        'access_token' => $token,
+        'token_type' => 'bearer',
+        'expires_in' => auth()->factory()->getTTL() * 60,
+      ]
     ]);
   }
 
@@ -50,7 +53,9 @@ class LoginController extends Controller
   {
     auth()->logout();
 
-    return response()->json(['message' => 'Successfully logged out']);
+    return response()->json([
+      'message' => 'Successfully logged out'
+    ]);
   }
 
   /**
@@ -60,9 +65,12 @@ class LoginController extends Controller
   public function refresh(): JsonResponse
   {
     return response()->json([
-      'access_token' => auth()->refresh(),
-      'token_type' => 'bearer',
-      'expires_in' => auth()->factory()->getTTL() * 60,
+      'message' => 'Successfully refreshed',
+      'data' => [
+        'access_token' => auth()->refresh(),
+        'token_type' => 'bearer',
+        'expires_in' => auth()->factory()->getTTL() * 60,
+      ]
     ]);
   }
 

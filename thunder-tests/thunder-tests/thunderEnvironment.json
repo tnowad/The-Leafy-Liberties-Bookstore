@@ -17,7 +17,7 @@
       },
       {
         "name": "access_token",
-        "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9hdXRoL3JlZ2lzdGVyIiwiaWF0IjoxNjc4ODMzMjE3LCJleHAiOjE2Nzg4MzY4MTcsIm5iZiI6MTY3ODgzMzIxNywianRpIjoiZHNxeFhrNjgxMnJjamg1VSIsInN1YiI6IjEwMyIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.yqXVwS7ULmxgrfKMfMArNhV5pGne1Isr6drfGngWL40"
+        "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNjc5MTQzODIxLCJleHAiOjE2NzkxNDc0MjEsIm5iZiI6MTY3OTE0MzgyMSwianRpIjoialRieHlKM09haGFYUDdxZSIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.lBWHwTGsAwUS23fjeCFslTgEG7efoBvPlwhHWUae098"
       },
       {
         "name": "refresh_token",
@@ -29,7 +29,7 @@
       },
       {
         "name": "token_type",
-        "value": "Bearer"
+        "value": "bearer"
       }
     ]
   }

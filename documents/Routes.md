@@ -37,7 +37,6 @@ The admin dashboard routes include:
 - Admin authenticated routes:
 
   - Admin dashboard ('/')
-  - Category CRUD routes ('/categories', '/categories/{category}/remove-image')
   - Product CRUD routes ('/products', '/products/remove-image')
   - Tag CRUD routes ('/tags')
   - Coupon CRUD routes ('/coupons')

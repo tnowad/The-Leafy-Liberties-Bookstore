@@ -1,15 +1,19 @@
 import config from '../config'
-// *Pages
-import Home from '../pages/Home'
-import Cart from '../pages/Cart'
-import Category from '../pages/Category/Category'
-import Checkout from '../pages/Checkout'
+// * Account Settings
+import Register from '../pages/Register'
 import Login from '../pages/Login'
+import ForgotPassword from '../pages/ForgotPassword/ForgotPassword'
+import Profile from '../pages/Profile'
+
+// * Pages
+import Home from '../pages/Home'
+import Cart from '../pages/Cart/Cart'
+import Checkout from '../pages/Checkout'
 import Product from '../components/Product'
 import ProductDetail from '../pages/ProductDetail'
-import Profile from '../pages/Profile'
-import Register from '../pages/Register'
 import Search from '../pages/Search/Search'
+import Contact from '../pages/Contact/Contact'
+import Wishlist from '../pages/Wishlist/Wishlist'
 
 // *Dashboard
 import Dashboard from '../pages/Dashboard'
@@ -27,9 +31,12 @@ import NotFound from '../pages/NotFound'
 
 // Public routes
 const publicRoutes = [
-  { path: config.routes.home, component: Home },
+  // * account
   { path: config.routes.login, component: Login },
   { path: config.routes.register, component: Register },
+  { path: config.routes.forgotPassword, component: ForgotPassword },
+  // * pages shop
+  { path: config.routes.home, component: Home },
   { path: config.routes.profile, component: Profile },
   { path: config.routes.products, component: Product, layout: null },
   { path: config.routes.productInfo, component: ProductDetail },
@@ -37,6 +44,8 @@ const publicRoutes = [
   { path: config.routes.checkout, component: Checkout },
   { path: config.routes.shop, component: Shop },
   { path: config.routes.search, component: Search },
+  { path: config.routes.contact, component: Contact },
+  { path: config.routes.wishlist, component: Wishlist },
   // * dashboard routes
   { path: config.routes.dashboard, component: Dashboard, layout: null },
   {
