@@ -1,25 +1,32 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser, faHeart } from '@fortawesome/free-regular-svg-icons'
 import {
+  faBars,
+  faClose,
   faList,
   faSearch,
-  faShoppingCart,
 } from '@fortawesome/free-solid-svg-icons'
+import { useState } from 'react'
 
 import { logo } from '../../../assets/images'
 import ButtonPill from '../../../components/Button/ButtonPill'
 import Dropdown from '../../../components/Dropdown/Dropdown'
 import MenuLinks from '../../../components/Menu/MenuLinks'
 import { Link } from 'react-router-dom'
+import IconHeader from '../../../components/IconHeader/IconHeader'
 
 function Header() {
+  const [isIconsVisible, setIconsVisibility] = useState(false)
+
+  const toggleIconsVisibility = () => {
+    setIconsVisibility(!isIconsVisible)
+  }
+
   return (
     <header className="flex justify-center w-full sticky top-0 bg-white z-10">
-      <div className="mt-5 container flex justify-between items-center">
+      <div className="mt-5 h-24 container flex justify-between items-center">
         <Link to="/">
           <img src={logo} alt="logo" className="h-20" />
         </Link>
-        {/* button dropdown */}
 
         <Dropdown
           trigger={
@@ -43,7 +50,6 @@ function Header() {
             </div>
           }
         />
-        {/* Search form */}
         <form className="flex items-center justify-center w-1/2 h-10 bg-gray-100 rounded-full">
           <input
             type="text"
@@ -58,23 +64,19 @@ function Header() {
           </button>
         </form>
 
-        {/* List icons */}
-        <div className="w-20 flex justify-between">
-          <FontAwesomeIcon
-            className="cursor-pointer text-gray-800 hover:text-green-800 transition-all"
-            icon={faUser}
-          />
-          <span className="relative bottom-1.5">|</span>
-          <FontAwesomeIcon
-            className="cursor-pointer text-gray-800 hover:text-green-800 transition-all"
-            icon={faHeart}
-          />
-          <span className="relative bottom-1.5">|</span>
-          <FontAwesomeIcon
-            className="cursor-pointer text-gray-800  hover:text-green-800 transition-all"
-            icon={faShoppingCart}
-          />
-        </div>
+        {isIconsVisible ? (
+          <div className="flex flex-col w-auto mr-4">
+            <button onClick={toggleIconsVisibility}>
+              <FontAwesomeIcon icon={faClose} />
+            </button>
+            <IconHeader />
+          </div>
+        ) : (
+          <button onClick={toggleIconsVisibility} className="mr-5 lg:hidden">
+            <FontAwesomeIcon icon={faBars} />
+          </button>
+        )}
+        {isIconsVisible || <IconHeader className="hidden" />}
       </div>
     </header>
   )

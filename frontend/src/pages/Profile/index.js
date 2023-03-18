@@ -16,19 +16,19 @@ function Profile() {
           <div>
             <div className="mt-5 flex">
               <img src={overview} alt="overview" className="mr-5 w-7 inline" />
-              <h3 className='cursor-pointer' >Overview</h3>
+              <h3 className="cursor-pointer">Overview</h3>
             </div>
             <div className="mt-5 flex">
               <img src={user} alt="user" className="mr-5 w-5 inline" />
-              <h3 className='cursor-pointer'>Account settings</h3>
+              <h3 className="cursor-pointer">Account settings</h3>
             </div>
             <div className="mt-5 flex">
               <img src={payment} alt="" className="mr-5 w-7 inline" />
-              <h3 className='cursor-pointer'>Payments</h3>
+              <h3 className="cursor-pointer">Payments</h3>
             </div>
             <div className="mt-5 flex">
               <img src={order} alt="" className="mr-5 w-6 inline" />
-              <h3 className='cursor-pointer'>Order</h3>
+              <h3 className="cursor-pointer">Order</h3>
             </div>
           </div>
         </div>
@@ -50,7 +50,7 @@ function Profile() {
                 <input
                   type="text"
                   required
-              className="h-9 p-5 w-full border border-solid border-gray-300 rounded-md"
+                  className="h-9 p-5 w-full border border-solid border-gray-300 rounded-md"
                 />
               </div>
             </div>
@@ -75,7 +75,7 @@ function Profile() {
               required
             ></input>
             <label>Gender *</label>
-            <div className="flex justify-around w-2/5 md:w-3/12">
+            <div className="flex justify-around w-3/4 md:w-3/5">
               <input
                 type="radio"
                 name="gender"
@@ -100,14 +100,14 @@ function Profile() {
             </div>
 
             <label>Birthday *</label>
-            <div className="w-3/5 md:w-2/4 flex justify-between">
+            <div className="h-10 w-3/5 md:w-2/4 flex justify-between">
               <input
                 type="number"
                 min="1"
                 max="31"
-                className="p-1 pl-6 text-base md:text-2xl border border-solid border-gray-300 rounded"
+                className="p-1 pl-6  text-base md:text-2xl border border-solid border-gray-300 rounded"
               />
-              <div className="p-1 border border-solid border-gray-300 rounded">
+              <div className="h-10 p-1 border border-solid border-gray-300 rounded">
                 <span>Month</span>
                 <input type="number" className="pl-2" min="1" max="12" />
               </div>
@@ -118,7 +118,7 @@ function Profile() {
               </div>
             </div>
             <label className="ml-10 mt-10">Password change</label>
-            <div className="p-8 flex flex-col border border-solid border-teal-800 rounded">
+            <div className="p-2 flex flex-col border border-solid border-teal-800 rounded">
               <div className="lg:w-3/4">
                 <label>Current password (leave blank to leave unchanged)</label>
                 <input
@@ -144,7 +144,7 @@ function Profile() {
             <input
               type="submit"
               value="Save changes"
-              className="p-2 mt-5 w-1/6 text-white cursor-pointer bg-teal-800 border  rounded-2xl"
+              className="p-2 mt-5 w-3/6 sm:w-1/6 text-white cursor-pointer bg-teal-800 border  rounded-2xl"
             />
           </form>
         </div>
