@@ -36,6 +36,7 @@ class LoginController extends Controller
     }
 
     return response()->json([
+      'message' => 'Successfully logged in',
       'access_token' => $token,
       'token_type' => 'bearer',
       'expires_in' => auth()->factory()->getTTL() * 60,
@@ -60,6 +61,7 @@ class LoginController extends Controller
   public function refresh(): JsonResponse
   {
     return response()->json([
+      'message' => 'Successfully refreshed token',
       'access_token' => auth()->refresh(),
       'token_type' => 'bearer',
       'expires_in' => auth()->factory()->getTTL() * 60,
@@ -72,6 +74,9 @@ class LoginController extends Controller
    */
   public function userProfile(): JsonResponse
   {
-    return response()->json(auth()->user());
+    return response()->json([
+      'message' => 'Successfully fetched user profile',
+      auth()->user()
+    ]);
   }
 }
