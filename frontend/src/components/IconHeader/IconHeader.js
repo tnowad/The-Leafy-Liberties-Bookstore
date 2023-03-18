@@ -11,12 +11,12 @@ function IconHeader({ className }) {
   ]
   return (
     <div
-      className={`flex flex-col sm:flex-row justify-between ${className} lg:flex`}
+      className={`flex flex-col md:flex-row justify-between ${className} md:flex`}
     >
       {arrayIconsHeader.map((item, index) => {
         return (
           <FontAwesomeIcon
-            className="mt-2 sm:mt-0 cursor-pointer text-gray-800 hover:text-green-800 transition-all"
+            className="mt-2 md:mt-0 md:mr-2 cursor-pointer text-gray-800 hover:text-green-800 transition-all"
             icon={item.icon}
             key={index}
           />

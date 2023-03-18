@@ -66,13 +66,13 @@ function Header() {
 
         {isIconsVisible ? (
           <div className="flex flex-col w-auto mr-4">
-            <button onClick={toggleIconsVisibility}>
+            <button onClick={toggleIconsVisibility} className="md:hidden">
               <FontAwesomeIcon icon={faClose} />
             </button>
             <IconHeader />
           </div>
         ) : (
-          <button onClick={toggleIconsVisibility} className="mr-5 lg:hidden">
+          <button onClick={toggleIconsVisibility} className="mr-5 md:hidden">
             <FontAwesomeIcon icon={faBars} />
           </button>
         )}
