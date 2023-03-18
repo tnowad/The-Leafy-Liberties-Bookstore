@@ -9,5 +9,6 @@
     "fontawesome",
     "fortawesome"
   ],
-  "commentTranslate.targetLanguage": "vi"
+  "commentTranslate.targetLanguage": "vi",
+  "docify.commentService.docstringFormat": "JsDoc"
 }
