@@ -23,13 +23,18 @@ class LoginController extends Controller
    */
   public function login(Request $request): JsonResponse
   {
+    // email or username login
     $request->validate([
-      'email' => 'required|string|email',
+      'email' => 'required|string',
       'password' => 'required|string',
       'remember_me' => 'boolean',
     ]);
 
-    $credentials = request(['email', 'password']);
+    if (filter_var($request->email, FILTER_VALIDATE_EMAIL)) {
+      $credentials = request(['email', 'password']);
+    } else {
+      $credentials = request(['username', 'password']);
+    }
 
     if (!$token = auth()->attempt($credentials)) {
       return response()->json(['message' => 'Unauthorized'], 401);
