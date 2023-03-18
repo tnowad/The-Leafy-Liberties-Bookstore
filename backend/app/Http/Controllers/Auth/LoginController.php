@@ -23,18 +23,13 @@ class LoginController extends Controller
    */
   public function login(Request $request): JsonResponse
   {
-    // email or username login
     $request->validate([
-      'email' => 'required|string',
+      'email' => 'required|string|email',
       'password' => 'required|string',
       'remember_me' => 'boolean',
     ]);
 
-    if (filter_var($request->email, FILTER_VALIDATE_EMAIL)) {
-      $credentials = request(['email', 'password']);
-    } else {
-      $credentials = request(['username', 'password']);
-    }
+    $credentials = request(['email', 'password']);
 
     if (!$token = auth()->attempt($credentials)) {
       return response()->json(['message' => 'Unauthorized'], 401);
@@ -42,9 +37,11 @@ class LoginController extends Controller
 
     return response()->json([
       'message' => 'Successfully logged in',
-      'access_token' => $token,
-      'token_type' => 'bearer',
-      'expires_in' => auth()->factory()->getTTL() * 60,
+      'data' => [
+        'access_token' => $token,
+        'token_type' => 'bearer',
+        'expires_in' => auth()->factory()->getTTL() * 60,
+      ]
     ]);
   }
 
@@ -56,7 +53,9 @@ class LoginController extends Controller
   {
     auth()->logout();
 
-    return response()->json(['message' => 'Successfully logged out']);
+    return response()->json([
+      'message' => 'Successfully logged out'
+    ]);
   }
 
   /**
@@ -66,10 +65,12 @@ class LoginController extends Controller
   public function refresh(): JsonResponse
   {
     return response()->json([
-      'message' => 'Successfully refreshed token',
-      'access_token' => auth()->refresh(),
-      'token_type' => 'bearer',
-      'expires_in' => auth()->factory()->getTTL() * 60,
+      'message' => 'Successfully refreshed',
+      'data' => [
+        'access_token' => auth()->refresh(),
+        'token_type' => 'bearer',
+        'expires_in' => auth()->factory()->getTTL() * 60,
+      ]
     ]);
   }
 
@@ -79,9 +80,6 @@ class LoginController extends Controller
    */
   public function userProfile(): JsonResponse
   {
-    return response()->json([
-      'message' => 'Successfully fetched user profile',
-      auth()->user()
-    ]);
+    return response()->json(auth()->user());
   }
 }
