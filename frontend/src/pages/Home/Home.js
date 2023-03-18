@@ -195,7 +195,7 @@ function Home() {
         </div>
         <div className="bottom-body-content flex mb-5 lg:gap-0 sm:gap-3 lg:flex-row mobile:flex-col">
           <div className="popular-author lg:w-1/4 bg-orange-50 lg:p-5 rounded-2xl xl:mr-10 lg:mr-2 mobile:w-full md:p-2 overflow-hidden lg:overflow-x-hidden mobile:overflow-x-scroll">
-            <div className="header-table lg:text-2xl border-0 border-solid border-b-2 mb-6 p-3 whitespace-nowrap md:text-xl mobile:text-center mobile:w-screen">
+            <div className="header-table lg:text-2xl border-0 border-solid border-b-2 mb-6 p-3 whitespace-nowrap md:text-xl mobile:text-center">
               <p>Popular Author</p>
             </div>
             <div>
@@ -232,15 +232,15 @@ function Home() {
               width="w-2/3"
             />
             <div className="list-author-bestselling">
-              <div className=" h-fit top-product flex sm:w-full mobile:w-screen sm:gap-0 mobile:gap-2">
-                <div className="object-cover h-52 xl:w-72 mr-4 md:w-96 mobile:w-full">
+              <div className=" h-fit top-product flex sm:w-full mobile:w-screen sm:gap-0 mobile:gap-2 sm:m-0">
+                <div className="object-cover h-52 xl:w-72 mr-4 md:w-96 mobile:w-1/2">
                   <img
                     src={productImg}
                     alt=""
                     className="w-full h-full"
                   />
                 </div>
-                <div className="top-product-detail h-52 flex flex-col xl:justify-between md:max-w-none sm:gap-0 lg:justify-start">
+                <div className="top-product-detail flex flex-col xl:justify-between sm:gap-0 lg:justify-start mobile:w-fit">
                   <p className="top-product-name xl:text-3xl lg:text-2xl">
                     Misty Figueroa
                   </p>
@@ -248,7 +248,7 @@ function Home() {
                     <img src={star} alt=""/>
                   </div>
                   <p className="top-product-author font-bold">Misty Figueroa</p>
-                  <div className="top-product-desc text-ellipsis sm:w-full pr-20 inline">
+                  <div className="top-product-desc text-ellipsis sm:w-full sm:pr-20 inline mobile:text-sm mobile:w-3/4 mobile:h-fit">
                     Est numquam harum aut ut. Pariatur cum blanditiis est
                     delectus accusamus eveniet. Quis fugiat eligendi magni eos
                     dignissimos numquam.Quis ipsum incididunt non minim elit

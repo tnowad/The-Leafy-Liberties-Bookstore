@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 export default function Login() {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
+  const [passwordShown, setPasswordShown] = useState(false)
 
   const handleLogin = (e) => {
     e.preventDefault()
@@ -27,6 +30,9 @@ export default function Login() {
         console.error('Error:', error)
       })
   }
+  const togglePassword = () => {
+    setPasswordShown(!passwordShown);
+  };
   return (
     <section className="bg-white">
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
@@ -59,7 +65,7 @@ export default function Login() {
                   // username={this.value}
                 />
               </div>
-              <div>
+              <div className="relative">
                 <label
                   htmlFor="password"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -67,7 +73,7 @@ export default function Login() {
                   Password
                 </label>
                 <input
-                  type="password"
+                  type={passwordShown ? 'text' : 'password'}
                   name="password"
                   id="password"
                   placeholder="••••••••"
@@ -75,6 +81,11 @@ export default function Login() {
                   required=""
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                />
+                <FontAwesomeIcon
+                  icon={!passwordShown ? faEye : faEyeSlash}
+                  className="absolute top-[60%] right-4 cursor-pointer"
+                  onClick={togglePassword}
                 />
               </div>
               {error && <div className="text-red-500">{error}</div>}

@@ -37,7 +37,7 @@ function Customer({ ...props }) {
 
   return (
     <div className="w-full">
-      <div className="flex m-1 sm:m-5 w-full ">
+      <div className="flex">
         <DashboardManager color="Customer" />
         <div className="mt-14 min-h-screen w-full overflow-x-scroll xl:w-4/5 xl:overflow-x-hidden">
           <div className="flex justify-between">

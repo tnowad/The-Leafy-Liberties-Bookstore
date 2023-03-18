@@ -1,21 +1,22 @@
+import React from 'react'
+import { useState } from 'react'
 import DashboardManager from '../../layouts/DashboardComponent/DashboardManager'
-import { PieChart } from 'react-minimal-pie-chart'
+import { Doughnut } from 'react-chartjs-2'
+import { UserData } from './Data'
 
 function Dashboard() {
   return (
-    <div>
-      <DashboardManager color="Dashboard" />
-      <div>
-        {' '}
-        <div>
-          <h2>Pie Chart</h2>
-          <PieChart
-            data={[
-              { title: 'One', value: 10, color: '#E38627' },
-              { title: 'Two', value: 15, color: '#C13C37' },
-              { title: 'Three', value: 20, color: '#6A2135' },
-            ]}
-          />
+    <div className="w-full bg-neutral-100">
+      <div className="flex">
+        <DashboardManager color="Products" />
+        <div className="mt-10 min-h-screen w-full overflow-x-scroll xl:w-4/5 xl:overflow-x-hidden p-7">
+          <div className="flex justify-between">
+            <h1 className="text-xl font-bold">Dashboard</h1>
+            {/* toggle the visibility of the form when the button is clicked */}
+            <button className="w-5 h-5 text-2xl font-semibold">+</button>
+          </div>
+          <div className="mt-5">
+          </div>
         </div>
       </div>
     </div>

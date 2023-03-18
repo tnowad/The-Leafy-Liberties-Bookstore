@@ -38,29 +38,29 @@ function DashboardManager({ ...props }) {
   ]
 
   return (
-    <div>
-      <div>
-        <Link to="/" className="flex flex-col sm:flex-row box-border">
-          <img src={logo} alt="" />
-          <h3 className="inline-block text-green-800 text-xl mt-6 md:text-3xl">
-            Dashboard
-          </h3>
-        </Link>
-        {/*//* manager  */}
-        <div className="flex flex-col">
-          {arrayDashboard.map((item) => {
-            return (
-              <ButtonWhite
-                key={item.name}
-                title={item.name}
-                color={props.color}
-                link={item.link}
-              >
-                <FontAwesomeIcon icon={item.icon} />
-              </ButtonWhite>
-            )
-          })}
-        </div>
+    <div className="w-[13%] bg-white">
+      <Link
+        to="/"
+        className="flex flex-col items-center sm:flex-row box-border"
+      >
+        <img src={logo} alt="" />
+        <h3 className="text-green-800 text-xl">Dashboard</h3>
+      </Link>
+      {/*//* manager  */}
+      <div className="flex flex-col justify-center pl-5">
+        {arrayDashboard.map((item) => {
+          return (
+            <ButtonWhite
+              key={item.name}
+              title={item.name}
+              color={props.color}
+              link={item.link}
+            >
+              <FontAwesomeIcon icon={item.icon} />
+            </ButtonWhite>
+          )
+        })}
+
       </div>
     </div>
   )
