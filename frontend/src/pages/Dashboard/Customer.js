@@ -64,15 +64,15 @@ function Customer({ ...props }) {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td className="text-center">Image</td>
-                  <td className="text-center">Hoang Gia Bao</td>
-                  <td className="text-center">hoanggiabao2122003@gmail.com</td>
-                  <td className="text-center">097220081</td>
-                  <td className="text-center">140</td>
-                  <td className="text-center">Active</td>
-                  <td className="text-center">15/3/2023</td>
-                  <td className="text-center border px-4 py-2">
+                <tr className="text-center">
+                  <td>Image</td>
+                  <td>Hoang Gia Bao</td>
+                  <td>hoanggiabao2122003@gmail.com</td>
+                  <td>097220081</td>
+                  <td>140</td>
+                  <td>Active</td>
+                  <td>15/3/2023</td>
+                  <td className="border px-4 py-2">
                     <button className="bg-green-800 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
                       ...
                     </button>
