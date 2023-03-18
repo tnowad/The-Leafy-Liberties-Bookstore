@@ -1,26 +1,29 @@
 import config from '../config'
-// Pages
+// *Pages
 import Home from '../pages/Home'
-import Profile from '../pages/Profile'
 import Cart from '../pages/Cart'
-import ProductDetail from '../pages/ProductDetail'
-import Login from '../pages/Login'
-import Register from '../pages/Register'
-import Product from '../components/Product'
+import Category from '../pages/Category/Category'
 import Checkout from '../pages/Checkout'
+import Login from '../pages/Login'
+import Product from '../components/Product'
+import ProductDetail from '../pages/ProductDetail'
+import Profile from '../pages/Profile'
+import Register from '../pages/Register'
+import Search from '../pages/Search/Search'
 
 // *Dashboard
 import Dashboard from '../pages/Dashboard'
 import Products from '../pages/Dashboard/Products'
 import Customer from '../pages/Dashboard/Customer'
-
-import NotFound from '../pages/NotFound'
-
-import { RouteBackend } from '../pages/Routes'
 import Statistics from '../pages/Dashboard/Statistics'
 import Payment from '../pages/Dashboard/Payment'
 import Message from '../pages/Dashboard/Message'
 import Shop from '../pages/Shop/Shop'
+
+//  *Backend
+import { RouteBackend } from '../pages/Routes'
+
+import NotFound from '../pages/NotFound'
 
 // Public routes
 const publicRoutes = [
@@ -33,6 +36,7 @@ const publicRoutes = [
   { path: config.routes.cart, component: Cart },
   { path: config.routes.checkout, component: Checkout },
   { path: config.routes.shop, component: Shop },
+  { path: config.routes.search, component: Search },
   // * dashboard routes
   { path: config.routes.dashboard, component: Dashboard, layout: null },
   {

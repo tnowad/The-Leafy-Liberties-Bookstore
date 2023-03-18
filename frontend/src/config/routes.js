@@ -9,7 +9,8 @@ const routes = {
   upload: '/upload',
   cart: '/cart',
   search: '/search',
-  shop: 'shop',
+  shop: '/shop',
+  category: '/category/:id',
   // * dashboard
   dashboard: '/dashboard',
   productsDashboard: '/dashboard/products',
