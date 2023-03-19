@@ -5,7 +5,7 @@ export default function Product(props) {
   return (
     <div className="product-info w-full flex flex-col justify-center items-center p-1">
       <div className="w-56 h-full object-cover">
-        <img src={productImg} alt="" className="w-full"/>
+        <img src={productImg} alt="" className="w-full" />
       </div>
       <div className={`product-body w-full p-1 text-lg font-medium flex flex-col justify-center items-center`}>
         <div className={`product-name`}>

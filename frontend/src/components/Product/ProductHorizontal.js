@@ -2,6 +2,11 @@ import React from 'react'
 import { productImg, star } from '../../assets/images'
 
 export function ProductHorizontal(props) {
+  // !Important: Add PropTypes to validate props values
+  // !Important: Refactor component to use CSS grid or flexbox for layout instead of hard-coded widths
+  // Todo: Replace hard-coded values with dynamic values
+  // Todo: Improve accessibility by adding alt text to the img tag and adding ARIA labels to interactive elements
+  // ?Idea: Improve performance by lazy loading the product image
   return (
     <div
       className={`product-info h-fit flex ${props.width} sm:w-64 md:w-80`}

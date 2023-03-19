@@ -65,7 +65,7 @@ function Header() {
         </form>
 
         {isIconsVisible ? (
-          <div className="flex flex-col w-auto mr-4">
+          <div className="flex flex-col w-auto translate-y-10 mr-4">
             <button onClick={toggleIconsVisibility} className="md:hidden">
               <FontAwesomeIcon icon={faClose} />
             </button>

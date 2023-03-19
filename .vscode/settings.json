@@ -6,8 +6,10 @@
     "backend/vendor/": true,
   },
   "cSpell.words": [
+    "flexbox",
     "fontawesome",
     "fortawesome"
   ],
-  "commentTranslate.targetLanguage": "vi"
+  "commentTranslate.targetLanguage": "vi",
+  "docify.commentService.docstringFormat": "JsDoc"
 }
