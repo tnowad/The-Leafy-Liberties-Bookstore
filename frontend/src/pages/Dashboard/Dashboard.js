@@ -1,10 +1,29 @@
 import React from 'react'
 import { useState } from 'react'
 import DashboardManager from '../../layouts/DashboardComponent/DashboardManager'
-import { Doughnut } from 'react-chartjs-2'
-import { UserData } from './Data'
-
+import Chart from 'react-apexcharts'
 function Dashboard() {
+  const state = {
+    options: {
+      chart: {
+        id: 'basic-bar',
+      },
+      plotOptions: {
+        pie: {
+          expandOnClick: false,
+        },
+        plugins: {
+          datalabels: {
+            display: false,
+          },
+        },
+      },
+    },
+    series: [70, 30],
+    chartOptions: {
+      labels: ['Apple'],
+    },
+  }
   return (
     <div className="w-full bg-neutral-100">
       <div className="flex">
@@ -15,7 +34,14 @@ function Dashboard() {
             {/* toggle the visibility of the form when the button is clicked */}
             <button className="w-5 h-5 text-2xl font-semibold">+</button>
           </div>
-          <div className="mt-5"></div>
+          <div className="mt-5">
+            <Chart
+              options={state.chartOptions}
+              series={state.series}
+              type="donut"
+              width="250"
+            />
+          </div>
         </div>
       </div>
     </div>
