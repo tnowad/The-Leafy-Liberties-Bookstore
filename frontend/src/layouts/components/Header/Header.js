@@ -1,3 +1,5 @@
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faBars,
@@ -5,14 +7,11 @@ import {
   faList,
   faSearch,
 } from '@fortawesome/free-solid-svg-icons'
-import { useState } from 'react'
-
 import { logo } from '../../../assets/images'
 import ButtonPill from '../../../components/Button/ButtonPill'
 import Dropdown from '../../../components/Dropdown/Dropdown'
-import MenuLinks from '../../../components/Menu/MenuLinks'
-import { Link } from 'react-router-dom'
 import IconHeader from '../../../components/IconHeader/IconHeader'
+import MenuLinks from '../../../components/Menu/MenuLinks'
 
 function Header() {
   const [isIconsVisible, setIconsVisibility] = useState(false)
@@ -30,25 +29,18 @@ function Header() {
 
         <Dropdown
           trigger={
-            <ButtonPill className="hidden lg:flex">
+            <>
               <FontAwesomeIcon className="mr-1" icon={faList} />
               Categories
-            </ButtonPill>
+            </>
           }
-          menu={
-            <div
-              className="p-5 absolute top-[85px] h-full bg-white box-border
-            border border-solid border-gray-400 rounded-lg"
-            >
-              <MenuLinks
-                items={[
-                  { name: 'Category 1', link: '/category-1' },
-                  { name: 'Category 2', link: '/category-2' },
-                  { name: 'Category 3', link: '/category-3' },
-                ]}
-              />
-            </div>
-          }
+          options={[
+            { label: <Link to="/products?category=echill">Category 1</Link> },
+            { label: <Link to="/products?category=echill">Category 2</Link> },
+            { label: <Link to="/products?category=echill">Category 3</Link> },
+            { label: <Link to="/products?category=echill">Category 4</Link> },
+            { label: <Link to="/products?category=echill">Category 5</Link> },
+          ]}
         />
         <form className="flex items-center justify-center w-1/2 h-10 bg-gray-100 rounded-full">
           <input
