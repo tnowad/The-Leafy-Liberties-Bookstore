@@ -24,7 +24,8 @@ function Dashboard() {
     ],
     chart: {
       type: 'bar',
-      height: 300,
+      height: '350px',
+      width: '830px',
     },
     plotOptions: {
       bar: {
@@ -56,19 +57,14 @@ function Dashboard() {
     },
     yaxis: {
       title: {
-        text: '$ (thousands)',
+        text: '$(thousands)',
       },
     },
     fill: {
       opacity: 1,
+      // colors: ['#F44336', '#E91E63'],
     },
-    // tooltip: {
-    //   y: {
-    //     formatter: function (val) {
-    //       return '$ ' + val + ' thousands'
-    //     },
-    //   },
-    // },
+
   }
   return (
     <div className="w-full bg-neutral-100">
@@ -78,7 +74,7 @@ function Dashboard() {
           <div className="flex justify-between">
             <h1 className="text-xl font-bold">Dashboard</h1>
             {/* toggle the visibility of the form when the button is clicked */}
-            <button className="w-5 h-5 text-2xl font-semibold">+</button>
+            {/* <button className="w-5 h-5 text-2xl font-semibold">+</button> */}
           </div>
           <div className="top-wrap flex justify-between items-center flex-wrap">
             <GeneralStatistics
@@ -111,10 +107,11 @@ function Dashboard() {
               </div>
               <Chart
                 series={options.series}
-                options={options.plotOptions}
-                type="bar"
-                width={830}
-                height={350}
+                options={options}
+                type={options.chart.type}
+                height={options.chart.height}
+                width={options.chart.width}
+                // color={options.fill.colors}
               />
             </div>
             <div className="most-sold-items w-[31.5%] py-4 px-4 bg-white rounded-2xl">
