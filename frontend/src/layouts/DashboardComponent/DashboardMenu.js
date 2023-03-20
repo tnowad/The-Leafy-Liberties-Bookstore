@@ -44,21 +44,24 @@ function DashboardMenu({ ...props }) {
           className="flex items-center justify-center py-4"
         >
           <img src={logo} alt="" />
+
           <h3 className="ml-12 sm:ml-0 text-green-800 text-xl">Dashboard</h3>
         </Link>
-        {/*//* manager  */}
+
         <div className="flex flex-col justify-center px-5">
-          {arrayDashboard.map((item) => {
-            return (
-              <span
-                className={"h-12 flex items-center hover:bg-primary hover:text-white cursor-pointer my-[2px] rounded-md box-border px-4 " + (window.location.href.endsWith(item.link) ? "bg-primary text-white" : "")}
-                key={item.name}
-              >
-                <FontAwesomeIcon icon={item.icon} />
-                <Link to={item.link} className="ml-2" > {item.name}</Link>
-              </span>
-            )
-          })}
+          {
+            arrayDashboard.map((item) => {
+              return (
+                <span
+                  className={"h-12 flex items-center transition-all hover:bg-primary hover:text-white hover:shadow-[0_0_5px_1px_rgb(49,88,84)] cursor-pointer my-[2px] rounded-md box-border px-4 " + (window.location.href.endsWith(item.link) ? "bg-primary shadow-[0_0_5px_1px_rgb(49,88,84)] text-white" : "")}
+                  key={item.name}
+                >
+                  <FontAwesomeIcon icon={item.icon} />
+                  <Link to={item.link} className="ml-2" > {item.name}</Link>
+                </span>
+              )
+            })
+          }
         </div>
       </div>
     </div>
