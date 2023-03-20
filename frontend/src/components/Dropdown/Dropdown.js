@@ -10,7 +10,7 @@ const Dropdown = ({ options, trigger }) => {
   }
 
   return (
-    <div className="relative w-48">
+    <div className="relative w-60">
       <button
         type="button"
         className="inline-flex items-center justify-between w-full px-4 py-2 border border-gray-300 rounded-full shadow-sm bg-primary text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
