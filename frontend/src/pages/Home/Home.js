@@ -95,7 +95,7 @@ function Home() {
     ],
   }
   return (
-    <div className="home flex justify-center w-full flex-col items-center">
+    <div className="flex justify-center w-full flex-col items-center">
       <div className="xl:h-96 w-full md:h-80">
         <Carousel slideInterval={3000} >
           <img src={homeImg} alt="hello" />
@@ -106,6 +106,7 @@ function Home() {
         </Carousel>
       </div>
       <div className="container">
+
         <SectionTitle
           name="Bestselling Books"
           class="bestselling-books"
@@ -114,27 +115,25 @@ function Home() {
         />
         <div className="bestselling-products w-full relative">
           <Slider {...settings}>
-            <Product></Product>
-            <Product></Product>
-            <Product></Product>
-            <Product></Product>
-            <Product></Product>
-            <Product></Product>
-            <Product></Product>
-            <Product></Product>
-            <Product></Product>
-            <Product></Product>
+            {
+              [...Array(10)].map((e, i) => {
+                return (
+                  <Product />
+                )
+              })
+            }
           </Slider>
         </div>
+
         <SectionTitle
           name="Popular Books"
           class="popular-books"
           text_size="text-3xl"
           width="w-3/4"
         />
-        <div className="popular-products lg:flex md:block">
-          <div className="w-3/4 md:w-full">
-            <div className="list grid grid-rows-popular-books m-auto 2xl:grid-cols-4 xl:grid-cols-popular-books lg:grid-cols-4 md:grid-cols-mdpopular-books sm:grid-cols-smpopular-books mobile:grid-cols-mobilepopular-books">
+        <div className="flex">
+          <div className="w-full">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
               {
                 [...Array(12)].map((e, i) => {
                   return (
@@ -144,25 +143,26 @@ function Home() {
               }
             </div>
           </div>
-          <div className="best-offer relative w-1/4 xl:block mobile:hidden">
-            <div className="w-full h-full">
+          <div className="hidden w-[25%] xl:block 2xl:w-1/3">
+            <div className="w-full h-auto sticky top-32">
               <img
                 src={bestOffer}
                 alt=""
                 className="rounded-2xl h-full w-full"
               />
-            </div>
-            <div className="offer-desc absolute top-3/4 left-14 xl:left-10">
-              <p className="text-lg text-white font-normal xl:text-base">
-                Best Offer
-              </p>
-              <p className="text-4xl xl:text-3xl">Save 50%</p>
-              <button className=" bg-white w-32 text-lg text-pink-400 font-bold p-2 rounded-full mt-3">
-                See more
-              </button>
+              <div className="absolute top-3/4 text-center flex items-center flex-col w-full">
+                <p className="text-lg text-white font-normal xl:text-base">
+                  Best Offer
+                </p>
+                <p className="text-4xl xl:text-3xl text-white">Save 50%</p>
+                <button className=" bg-white w-32 text-lg text-pink-400 font-bold p-2 rounded-full mt-3">
+                  See more
+                </button>
+              </div>
             </div>
           </div>
         </div>
+
         <SectionTitle
           name="Genres Books"
           class="genres-books"
@@ -176,7 +176,9 @@ function Home() {
             <GenresKind name="Fantasy" />
           </Slider>
         </div>
-        <div className="bottom-body-content flex mb-5 lg:gap-0 sm:gap-3 lg:flex-row mobile:flex-col">
+
+        <div className="flex mb-5 lg:gap-0 sm:gap-3 lg:flex-row mobile:flex-col">
+
           <div className="popular-author lg:w-1/4 bg-orange-50 lg:p-5 rounded-2xl xl:mr-10 lg:mr-2 mobile:w-full md:p-2 overflow-hidden lg:overflow-x-hidden mobile:overflow-x-scroll">
             <div className="header-table lg:text-2xl border-0 border-solid border-b-2 mb-6 p-3 whitespace-nowrap md:text-xl mobile:text-center">
               <p>Popular Author</p>
@@ -207,6 +209,7 @@ function Home() {
               </ul>
             </div>
           </div>
+
           <div className="author-bestselling lg:w-3/4 mobile:w-full">
             <SectionTitle
               name="Bestselling Books"
@@ -261,6 +264,7 @@ function Home() {
             </div>
           </div>
         </div>
+
       </div>
     </div >
   )
