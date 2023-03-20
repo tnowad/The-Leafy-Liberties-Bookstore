@@ -1,5 +1,8 @@
 import DashboardManager from '../../layouts/DashboardComponent/DashboardManager'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { customerData } from './Data'
+import WindowSize from '../../components/WindpwSize/WindowSize'
+
 function Customer({ ...props }) {
   const arrayTitle = [
     { name: 'Profile' },
@@ -34,15 +37,22 @@ function Customer({ ...props }) {
     const status = formData.get('status')
     const createAt = formData.get('createAt')
   }
+  const [windowSize, setWindowSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  })
+
+  const handleSizeChange = (size) => {
+    setWindowSize(size)
+  }
 
   return (
     <div className="w-full">
       <div className="flex">
         <DashboardManager color="Customer" />
-        <div className="mt-14 min-h-screen w-full overflow-x-scroll xl:w-4/5 xl:overflow-x-hidden">
+        <div className="ml-14 mt-14 min-h-screen w-full overflow-x-scroll xl:w-4/5 xl:overflow-x-hidden">
           <div className="flex justify-between">
             <h1 className="text-xl">Customer</h1>
-            {/* toggle the visibility of the form when the button is clicked */}
             <button
               className="w-5 h-5 text-2xl "
               onClick={() => setIsFormVisible(!isFormVisible)}
@@ -51,40 +61,78 @@ function Customer({ ...props }) {
             </button>
           </div>
           <div className="mt-5">
-            <table className="w-full border-collapse">
-              <thead className="w-full bg-gray-100 rounded-sm">
-                <tr className="w-44">
-                  {arrayTitle.map((item) => {
+            <WindowSize onSizeChange={handleSizeChange} />
+            {windowSize.width > 500 ? (
+              <table className="w-full border-collapse">
+                <thead className="w-full bg-gray-100 rounded-sm">
+                  <tr className="w-44">
+                    {arrayTitle.map((item) => {
+                      return (
+                        <th className="px-4 py-2" key={item.name}>
+                          {item.name}
+                        </th>
+                      )
+                    })}
+                  </tr>
+                </thead>
+                <tbody>
+                  {customerData.map((item) => {
                     return (
-                      <th className="px-4 py-2" key={item.name}>
-                        {item.name}
-                      </th>
+                      <tr className="text-center">
+                        <td>{item.profile}</td>
+                        <td>{item.name}</td>
+                        <td>{item.email}</td>
+                        <td>{item.phone}</td>
+                        <td>{item.totalBuy}</td>
+                        <td>{item.status}</td>
+                        <td>{item.createAt}</td>
+                        <td className="border px-4 py-2">
+                          <button className="bg-green-800 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
+                            ...
+                          </button>
+                        </td>
+                      </tr>
                     )
                   })}
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="text-center">
-                  <td>Image</td>
-                  <td>Hoang Gia Bao</td>
-                  <td>hoanggiabao2122003@gmail.com</td>
-                  <td>097220081</td>
-                  <td>140</td>
-                  <td>Active</td>
-                  <td>15/3/2023</td>
-                  <td className="border px-4 py-2">
-                    <button className="bg-green-800 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
-                      ...
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+                </tbody>
+              </table>
+            ) : (
+              <>
+                {customerData.map((item) => {
+                  return (
+                    <table className="ml-5 mb-8 flex flex-row justify-around border-0 border-b-2 border-gray-200 border-solid ">
+                      <thead>
+                        <tr className="flex flex-col">
+                          {arrayTitle.map((item) => {
+                            return <th key={item.name}>{item.name}</th>
+                          })}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr className="text-center flex flex-col justify-around ">
+                          <td>{item.profile}</td>
+                          <td>{item.name}</td>
+                          <td>{item.email}</td>
+                          <td>{item.phone}</td>
+                          <td>{item.totalBuy}</td>
+                          <td>{item.status}</td>
+                          <td>{item.createAt}</td>
+                          <td className="border px-4 py-2">
+                            <button className="bg-green-800 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
+                              ...
+                            </button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  )
+                })}
+              </>
+            )}
             {isFormVisible && (
               <div className="absolute top-0 left-0 h-full w-full flex justify-center items-center bg-gray-500 bg-opacity-75 z-10">
                 <div className="bg-white p-8 rounded-md shadow-lg">
                   <h2 className="text-xl font-bold mb-4">Add Customer</h2>
-                  {/* Form fields go here */}
                   <form className="flex flex-col" onSubmit={handleSubmit}>
                     <label htmlFor="image">Image:</label>
                     <input

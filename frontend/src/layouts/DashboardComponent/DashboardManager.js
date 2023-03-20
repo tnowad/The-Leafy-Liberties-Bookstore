@@ -38,13 +38,13 @@ function DashboardManager({ ...props }) {
   ]
 
   return (
-    <div className="w-[13%] bg-white">
+    <div className="w-[32%] md:w-[15%] lg:w-[13%] bg-white">
       <Link
         to="/"
         className="flex flex-col items-center sm:flex-row box-border"
       >
         <img src={logo} alt="" />
-        <h3 className="text-green-800 text-xl">Dashboard</h3>
+        <h3 className="ml-12 sm:ml-0 text-green-800 text-xl">Dashboard</h3>
       </Link>
       {/*//* manager  */}
       <div className="flex flex-col justify-center pl-5">
@@ -60,7 +60,6 @@ function DashboardManager({ ...props }) {
             </ButtonWhite>
           )
         })}
-
       </div>
     </div>
   )

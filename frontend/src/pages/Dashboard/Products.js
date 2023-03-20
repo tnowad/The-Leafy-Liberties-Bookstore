@@ -1,5 +1,7 @@
 import DashboardManager from '../../layouts/DashboardComponent/DashboardManager'
 import { useState } from 'react'
+import WindowSize from '../../components/WindpwSize/WindowSize'
+import { productData } from './Data'
 function Product({ ...props }) {
   const arrayTitle = [
     { name: 'Products' },
@@ -31,12 +33,20 @@ function Product({ ...props }) {
     const amount = formData.get('amount')
     const status = formData.get('status')
   }
+  const [windowSize, setWindowSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  })
+
+  const handleSizeChange = (size) => {
+    setWindowSize(size)
+  }
 
   return (
     <div className="w-full bg-neutral-100">
       <div className="flex">
         <DashboardManager color="Products" />
-        <div className="mt-14 min-h-screen w-full overflow-x-scroll xl:w-4/5 xl:overflow-x-hidden">
+        <div className="md:ml-0 mt-14 min-h-screen w-full overflow-x-scroll xl:w-4/5 xl:overflow-x-hidden">
           <div className="flex justify-between">
             <h1 className="text-xl">Product</h1>
             {/* toggle the visibility of the form when the button is clicked */}
@@ -48,34 +58,73 @@ function Product({ ...props }) {
             </button>
           </div>
           <div className="mt-5">
-            <table className="w-full border-collapse">
-              <thead className="w-full bg-gray-100 rounded-sm">
-                <tr className="w-44">
-                  {arrayTitle.map((item) => {
+            <WindowSize onSizeChange={handleSizeChange} />
+            {window.innerWidth > 500 ? (
+              <table className="w-full border-collapse">
+                <thead className="w-full bg-gray-100 rounded-sm">
+                  <tr className="w-44">
+                    {arrayTitle.map((item) => {
+                      return (
+                        <th className="px-4 py-2" key={item.name}>
+                          {item.name}
+                        </th>
+                      )
+                    })}
+                  </tr>
+                </thead>
+                <tbody>
+                  {productData.map((item) => {
                     return (
-                      <th className="px-4 py-2" key={item.name}>
-                        {item.name}
-                      </th>
+                      <tr className="text-center">
+                        <td>{item.image}</td>
+                        <td>{item.category}</td>
+                        <td>{item.entered}</td>
+                        <td>{item.remaining}</td>
+                        <td>{item.status}</td>
+                        <td>{item.amount}</td>
+                        <td className="border px-4 py-2">
+                          <button className="bg-green-800 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
+                            ...
+                          </button>
+                        </td>
+                      </tr>
                     )
                   })}
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="text-center">
-                  <td>Image</td>
-                  <td>Therory</td>
-                  <td>243</td>
-                  <td>140</td>
-                  <td>In stock</td>
-                  <td>$15.15</td>
-                  <td className="border px-4 py-2">
-                    <button className="bg-green-800 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
-                      ...
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+                </tbody>
+              </table>
+            ) : (
+              <>
+                {productData.map((item) => {
+                  return (
+                    <table className="ml-5 mb-8 flex flex-row justify-around border-0 border-b-2 border-gray-200 border-solid ">
+                      <thead>
+                        <tr className="flex flex-col">
+                          {arrayTitle.map((item) => {
+                            return <th key={item.name}>{item.name}</th>
+                          })}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr className="text-center flex flex-col justify-around ">
+                          <td>{item.image}</td>
+                          <td>{item.category}</td>
+                          <td>{item.entered}</td>
+                          <td>{item.remaining}</td>
+                          <td>{item.status}</td>
+                          <td>{item.amount}</td>
+                          <td className="border px-4 py-2">
+                            <button className="bg-green-800 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
+                              ...
+                            </button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  )
+                })}
+              </>
+            )}
+
             {isFormVisible && (
               <div className="absolute top-0 left-0 h-full w-full flex justify-center items-center bg-gray-500 bg-opacity-75 z-10">
                 <div className="bg-white p-8 rounded-md shadow-lg">

@@ -29,4 +29,61 @@ export const UserData = [
     userGain: 4300,
     userLost: 234,
   },
-];
+]
+
+export const customerData = [
+  {
+    profile: 'bao',
+    name: 'Hoang Gia Bao',
+    email: 'bao@gmail.com',
+    phone: '0972200871',
+    totalBuy: 455214,
+    status: 'Active',
+    createAt: '2015-01-01',
+  },
+  {
+    profile: 'phat',
+    name: 'Nguyen Tien Phat',
+    email: 'phat@gmail.com',
+    phone: '098595626',
+    totalBuy: 5552151,
+    status: 'Active',
+    createAt: '2018-01-01',
+  },
+  {
+    profile: 'Chinh',
+    name: 'Mai Chung Chinh',
+    email: 'chinh@gmail.com',
+    phone: '0651561131',
+    totalBuy: 6265265,
+    status: 'No active',
+    createAt: '2019-03-01',
+  },
+]
+
+export const productData = [
+  {
+    image: 'Conan',
+    category: 'Therory',
+    entered: 243,
+    remaining: 140,
+    status: 'In stock',
+    amount: 140,
+  },
+  {
+    image: 'Doraemon',
+    category: 'Funny',
+    entered: 122,
+    remaining: 212,
+    status: 'In stock',
+    amount: 1212,
+  },
+  {
+    image: 'Luffy',
+    category: 'Comedy',
+    entered: 45,
+    remaining: 121,
+    status: 'In stock',
+    amount: 123,
+  },
+]
