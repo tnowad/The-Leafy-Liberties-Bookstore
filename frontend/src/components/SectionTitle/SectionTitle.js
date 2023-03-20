@@ -11,3 +11,4 @@ export default function SectionTitle({ name = 'Title', link = '/', className = '
     </div>
   )
 }
+

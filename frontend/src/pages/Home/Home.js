@@ -8,7 +8,7 @@ import {
 } from '../../assets/images'
 import Product from '../../components/Product/index'
 import Author from '../../components/Author/index'
-import Bodyheader from '../../components/Body_Header'
+import SectionTitle from '../../components/SectionTitle'
 import { ProductHorizontal } from '../../components/Product/index'
 import GenresKind from '../../components/GenresKind/GenresKind'
 import { Carousel } from 'flowbite-react'
@@ -106,9 +106,9 @@ function Home() {
         </Carousel>
       </div>
       <div className="container">
-        <Bodyheader
+        <SectionTitle
           name="Bestselling Books"
-          class="bestlling-books"
+          class="bestselling-books"
           text_size="text-3xl"
           width="w-3/4"
         />
@@ -126,7 +126,7 @@ function Home() {
             <Product></Product>
           </Slider>
         </div>
-        <Bodyheader
+        <SectionTitle
           name="Popular Books"
           class="popular-books"
           text_size="text-3xl"
@@ -134,32 +134,15 @@ function Home() {
         />
         <div className="popular-products lg:flex md:block">
           <div className="w-3/4 md:w-full">
-            <ul className="list grid grid-rows-popular-books m-auto 2xl:grid-cols-4 xl:grid-cols-popular-books lg:grid-cols-4 md:grid-cols-mdpopular-books sm:grid-cols-smpopular-books mobile:grid-cols-mobilepopular-books">
-              <li>
-                <Product></Product>
-              </li>
-              <li>
-                <Product></Product>
-              </li>
-              <li>
-                <Product></Product>
-              </li>
-              <li>
-                <Product></Product>
-              </li>
-              <li>
-                <Product></Product>
-              </li>
-              <li>
-                <Product></Product>
-              </li>
-              <li>
-                <Product></Product>
-              </li>
-              <li>
-                <Product></Product>
-              </li>
-            </ul>
+            <div className="list grid grid-rows-popular-books m-auto 2xl:grid-cols-4 xl:grid-cols-popular-books lg:grid-cols-4 md:grid-cols-mdpopular-books sm:grid-cols-smpopular-books mobile:grid-cols-mobilepopular-books">
+              {
+                [...Array(12)].map((e, i) => {
+                  return (
+                    <Product />
+                  )
+                })
+              }
+            </div>
           </div>
           <div className="best-offer relative w-1/4 xl:block mobile:hidden">
             <div className="w-full h-full">
@@ -180,7 +163,7 @@ function Home() {
             </div>
           </div>
         </div>
-        <Bodyheader
+        <SectionTitle
           name="Genres Books"
           class="genres-books"
           text_size="text-3xl"
@@ -225,7 +208,7 @@ function Home() {
             </div>
           </div>
           <div className="author-bestselling lg:w-3/4 mobile:w-full">
-            <Bodyheader
+            <SectionTitle
               name="Bestselling Books"
               class="bestselling-books-author"
               text_size="text-2xl"
@@ -279,7 +262,7 @@ function Home() {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   )
 }
 
