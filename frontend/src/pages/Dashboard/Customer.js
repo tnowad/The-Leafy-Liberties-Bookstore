@@ -1,7 +1,7 @@
 import DashboardManager from '../../layouts/DashboardComponent/DashboardManager'
 import { useEffect, useState } from 'react'
 import { customerData } from './Data'
-import WindowSize from '../../components/WindpwSize/WindowSize'
+import WindowSize from '../../components/WindowSize/WindowSize'
 
 function Customer({ ...props }) {
   const arrayTitle = [
@@ -62,7 +62,7 @@ function Customer({ ...props }) {
           </div>
           <div className="mt-5">
             <WindowSize onSizeChange={handleSizeChange} />
-            {windowSize.width > 500 ? (
+            {window.innerWidth > 500 ? (
               <table className="w-full border-collapse">
                 <thead className="w-full bg-gray-100 rounded-sm">
                   <tr className="w-44">

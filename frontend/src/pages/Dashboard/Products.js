@@ -1,6 +1,6 @@
 import DashboardManager from '../../layouts/DashboardComponent/DashboardManager'
 import { useState } from 'react'
-import WindowSize from '../../components/WindpwSize/WindowSize'
+import WindowSize from '../../components/WindowSize/WindowSize'
 import { productData } from './Data'
 function Product({ ...props }) {
   const arrayTitle = [
