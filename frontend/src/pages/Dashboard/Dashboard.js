@@ -9,7 +9,8 @@ import {
   faBookBible,
 } from '@fortawesome/free-solid-svg-icons'
 import Chart from 'react-apexcharts'
-import {Progress} from 'flowbite-react'
+import { Progress, Table } from 'flowbite-react'
+import { Link } from 'react-router-dom'
 function Dashboard() {
   const options = {
     series: [
@@ -64,13 +65,54 @@ function Dashboard() {
       opacity: 1,
       // colors: ['#F44336', '#E91E63'],
     },
-
+    responsive:[
+      {
+        breakpoint: 1670,
+        options:{
+          chart: {
+            width: "650"
+          }
+        }
+      },
+      {
+        breakpoint: 1533,
+        options:{
+          chart: {
+            width: "600"
+          }
+        }
+      },
+      {
+        breakpoint: 1440,
+        options:{
+          chart: {
+            width: "850"
+          }
+        }
+      },
+      {
+        breakpoint: 1305,
+        options:{
+          chart: {
+            width: "750"
+          }
+        }
+      },
+      {
+        breakpoint: 1201,
+        options:{
+          chart: {
+            width: "950"
+          }
+        }
+      },
+    ],
   }
   return (
     <div className="w-full bg-neutral-100">
       <div className="flex">
         <DashboardManager color="Dashboard" />
-        <div className="mt-10 min-h-screen w-full overflow-x-scroll xl:w-4/5 xl:overflow-x-hidden px-24">
+        <div className="mt-10 min-h-screen w-full overflow-x-scroll xl:w-4/5 xl:overflow-x-hidden 2xl:px-24 xl:px-20">
           <div className="flex justify-between">
             <h1 className="text-xl font-bold">Dashboard</h1>
             {/* toggle the visibility of the form when the button is clicked */}
@@ -100,7 +142,7 @@ function Dashboard() {
             />
           </div>
           <div className="body-wrap mt-8 flex justify-between items-start flex-wrap">
-            <div className="chart w-[70$] px-6 py-4 bg-white rounded-2xl">
+            <div className="chart 2xl:w-[65.5%] px-6 py-4 bg-white rounded-2xl shadow-lg md:w-full">
               <div className="total-revuenes">
                 <p className="font-semibold text-2xl">Total Revuenes</p>
                 <p className="mt-2 font-bold text-lg">$50.4K</p>
@@ -111,10 +153,11 @@ function Dashboard() {
                 type={options.chart.type}
                 height={options.chart.height}
                 width={options.chart.width}
+                responsive={options.responsive}
                 // color={options.fill.colors}
               />
             </div>
-            <div className="most-sold-items w-[31.5%] py-4 px-4 bg-white rounded-2xl">
+            <div className="most-sold-items 2xl:w-[31.5%] py-4 px-4 bg-white rounded-2xl shadow-l md:w-full md:mt-5 2xl:mt-0">
               <p className="font-bold text-2xl mb-5">Most Sold Items</p>
               <div className="flex flex-col gap-4">
                 <div className="text-base font-medium">Dark</div>
@@ -137,6 +180,97 @@ function Dashboard() {
                 <Progress progress={25} color="yellow" />
               </div>
             </div>
+          </div>
+          <div className="table-statistics mt-8">
+            <Table>
+              <Table.Head className="text-[px]">
+                <Table.HeadCell>Products</Table.HeadCell>
+                <Table.HeadCell>Order ID</Table.HeadCell>
+                <Table.HeadCell>Date</Table.HeadCell>
+                <Table.HeadCell>Customer Name</Table.HeadCell>
+                <Table.HeadCell>Status</Table.HeadCell>
+                <Table.HeadCell>Amount</Table.HeadCell>
+                <Table.HeadCell>Action</Table.HeadCell>
+              </Table.Head>
+              <Table.Body className="divide-y">
+                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                  <Table.Cell className="whitespace-nowrap font-medium text-gray-900 ">
+                    Apple MacBook Pro 17"
+                  </Table.Cell>
+                  <Table.Cell>Sliver</Table.Cell>
+                  <Table.Cell>15/05/2023</Table.Cell>
+                  <Table.Cell>Hello World</Table.Cell>
+                  <Table.Cell>Delivered</Table.Cell>
+                  <Table.Cell>$2999</Table.Cell>
+                  <Table.Cell>
+                    <button className="text-lg text-white px-3 py-2 bg-primary-600 border border-solid rounded-lg">
+                      •••
+                    </button>
+                  </Table.Cell>
+                </Table.Row>
+                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                  <Table.Cell className="whitespace-nowrap font-medium text-gray-900 ">
+                    Apple MacBook Pro 17"
+                  </Table.Cell>
+                  <Table.Cell>Sliver</Table.Cell>
+                  <Table.Cell>15/05/2023</Table.Cell>
+                  <Table.Cell>Hello World</Table.Cell>
+                  <Table.Cell>Delivered</Table.Cell>
+                  <Table.Cell>$2999</Table.Cell>
+                  <Table.Cell>
+                    <button className="text-lg text-white px-3 py-2 bg-primary-600 border border-solid rounded-lg">
+                      •••
+                    </button>
+                  </Table.Cell>
+                </Table.Row>
+                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                  <Table.Cell className="whitespace-nowrap font-medium text-gray-900 ">
+                    Apple MacBook Pro 17"
+                  </Table.Cell>
+                  <Table.Cell>Sliver</Table.Cell>
+                  <Table.Cell>15/05/2023</Table.Cell>
+                  <Table.Cell>Hello World</Table.Cell>
+                  <Table.Cell>Delivered</Table.Cell>
+                  <Table.Cell>$2999</Table.Cell>
+                  <Table.Cell>
+                    <button className="text-lg text-white px-3 py-2 bg-primary-600 border border-solid rounded-lg">
+                      •••
+                    </button>
+                  </Table.Cell>
+                </Table.Row>
+                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                  <Table.Cell className="whitespace-nowrap font-medium text-gray-900 ">
+                    Apple MacBook Pro 17"
+                  </Table.Cell>
+                  <Table.Cell>Sliver</Table.Cell>
+                  <Table.Cell>15/05/2023</Table.Cell>
+                  <Table.Cell>Hello World</Table.Cell>
+                  <Table.Cell>Delivered</Table.Cell>
+                  <Table.Cell>$2999</Table.Cell>
+                  <Table.Cell>
+                    <button className="text-lg text-white px-3 py-2 bg-primary-600 border border-solid rounded-lg">
+                      •••
+                    </button>
+                  </Table.Cell>
+                </Table.Row>
+                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                  <Table.Cell className="whitespace-nowrap font-medium text-gray-900 ">
+                    Apple MacBook Pro 17"
+                  </Table.Cell>
+                  <Table.Cell>Sliver</Table.Cell>
+                  <Table.Cell>15/05/2023</Table.Cell>
+                  <Table.Cell>Hello World</Table.Cell>
+                  <Table.Cell>Delivered</Table.Cell>
+                  <Table.Cell>$2999</Table.Cell>
+                  <Table.Cell>
+                    <button className="text-lg text-white px-3 py-2 bg-primary-600 border border-solid rounded-lg">
+                      •••
+                    </button>
+                  </Table.Cell>
+                </Table.Row>
+
+              </Table.Body>
+            </Table>
           </div>
         </div>
       </div>
