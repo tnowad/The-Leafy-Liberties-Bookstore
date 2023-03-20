@@ -11,7 +11,6 @@ export default function Login() {
   const handleLogin = (e) => {
     e.preventDefault()
     console.log(email)
-
     fetch('/api/auth/login', {
       method: 'POST',
       headers: {
