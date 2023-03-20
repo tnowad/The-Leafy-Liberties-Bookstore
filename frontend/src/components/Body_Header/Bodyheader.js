@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-export default function Bodyheader(props) {
+export default function SectionTitle({ name = 'Title', link = '/', className = '' }) {
   return (
-    <div className={`best-selling flex justify-between items-center text-center ${props.class}`}>
-      <h2 className={`my-4 whitespace-nowrap lg:text-xl xl:text-2xl 2xl:text-3xl ${props.text_size} mobile:text-xl`}>{props.name} </h2>
-      <span className={`h-px bg-gray-600 xl:w-2/3 2xl:w-3/4 ${props.width} mobile:w-1/2`}></span>
-      <Link className="w-32 text-base bg-primary-900 text-white p-2 rounded-3xl ">
+    <div className={`flex justify-between items-center text-center ${className}`}>
+      <h2 className="my-4 whitespace-nowrap lg:text-xl xl:text-2xl 2xl:text-3xl mobile:text-xl">{name}</h2>
+      <span className={`h-px bg-gray-600 w-full mx-2`} />
+      <Link className="w-32 text-base bg-primary hover:bg-primary-800 text-white p-2 rounded-3xl" to={link}>
         View All
       </Link>
     </div>

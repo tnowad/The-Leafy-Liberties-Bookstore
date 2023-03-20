@@ -85,7 +85,7 @@ function Home() {
           slidesToShow: 2,
           slidesToScroll: 1,
         },
-      },{
+      }, {
         breakpoint: 577,
         settings: {
           slidesToShow: 1,
@@ -245,7 +245,7 @@ function Home() {
                     Misty Figueroa
                   </p>
                   <div className="rate">
-                    <img src={star} alt=""/>
+                    <img src={star} alt="" />
                   </div>
                   <p className="top-product-author font-bold">Misty Figueroa</p>
                   <div className="top-product-desc text-ellipsis sm:w-full sm:pr-20 inline mobile:text-sm mobile:w-3/4 mobile:h-fit">
