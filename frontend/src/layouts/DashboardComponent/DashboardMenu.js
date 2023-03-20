@@ -10,7 +10,7 @@ import {
 import { Link } from 'react-router-dom'
 import { logo } from '../../assets/images'
 
-function DashboardManager({ ...props }) {
+function DashboardMenu({ ...props }) {
   const arrayDashboard = [
     { name: 'Dashboard', link: '/dashboard', icon: faBarsStaggered },
     {
@@ -40,14 +40,14 @@ function DashboardManager({ ...props }) {
     <div className="w-64 bg-white">
       <div className='sticky top-0'>
         <Link
-          to="/"
-          className="flex flex-col items-center sm:flex-row box-border"
+          to="/dashboard"
+          className="flex items-center justify-center py-4"
         >
           <img src={logo} alt="" />
           <h3 className="ml-12 sm:ml-0 text-green-800 text-xl">Dashboard</h3>
         </Link>
         {/*//* manager  */}
-        <div className="flex flex-col justify-center pl-5">
+        <div className="flex flex-col justify-center px-5">
           {arrayDashboard.map((item) => {
             return (
               <span
@@ -65,4 +65,4 @@ function DashboardManager({ ...props }) {
   )
 }
 
-export default DashboardManager
+export default DashboardMenu

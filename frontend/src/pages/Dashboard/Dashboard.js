@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import DashboardManager from '../../layouts/DashboardComponent/DashboardManager'
+import DashboardMenu from '../../layouts/DashboardComponent/DashboardMenu'
 import GeneralStatistics from '../../components/GeneralStatistics/GeneralStatistics'
 import {
   faArrowTrendUp,
@@ -65,10 +65,10 @@ function Dashboard() {
       opacity: 1,
       // colors: ['#F44336', '#E91E63'],
     },
-    responsive:[
+    responsive: [
       {
         breakpoint: 1670,
-        options:{
+        options: {
           chart: {
             width: "650"
           }
@@ -76,7 +76,7 @@ function Dashboard() {
       },
       {
         breakpoint: 1533,
-        options:{
+        options: {
           chart: {
             width: "600"
           }
@@ -84,7 +84,7 @@ function Dashboard() {
       },
       {
         breakpoint: 1440,
-        options:{
+        options: {
           chart: {
             width: "850"
           }
@@ -92,7 +92,7 @@ function Dashboard() {
       },
       {
         breakpoint: 1305,
-        options:{
+        options: {
           chart: {
             width: "750"
           }
@@ -100,7 +100,7 @@ function Dashboard() {
       },
       {
         breakpoint: 1201,
-        options:{
+        options: {
           chart: {
             width: "950"
           }
@@ -110,13 +110,11 @@ function Dashboard() {
   }
   return (
     <div className="w-full bg-neutral-100">
-      <div className="flex">
-        <DashboardManager color="Dashboard" />
-        <div className="mt-10 min-h-screen w-full overflow-x-scroll xl:w-4/5 xl:overflow-x-hidden 2xl:px-24 xl:px-20">
+      <div className="grid grid-cols-[200px_auto]">
+        <DashboardMenu />
+        <div className="mt-10 min-h-screen box-border px-10 w-full">
           <div className="flex justify-between">
-            <h1 className="text-xl font-bold">Dashboard</h1>
-            {/* toggle the visibility of the form when the button is clicked */}
-            {/* <button className="w-5 h-5 text-2xl font-semibold">+</button> */}
+            <h1 className="text-xl font-bold">{window.location.pathname.split('/').map(item => item.charAt(0).toUpperCase() + item.substring(1))}</h1>
           </div>
           <div className="top-wrap flex justify-between items-center flex-wrap">
             <GeneralStatistics
@@ -141,7 +139,7 @@ function Dashboard() {
               className="bg-orange-400 border-orange-400 shadow-[0_0_5px_1px_rgba(255,138,76,0.3)] shadow-orange-400"
             />
           </div>
-          <div className="body-wrap mt-8 flex justify-between items-start flex-wrap">
+          <div className="body-wrap mt-8 flex justify-between items-start flex-wrap hidden">
             <div className="chart 2xl:w-[65.5%] px-6 py-4 bg-white rounded-2xl shadow-lg md:w-full">
               <div className="total-revuenes">
                 <p className="font-semibold text-2xl">Total Revuenes</p>
@@ -151,10 +149,6 @@ function Dashboard() {
                 series={options.series}
                 options={options}
                 type={options.chart.type}
-                height={options.chart.height}
-                width={options.chart.width}
-                responsive={options.responsive}
-                // color={options.fill.colors}
               />
             </div>
             <div className="most-sold-items 2xl:w-[31.5%] py-4 px-4 bg-white rounded-2xl shadow-l md:w-full md:mt-5 2xl:mt-0">

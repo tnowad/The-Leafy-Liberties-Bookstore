@@ -1,4 +1,4 @@
-import DashboardManager from '../../layouts/DashboardComponent/DashboardManager'
+import DashboardMenu from '../../layouts/DashboardComponent/DashboardMenu'
 import { useEffect, useState } from 'react'
 import { customerData } from './Data'
 import WindowSize from '../../components/WindowSize/WindowSize'
@@ -49,7 +49,7 @@ function Customer({ ...props }) {
   return (
     <div className="w-full">
       <div className="flex">
-        <DashboardManager color="Customer" />
+        <DashboardMenu color="Customer" />
         <div className="ml-14 mt-14 min-h-screen w-full overflow-x-scroll xl:w-4/5 xl:overflow-x-hidden">
           <div className="flex justify-between">
             <h1 className="text-xl">Customer</h1>

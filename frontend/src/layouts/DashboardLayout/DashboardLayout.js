@@ -1,12 +1,15 @@
-import Header from '../components/Header'
-import Footer from '../components/Footer/Footer'
 
+import DashboardMenu from '../DashboardComponent/DashboardMenu';
 export default function DashboardLayout({ children }) {
   return (
-    <div>
-      <Header />
-      {children}
-      <Footer />
+
+    <div className="w-full bg-neutral-100">
+      <div className="grid grid-cols-[200px_auto]">
+        <DashboardMenu />
+        <div className="w-full">
+          {children}
+        </div>
+      </div>
     </div>
   )
 }

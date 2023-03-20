@@ -1,4 +1,4 @@
-import DashboardManager from '../../layouts/DashboardComponent/DashboardManager'
+import DashboardMenu from '../../layouts/DashboardComponent/DashboardMenu'
 import { useState } from 'react'
 import WindowSize from '../../components/WindowSize/WindowSize'
 import { productData } from './Data'
@@ -45,7 +45,7 @@ function Product({ ...props }) {
   return (
     <div className="w-full bg-neutral-100">
       <div className="flex">
-        <DashboardManager color="Products" />
+        <DashboardMenu color="Products" />
         <div className="md:ml-0 mt-14 min-h-screen w-full overflow-x-scroll xl:w-4/5 xl:overflow-x-hidden">
           <div className="flex justify-between">
             <h1 className="text-xl">Product</h1>

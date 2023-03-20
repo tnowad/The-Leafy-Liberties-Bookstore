@@ -1,9 +1,9 @@
-import DashboardManager from '../../layouts/DashboardComponent/DashboardManager'
+import DashboardMenu from '../../layouts/DashboardComponent/DashboardMenu'
 
 function Statistics() {
   return (
     <div>
-      <DashboardManager color="Statistics" />
+      <DashboardMenu color="Statistics" />
       <div>Statistics dashboard</div>
     </div>
   )

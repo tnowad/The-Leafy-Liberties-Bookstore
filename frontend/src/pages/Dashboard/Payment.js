@@ -1,9 +1,9 @@
-import DashboardManager from '../../layouts/DashboardComponent/DashboardManager'
+import DashboardMenu from '../../layouts/DashboardComponent/DashboardMenu'
 
 function Payment() {
   return (
     <div>
-      <DashboardManager color="Payment" />
+      <DashboardMenu color="Payment" />
       <div>Payment dashboard</div>
     </div>
   )

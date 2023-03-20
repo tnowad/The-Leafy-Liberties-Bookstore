@@ -28,6 +28,7 @@ import Shop from '../pages/Shop/Shop'
 import { RouteBackend } from '../pages/Routes'
 
 import NotFound from '../pages/NotFound'
+import DashboardLayout from '../layouts/DashboardLayout/DashboardLayout';
 
 // Public routes
 const publicRoutes = [
@@ -47,31 +48,35 @@ const publicRoutes = [
   { path: config.routes.contact, component: Contact },
   { path: config.routes.wishlist, component: Wishlist },
   // * dashboard routes
-  { path: config.routes.dashboard, component: Dashboard, layout: null },
+  {
+    path: config.routes.dashboard,
+    component: Dashboard,
+    layout: DashboardLayout
+  },
   {
     path: config.routes.statisticsDashboard,
     component: Statistics,
-    layout: null,
+    layout: DashboardLayout,
   },
   {
     path: config.routes.paymentDashboard,
     component: Payment,
-    layout: null,
+    layout: DashboardLayout,
   },
   {
     path: config.routes.productsDashboard,
     component: Products,
-    layout: null,
+    layout: DashboardLayout,
   },
   {
     path: config.routes.customerDashboard,
     component: Customer,
-    layout: null,
+    layout: DashboardLayout,
   },
   {
     path: config.routes.messageDashboard,
     component: Message,
-    layout: null,
+    layout: DashboardLayout,
   },
   // * backend routes
   { path: config.routes.routes, component: RouteBackend, layout: null },
