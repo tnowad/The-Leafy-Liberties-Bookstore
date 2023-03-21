@@ -111,7 +111,7 @@ function Shop() {
     <div className="flex justify-center">
       <div className="container grid lg:grid-cols-[200px,auto] 2xl:grid-cols-[250px,auto]">
         <div className="box-border mx-2">
-          <Filter data={filter} className="xl:sticky xl:top-32" />
+          <Filter data={filter} className="lg:sticky lg:top-32" />
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
           {[...Array(24)].map((e, i) => {
