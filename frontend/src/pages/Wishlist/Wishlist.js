@@ -24,11 +24,14 @@ function Wishlist() {
   return (
     <div>
       <div
-        className="md:my-16
+        className="my-10 md:my-16
       flex flex-col items-center"
       >
-        <FontAwesomeIcon className="text-6xl text-green-800" icon={faHeart} />
-        <h1 className="text-green-800 text-6xl">My wishlist</h1>
+        <FontAwesomeIcon
+          className="text-4xl md:text-6xl text-green-800"
+          icon={faHeart}
+        />
+        <h1 className=" text-4xl text-green-800 md:text-6xl">My wishlist</h1>
       </div>
       <WindowSize onSizeChange={handleSizeChange} />
       {window.innerWidth > 650 ? (
@@ -77,7 +80,7 @@ function Wishlist() {
             return (
               <table
                 key={item.id}
-                className="ml-5 mb-8 flex flex-row justify-around border-0 border-b-2 border-gray-200 border-solid "
+                className="ml-5 mb-8 pt-10 flex flex-row justify-around border-0 border-t-2 border-gray-200 border-solid "
               >
                 <thead>
                   <tr className="flex flex-col">
@@ -87,7 +90,6 @@ function Wishlist() {
                           className={
                             item.name === 'Action' ? `h-16 pt-5` : `h-auto`
                           }
-                          colSpan={item.name === 'Action' ? 2 : 1}
                           key={item.name}
                         >
                           {item.name}
@@ -107,12 +109,11 @@ function Wishlist() {
                       <button className="bg-green-800 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
                         <FontAwesomeIcon className="hover:" icon={faCartPlus} />
                       </button>
-                    </td>
-                    <td className="border px-4 py-2">
-                      <button className="bg-green-800 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
+                      <button className="ml-3 bg-green-800 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
                         <FontAwesomeIcon icon={faTrash} />
                       </button>
                     </td>
+                    <td className="border px-4 py-2"></td>
                   </tr>
                 </tbody>
               </table>
