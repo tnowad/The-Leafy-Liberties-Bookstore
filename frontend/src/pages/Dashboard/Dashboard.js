@@ -9,8 +9,9 @@ import {
   faBookBible,
 } from '@fortawesome/free-solid-svg-icons'
 import Chart from 'react-apexcharts'
-import { Progress, Table } from 'flowbite-react'
+import { Progress } from 'flowbite-react'
 import { Link } from 'react-router-dom'
+
 function Dashboard() {
   const options = {
     series: [
@@ -72,6 +73,12 @@ function Dashboard() {
           chart: {
             width: '750',
           },
+          plotOptions: {
+            bar: {
+              borderRadius: 4,
+              horizontal: false,
+            },
+          },
         },
       },
       {
@@ -115,10 +122,10 @@ function Dashboard() {
         },
       },
       {
-        breakpoint: 920,
+        breakpoint: 982,
         options: {
           chart: {
-            width: '650',
+            width: '700',
           },
           plotOptions: {
             bar: {
@@ -129,11 +136,11 @@ function Dashboard() {
         },
       },
       {
-        breakpoint: 768,
+        breakpoint: 828,
         options: {
           chart: {
             type: 'bar',
-            width: '550',
+            width: '600',
             height: '500',
           },
           plotOptions: {
@@ -153,7 +160,7 @@ function Dashboard() {
         },
       },
       {
-        breakpoint: 550,
+        breakpoint: 580,
         options: {
           chart: {
             width: '350',
@@ -164,7 +171,7 @@ function Dashboard() {
   }
   return (
     <div className="w-full bg-neutral-100">
-      <div className="w-full my-0 mx-auto">
+      <div className="w-full my-0 mx-auto overflow-x-hidden">
         <div className="mt-10 min-h-screen box-border w-full px-10 mobile:px-5">
           <div className="flex justify-between">
             <h1 className="text-xl font-bold">
@@ -198,8 +205,8 @@ function Dashboard() {
               className="bg-orange-400 border-orange-400 shadow-[0_0_5px_1px_rgba(255,138,76,0.3)] shadow-orange-400"
             />
           </div>
-          <div className="body-wrap mt-8 flex justify-between items-start flex-wrap">
-            <div className="chart 2xl:w-[65.5%] px-6 py-4 bg-white rounded-2xl shadow-lg mobile:w-full">
+          <div className="body-wrap w-full mt-8 flex justify-between items-start flex-wrap">
+            {/* <div className="chart 2xl:w-[65.5%] px-6 py-4 bg-white rounded-2xl shadow-lg mobile:w-full">
               <div className="total-revuenes">
                 <p className="font-semibold text-2xl">Total Revuenes</p>
                 <p className="mt-2 font-bold text-lg">$50.4K</p>
@@ -211,7 +218,7 @@ function Dashboard() {
                 width={options.chart.width}
                 height={options.chart.height}
               />
-            </div>
+            </div> */}
             <div className="most-sold-items 2xl:w-[31.5%] py-4 px-4 bg-white rounded-2xl shadow-lg mobile:w-full mobile:mt-5 2xl:mt-0">
               <p className="font-bold text-2xl mb-5">Most Sold Items</p>
               <div className="flex flex-col gap-4">
@@ -236,95 +243,164 @@ function Dashboard() {
               </div>
             </div>
           </div>
-          <div className="table-statistics my-8 shadow-lg">
-            <Table>
-              <Table.Head className="text-[px]">
-                <Table.HeadCell>Products</Table.HeadCell>
-                <Table.HeadCell>Order ID</Table.HeadCell>
-                <Table.HeadCell>Date</Table.HeadCell>
-                <Table.HeadCell>Customer Name</Table.HeadCell>
-                <Table.HeadCell>Status</Table.HeadCell>
-                <Table.HeadCell>Amount</Table.HeadCell>
-                <Table.HeadCell>Action</Table.HeadCell>
-              </Table.Head>
-              <Table.Body className="divide-y">
-                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                  <Table.Cell className="whitespace-nowrap font-medium text-gray-900 ">
-                    Apple MacBook Pro 17"
-                  </Table.Cell>
-                  <Table.Cell>Sliver</Table.Cell>
-                  <Table.Cell>15/05/2023</Table.Cell>
-                  <Table.Cell>Hello World</Table.Cell>
-                  <Table.Cell>Delivered</Table.Cell>
-                  <Table.Cell>$2999</Table.Cell>
-                  <Table.Cell>
-                    <button className="text-lg text-white px-3 py-2 bg-primary-600 border border-solid rounded-lg">
-                      •••
-                    </button>
-                  </Table.Cell>
-                </Table.Row>
-                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                  <Table.Cell className="whitespace-nowrap font-medium text-gray-900 ">
-                    Apple MacBook Pro 17"
-                  </Table.Cell>
-                  <Table.Cell>Sliver</Table.Cell>
-                  <Table.Cell>15/05/2023</Table.Cell>
-                  <Table.Cell>Hello World</Table.Cell>
-                  <Table.Cell>Delivered</Table.Cell>
-                  <Table.Cell>$2999</Table.Cell>
-                  <Table.Cell>
-                    <button className="text-lg text-white px-3 py-2 bg-primary-600 border border-solid rounded-lg">
-                      •••
-                    </button>
-                  </Table.Cell>
-                </Table.Row>
-                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                  <Table.Cell className="whitespace-nowrap font-medium text-gray-900 ">
-                    Apple MacBook Pro 17"
-                  </Table.Cell>
-                  <Table.Cell>Sliver</Table.Cell>
-                  <Table.Cell>15/05/2023</Table.Cell>
-                  <Table.Cell>Hello World</Table.Cell>
-                  <Table.Cell>Delivered</Table.Cell>
-                  <Table.Cell>$2999</Table.Cell>
-                  <Table.Cell>
-                    <button className="text-lg text-white px-3 py-2 bg-primary-600 border border-solid rounded-lg">
-                      •••
-                    </button>
-                  </Table.Cell>
-                </Table.Row>
-                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                  <Table.Cell className="whitespace-nowrap font-medium text-gray-900 ">
-                    Apple MacBook Pro 17"
-                  </Table.Cell>
-                  <Table.Cell>Sliver</Table.Cell>
-                  <Table.Cell>15/05/2023</Table.Cell>
-                  <Table.Cell>Hello World</Table.Cell>
-                  <Table.Cell>Delivered</Table.Cell>
-                  <Table.Cell>$2999</Table.Cell>
-                  <Table.Cell>
-                    <button className="text-lg text-white px-3 py-2 bg-primary-600 border border-solid rounded-lg">
-                      •••
-                    </button>
-                  </Table.Cell>
-                </Table.Row>
-                <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                  <Table.Cell className="whitespace-nowrap font-medium text-gray-900 ">
-                    Apple MacBook Pro 17"
-                  </Table.Cell>
-                  <Table.Cell>Sliver</Table.Cell>
-                  <Table.Cell>15/05/2023</Table.Cell>
-                  <Table.Cell>Hello World</Table.Cell>
-                  <Table.Cell>Delivered</Table.Cell>
-                  <Table.Cell>$2999</Table.Cell>
-                  <Table.Cell>
-                    <button className="text-lg text-white px-3 py-2 bg-primary-600 border border-solid rounded-lg">
-                      •••
-                    </button>
-                  </Table.Cell>
-                </Table.Row>
-              </Table.Body>
-            </Table>
+          <div className="table-statistics my-8 shadow-lg cursor-pointer rouded-2xl">
+            <div class="relative overflow-x-auto">
+              <table class="w-full text-sm text-left text-gray-500 rounded-2xl">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                  <tr>
+                    <th scope="col" class="px-6 py-3">
+                      Product name
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                      Color
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                      Category
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                      Price
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                      Action
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                      Action
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                      Action
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="bg-white border-b hover:bg-gray-200 transition-opacity">
+                    <th
+                      scope="row"
+                      class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                    >
+                      Apple MacBook Pro 17"
+                    </th>
+                    <td class="px-6 py-4">Silver</td>
+                    <td class="px-6 py-4">Laptop</td>
+                    <td class="px-6 py-4">$2999</td>
+                    <td class="px-6 py-4">$2999</td>
+                    <td class="px-6 py-4">$2999</td>
+                    <td class="px-6 py-4">
+                      <a
+                        href="#"
+                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                      >
+                        Edit
+                      </a>
+                    </td>
+                  </tr>
+                  <tr class="bg-gray-50 border-b hover:bg-gray-200 transition-opacity">
+                    <th
+                      scope="row"
+                      class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                    >
+                      Apple MacBook Pro 17"
+                    </th>
+                    <td class="px-6 py-4">Silver</td>
+                    <td class="px-6 py-4">Laptop</td>
+                    <td class="px-6 py-4">$2999</td>
+                    <td class="px-6 py-4">$2999</td>
+                    <td class="px-6 py-4">$2999</td>
+                    <td class="px-6 py-4">
+                      <a
+                        href="#"
+                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                      >
+                        Edit
+                      </a>
+                    </td>
+                  </tr>
+                  <tr class="bg-white border-b hover:bg-gray-200 transition-opacity">
+                    <th
+                      scope="row"
+                      class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                    >
+                      Apple MacBook Pro 17"
+                    </th>
+                    <td class="px-6 py-4">Silver</td>
+                    <td class="px-6 py-4">Laptop</td>
+                    <td class="px-6 py-4">$2999</td>
+                    <td class="px-6 py-4">$2999</td>
+                    <td class="px-6 py-4">$2999</td>
+                    <td class="px-6 py-4">
+                      <a
+                        href="#"
+                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                      >
+                        Edit
+                      </a>
+                    </td>
+                  </tr>
+                  <tr class="bg-gray-50 border-b hover:bg-gray-200 transition-opacity">
+                    <th
+                      scope="row"
+                      class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                    >
+                      Apple MacBook Pro 17"
+                    </th>
+                    <td class="px-6 py-4">Silver</td>
+                    <td class="px-6 py-4">Laptop</td>
+                    <td class="px-6 py-4">$2999</td>
+                    <td class="px-6 py-4">$2999</td>
+                    <td class="px-6 py-4">$2999</td>
+                    <td class="px-6 py-4">
+                      <a
+                        href="#"
+                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                      >
+                        Edit
+                      </a>
+                    </td>
+                  </tr>
+                  <tr class="bg-white border-b hover:bg-gray-200 transition-opacity">
+                    <th
+                      scope="row"
+                      class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                    >
+                      Apple MacBook Pro 17"
+                    </th>
+                    <td class="px-6 py-4">Silver</td>
+                    <td class="px-6 py-4">Laptop</td>
+                    <td class="px-6 py-4">$2999</td>
+                    <td class="px-6 py-4">$2999</td>
+                    <td class="px-6 py-4">$2999</td>
+                    <td class="px-6 py-4">
+                      <a
+                        href="#"
+                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                      >
+                        Edit
+                      </a>
+                    </td>
+                  </tr>
+                  <tr class="bg-gray-50 border-b hover:bg-gray-200 transition-opacity">
+                    <th
+                      scope="row"
+                      class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                    >
+                      Apple MacBook Pro 17"
+                    </th>
+                    <td class="px-6 py-4">Silver</td>
+                    <td class="px-6 py-4">Laptop</td>
+                    <td class="px-6 py-4">$2999</td>
+                    <td class="px-6 py-4">$2999</td>
+                    <td class="px-6 py-4">$2999</td>
+                    <td class="px-6 py-4">
+                      <a
+                        href="#"
+                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                      >
+                        Edit
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
