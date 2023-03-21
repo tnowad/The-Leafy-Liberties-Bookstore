@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { productData } from '../Dashboard/Data'
 import WindowSize from '../../components/WindowSize/WindowSize'
-import { faCartPlus, faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faCartPlus, faHeart, faTrash } from '@fortawesome/free-solid-svg-icons'
+import ButtonHover from '../../components/Button/ButtonHover'
 
 function Wishlist() {
   const arrayTitle = [
@@ -23,6 +24,13 @@ function Wishlist() {
   }
   return (
     <div>
+      <div
+        className="md:my-16
+      flex flex-col items-center"
+      >
+        <FontAwesomeIcon className="text-6xl text-green-800" icon={faHeart} />
+        <h1 className="text-green-800 text-6xl">My wishlist</h1>
+      </div>
       <WindowSize onSizeChange={handleSizeChange} />
       {window.innerWidth > 500 ? (
         <table className="w-full border-collapse">
@@ -49,25 +57,15 @@ function Wishlist() {
                   <td>{item.category}</td>
                   <td>{item.status}</td>
                   <td>{item.amount}</td>
-                  <td className="border px-4 py-2">
-                    <button class="relative bg-green-800 text-white font-bold py-2 px-4 rounded hover:bg-green-600 hover:text-white">
+                  <td className="border px-1 py-2">
+                    <ButtonHover hoverText="Add">
                       <FontAwesomeIcon className="hover:" icon={faCartPlus} />
-                      <span class="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 hover:opacity-100">
-                        <span class="w-20 relative left-16 text-green-800">
-                          Add
-                        </span>
-                      </span>
-                    </button>
+                    </ButtonHover>
                   </td>
                   <td className="border px-4 py-2">
-                    <button class="relative bg-green-800 text-white font-bold py-2 px-4 rounded hover:bg-green-600 hover:text-white">
+                    <ButtonHover hoverText="Remove">
                       <FontAwesomeIcon icon={faTrash} />
-                      <span class="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 hover:opacity-100">
-                        <span class="relative left-16 text-green-800">
-                          remove
-                        </span>
-                      </span>
-                    </button>
+                    </ButtonHover>
                   </td>
                 </tr>
               )
