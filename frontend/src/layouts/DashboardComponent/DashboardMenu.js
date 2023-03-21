@@ -12,10 +12,11 @@ import {
 import { Link } from 'react-router-dom'
 import { logo } from '../../assets/images'
 import { useState } from 'react'
-
+// import { Tooltip } from '@material-tailwind/react'
+import { Tooltip } from '../../components/Tooltip/Tooltip'
 function DashboardMenu({ ...props }) {
   const [isIconsVisible, setIconsVisibility] = useState(false)
-
+  // const tooltip = new Tooltip("Test Hover", , options);
   const toggleIconsVisibility = () => {
     setIconsVisibility(!isIconsVisible)
   }
@@ -45,7 +46,7 @@ function DashboardMenu({ ...props }) {
   ]
 
   return (
-    <div className=" xl:w-64 bg-white lg:w-10">
+    <div className=" xl:w-64 bg-white ">
       <div className="sticky top-0 hidden xl:block">
         <Link to="/dashboard" className="flex items-center justify-center py-4">
           <img src={logo} alt="" />
@@ -76,13 +77,39 @@ function DashboardMenu({ ...props }) {
         </div>
       </div>
       {isIconsVisible ? (
-        <button onClick={toggleIconsVisibility} className="xl:hidden p-2">
-          <FontAwesomeIcon icon={faBars} size="xl"/>
-        </button>
+        <div className="sticky xl:hidden"></div>
       ) : (
-        <button onClick={toggleIconsVisibility} className="xl:hidden p-2">
-          <FontAwesomeIcon icon={faClose} size="xl"/>
-        </button>
+        <div className="xl:hidden w-full">
+          <div className="sticky top-0">
+            <div className="flex flex-col justify-center px-3">
+              <Link
+                to="/dashboard"
+                className="object-cover w-14 h-14 mb-8"
+              >
+                <img src={logo} alt="" className='w-full h-full'/>
+              </Link>
+              {arrayDashboard.map((item) => {
+                return (
+                  <Tooltip message={item.name}>
+                    <span
+                      className={
+                        'h-12 flex items-center hover:bg-primary hover:text-white cursor-pointer my-[2px] rounded-md box-border px-4 ' +
+                        (window.location.href.endsWith(item.link)
+                          ? 'bg-primary text-white'
+                          : '')
+                      }
+                      key={item.name}
+                    >
+                      <Link to={item.link}>
+                        <FontAwesomeIcon icon={item.icon} />
+                      </Link>
+                    </span>
+                  </Tooltip>
+                )
+              })}
+            </div>
+          </div>
+        </div>
       )}
     </div>
   )

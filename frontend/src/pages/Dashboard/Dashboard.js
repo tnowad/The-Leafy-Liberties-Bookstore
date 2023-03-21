@@ -106,12 +106,66 @@ function Dashboard() {
           },
         },
       },
+      {
+        breakpoint: 1105,
+        options: {
+          chart: {
+            width: '800',
+          },
+        },
+      },
+      {
+        breakpoint: 920,
+        options: {
+          chart: {
+            width: '650',
+          },
+          plotOptions: {
+            bar: {
+              borderRadius: 4,
+              horizontal: false,
+            },
+          },
+        },
+      },
+      {
+        breakpoint: 768,
+        options: {
+          chart: {
+            type: 'bar',
+            width: '550',
+            height: '500'
+          },
+          plotOptions: {
+            bar: {
+              borderRadius: 4,
+              horizontal: true,
+            },
+          },
+        },
+      },
+      {
+        breakpoint: 665,
+        options: {
+          chart: {
+            width: '450',
+          },
+        },
+      },
+      {
+        breakpoint: 550,
+        options: {
+          chart: {
+            width: '350',
+          },
+        },
+      },
     ],
   }
   return (
     <div className="w-full bg-neutral-100">
       <div className="w-full my-0 mx-auto">
-        <div className="mt-10 min-h-screen box-border px-10 w-full">
+        <div className="mt-10 min-h-screen box-border w-full px-10 mobile:px-5">
           <div className="flex justify-between">
             <h1 className="text-xl font-bold">
               {window.location.pathname
@@ -145,7 +199,7 @@ function Dashboard() {
             />
           </div>
           <div className="body-wrap mt-8 flex justify-between items-start flex-wrap">
-            <div className="chart 2xl:w-[65.5%] px-6 py-4 bg-white rounded-2xl shadow-lg md:w-full">
+            <div className="chart 2xl:w-[65.5%] px-6 py-4 bg-white rounded-2xl shadow-lg mobile:w-full">
               <div className="total-revuenes">
                 <p className="font-semibold text-2xl">Total Revuenes</p>
                 <p className="mt-2 font-bold text-lg">$50.4K</p>
@@ -158,7 +212,7 @@ function Dashboard() {
                 height={options.chart.height}
               />
             </div>
-            <div className="most-sold-items 2xl:w-[31.5%] py-4 px-4 bg-white rounded-2xl shadow-lg md:w-full md:mt-5 2xl:mt-0">
+            <div className="most-sold-items 2xl:w-[31.5%] py-4 px-4 bg-white rounded-2xl shadow-lg mobile:w-full mobile:mt-5 2xl:mt-0">
               <p className="font-bold text-2xl mb-5">Most Sold Items</p>
               <div className="flex flex-col gap-4">
                 <div className="text-base font-medium">Dark</div>
