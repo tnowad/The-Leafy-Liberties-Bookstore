@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { productData } from '../Dashboard/Data'
 import WindowSize from '../../components/WindowSize/WindowSize'
 import { faCartPlus, faHeart, faTrash } from '@fortawesome/free-solid-svg-icons'
-import ButtonHover from '../../components/Button/ButtonHover'
 
 function Wishlist() {
   const arrayTitle = [
@@ -32,7 +31,7 @@ function Wishlist() {
         <h1 className="text-green-800 text-6xl">My wishlist</h1>
       </div>
       <WindowSize onSizeChange={handleSizeChange} />
-      {window.innerWidth > 500 ? (
+      {window.innerWidth > 650 ? (
         <table className="w-full border-collapse">
           <thead className="w-full bg-gray-100 rounded-sm">
             <tr className="w-44">
@@ -58,14 +57,14 @@ function Wishlist() {
                   <td>{item.status}</td>
                   <td>{item.amount}</td>
                   <td className="border px-1 py-2">
-                    <ButtonHover hoverText="Add">
+                    <button className="bg-green-800 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
                       <FontAwesomeIcon className="hover:" icon={faCartPlus} />
-                    </ButtonHover>
+                    </button>
                   </td>
                   <td className="border px-4 py-2">
-                    <ButtonHover hoverText="Remove">
+                    <button className="bg-green-800 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
                       <FontAwesomeIcon icon={faTrash} />
-                    </ButtonHover>
+                    </button>
                   </td>
                 </tr>
               )
@@ -104,14 +103,14 @@ function Wishlist() {
 
                     <td>{item.status}</td>
                     <td>{item.amount}</td>
-                    <td className="border px-4 py-2">
-                      <button className="bg-green-800 hover:bg-green-600 text-sm text-white font-bold py-1 px-2 rounded">
-                        Add to cart
+                    <td className="border px-1 py-2">
+                      <button className="bg-green-800 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
+                        <FontAwesomeIcon className="hover:" icon={faCartPlus} />
                       </button>
                     </td>
                     <td className="border px-4 py-2">
-                      <button className="bg-green-800 hover:bg-green-600 text-sm text-white font-bold py-1 px-2 rounded">
-                        Remove from wishlist
+                      <button className="bg-green-800 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
+                        <FontAwesomeIcon icon={faTrash} />
                       </button>
                     </td>
                   </tr>
