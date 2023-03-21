@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { productData } from '../Dashboard/Data'
 import WindowSize from '../../components/WindowSize/WindowSize'
-import { faCartPlus, faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faCartPlus, faHeart, faTrash } from '@fortawesome/free-solid-svg-icons'
 
 function Wishlist() {
   const arrayTitle = [
@@ -23,8 +23,15 @@ function Wishlist() {
   }
   return (
     <div>
+      <div
+        className="md:my-16
+      flex flex-col items-center"
+      >
+        <FontAwesomeIcon className="text-6xl text-green-800" icon={faHeart} />
+        <h1 className="text-green-800 text-6xl">My wishlist</h1>
+      </div>
       <WindowSize onSizeChange={handleSizeChange} />
-      {window.innerWidth > 500 ? (
+      {window.innerWidth > 650 ? (
         <table className="w-full border-collapse">
           <thead className="w-full bg-gray-100 rounded-sm">
             <tr className="w-44">
@@ -49,24 +56,14 @@ function Wishlist() {
                   <td>{item.category}</td>
                   <td>{item.status}</td>
                   <td>{item.amount}</td>
-                  <td className="border px-4 py-2">
-                    <button class="relative bg-green-800 text-white font-bold py-2 px-4 rounded hover:bg-green-600 hover:text-white">
+                  <td className="border px-1 py-2">
+                    <button className="bg-green-800 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
                       <FontAwesomeIcon className="hover:" icon={faCartPlus} />
-                      <span class="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 hover:opacity-100">
-                        <span class="w-20 relative left-16 text-green-800">
-                          Add
-                        </span>
-                      </span>
                     </button>
                   </td>
                   <td className="border px-4 py-2">
-                    <button class="relative bg-green-800 text-white font-bold py-2 px-4 rounded hover:bg-green-600 hover:text-white">
+                    <button className="bg-green-800 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
                       <FontAwesomeIcon icon={faTrash} />
-                      <span class="absolute top-0 left-0 w-full h-full flex items-center justify-center opacity-0 hover:opacity-100">
-                        <span class="relative left-16 text-green-800">
-                          remove
-                        </span>
-                      </span>
                     </button>
                   </td>
                 </tr>
@@ -106,14 +103,14 @@ function Wishlist() {
 
                     <td>{item.status}</td>
                     <td>{item.amount}</td>
-                    <td className="border px-4 py-2">
-                      <button className="bg-green-800 hover:bg-green-600 text-sm text-white font-bold py-1 px-2 rounded">
-                        Add to cart
+                    <td className="border px-1 py-2">
+                      <button className="bg-green-800 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
+                        <FontAwesomeIcon className="hover:" icon={faCartPlus} />
                       </button>
                     </td>
                     <td className="border px-4 py-2">
-                      <button className="bg-green-800 hover:bg-green-600 text-sm text-white font-bold py-1 px-2 rounded">
-                        Remove from wishlist
+                      <button className="bg-green-800 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
+                        <FontAwesomeIcon icon={faTrash} />
                       </button>
                     </td>
                   </tr>
