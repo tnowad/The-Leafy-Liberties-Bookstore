@@ -79,10 +79,11 @@ const publicRoutes = [
     layout: DashboardLayout,
   },
   // * backend routes
-  { path: config.routes.routes, component: RouteBackend, layout: null },
   { path: '*', component: NotFound },
 ]
 
-const privateRoutes = []
+const protectedRoutes = [
+  { path: config.routes.routes, component: RouteBackend, layout: null },
+]
 
-export { publicRoutes, privateRoutes }
+export { publicRoutes, protectedRoutes }

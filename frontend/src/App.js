@@ -1,17 +1,19 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { publicRoutes } from './routes/routes'
+import { publicRoutes, protectedRoutes } from './routes/routes'
 import DefaultLayout from './layouts/DefaultLayout'
 import { Fragment } from 'react'
+import { ProtectedRoute } from './components/ProtectedRoute/ProtectedRoute'
+import { AuthProvider, useAuth } from './contexts/AuthContext'
 
 function App() {
-  const renderRoutes = () => {
+  const renderPublicRoutes = () => {
     return publicRoutes.map((route, index) => {
       const Page = route.component
       const Layout =
         route.layout === null ? Fragment : route.layout || DefaultLayout
       return (
         <Route
-          key={index}
+          key={route.path}
           path={route.path}
           element={
             <Layout>
@@ -23,9 +25,35 @@ function App() {
     })
   }
 
+  const renderProtectedRoutes = () => {
+    return protectedRoutes.map((route, index) => {
+      const Page = route.component
+      const Layout =
+        route.layout === null ? Fragment : route.layout || DefaultLayout
+      return (
+        <Route
+          key={route.path}
+          path={route.path}
+          element={
+            <Layout>
+              <ProtectedRoute>
+                <Page />
+              </ProtectedRoute>
+            </Layout>
+          }
+        />
+      )
+    })
+  }
+
   return (
     <BrowserRouter>
-      <Routes>{renderRoutes()}</Routes>
+      <AuthProvider>
+        <Routes>
+          {renderPublicRoutes()}
+          {renderProtectedRoutes()}
+        </Routes>
+      </AuthProvider>
     </BrowserRouter>
   )
 }
