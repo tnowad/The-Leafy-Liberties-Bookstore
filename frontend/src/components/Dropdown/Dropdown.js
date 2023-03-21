@@ -10,10 +10,10 @@ const Dropdown = ({ options, trigger }) => {
   }
 
   return (
-    <div className="relative w-60">
+    <div className="relative w-full">
       <button
         type="button"
-        className="inline-flex items-center justify-between w-full px-4 py-2 border border-gray-300 rounded-full shadow-sm bg-primary text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+        className="whitespace-nowrap inline-flex items-center justify-between w-full px-4 py-2 border border-gray-300 rounded-full shadow-sm bg-primary text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
         onClick={() => setIsOpen(!isOpen)}
       >
         {selectedOption ? selectedOption.label : trigger}

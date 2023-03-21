@@ -29,22 +29,23 @@ function Header() {
         <Link to="/" className="w-48">
           <img src={logo} alt="logo" className="h-20" />
         </Link>
-
-        <Dropdown
-          trigger={
-            <>
-              <FontAwesomeIcon className="mr-1" icon={faList} />
-              Categories
-            </>
-          }
-          options={[
-            { label: <Link to="/products?category=echill">Category 1</Link> },
-            { label: <Link to="/products?category=echill">Category 2</Link> },
-            { label: <Link to="/products?category=echill">Category 3</Link> },
-            { label: <Link to="/products?category=echill">Category 4</Link> },
-            { label: <Link to="/products?category=echill">Category 5</Link> },
-          ]}
-        />
+        <div className="hidden sm:block w-full max-w-[140px]">
+          <Dropdown
+            trigger={
+              <>
+                <FontAwesomeIcon className="mr-1" icon={faList} />
+                Categories
+              </>
+            }
+            options={[
+              { label: <Link to="/products?category=echill">Category 1</Link> },
+              { label: <Link to="/products?category=echill">Category 2</Link> },
+              { label: <Link to="/products?category=echill">Category 3</Link> },
+              { label: <Link to="/products?category=echill">Category 4</Link> },
+              { label: <Link to="/products?category=echill">Category 5</Link> },
+            ]}
+          />
+        </div>
         <div className="w-full box-border px-10">
           <Search
             placeholder="Search Products..."

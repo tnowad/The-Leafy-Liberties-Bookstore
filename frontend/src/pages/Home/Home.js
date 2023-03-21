@@ -85,7 +85,8 @@ function Home() {
           slidesToShow: 2,
           slidesToScroll: 1,
         },
-      }, {
+      },
+      {
         breakpoint: 577,
         settings: {
           slidesToShow: 1,
@@ -96,17 +97,16 @@ function Home() {
   }
   return (
     <div className="flex justify-center w-full flex-col items-center">
-      <div className="xl:h-96 w-full md:h-80">
-        <Carousel slideInterval={3000} >
-          <img src={homeImg} alt="hello" />
-          <img src={homeImg} alt="hello" />
-          <img src={homeImg} alt="hello" />
-          <img src={homeImg} alt="hello" />
-          <img src={homeImg} alt="hello" />
+      <div className="h-56 md:h-80 xl:h-96 w-full">
+        <Carousel slideInterval={3000}>
+          {[...Array(10)].map((e, i) => {
+            return (
+              <img src={homeImg} className="h-full object-cover" alt="hello" />
+            )
+          })}
         </Carousel>
       </div>
       <div className="container">
-
         <SectionTitle
           name="Bestselling Books"
           class="bestselling-books"
@@ -115,13 +115,9 @@ function Home() {
         />
         <div className="bestselling-products w-full relative">
           <Slider {...settings}>
-            {
-              [...Array(10)].map((e, i) => {
-                return (
-                  <Product />
-                )
-              })
-            }
+            {[...Array(10)].map((e, i) => {
+              return <Product />
+            })}
           </Slider>
         </div>
 
@@ -134,13 +130,9 @@ function Home() {
         <div className="flex">
           <div className="w-full">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-              {
-                [...Array(12)].map((e, i) => {
-                  return (
-                    <Product />
-                  )
-                })
-              }
+              {[...Array(12)].map((e, i) => {
+                return <Product />
+              })}
             </div>
           </div>
           <div className="hidden w-[25%] xl:block 2xl:w-1/3">
@@ -178,35 +170,19 @@ function Home() {
         </div>
 
         <div className="flex mb-5 lg:gap-0 sm:gap-3 lg:flex-row mobile:flex-col">
-
-          <div className="popular-author lg:w-1/4 bg-orange-50 lg:p-5 rounded-2xl xl:mr-10 lg:mr-2 mobile:w-full md:p-2 overflow-hidden lg:overflow-x-hidden mobile:overflow-x-scroll">
+          <div className="lg:w-1/4 bg-orange-50 lg:p-5 rounded-2xl xl:mr-10 lg:mr-2 mobile:w-full md:p-2 overflow-hidden lg:overflow-x-hidden">
             <div className="header-table lg:text-2xl border-0 border-solid border-b-2 mb-6 p-3 whitespace-nowrap md:text-xl mobile:text-center">
               <p>Popular Author</p>
             </div>
-            <div>
-              <ul className="author-menu lg:block lg:gap-0 mobile:flex mobile:gap-2">
-                <li className="cursor-pointer">
-                  <Author />
-                </li>
-                <li className="cursor-pointer">
-                  <Author />
-                </li>
-                <li className="cursor-pointer">
-                  <Author />
-                </li>
-                <li className="cursor-pointer">
-                  <Author />
-                </li>
-                <li className="cursor-pointer">
-                  <Author />
-                </li>
-                <li className="cursor-pointer">
-                  <Author />
-                </li>
-                <li className="cursor-pointer">
-                  <Author />
-                </li>
-              </ul>
+            <div className="grid grid-cols-3 lg:grid-cols-1">
+              {/* loop 7 times */}
+              {[...Array(6)].map((e, i) => {
+                return (
+                  <div className="py-2">
+                    <Author />
+                  </div>
+                )
+              })}
             </div>
           </div>
 
@@ -220,11 +196,7 @@ function Home() {
             <div className="list-author-bestselling">
               <div className=" h-fit top-product flex sm:w-full mobile:w-screen sm:gap-0 mobile:gap-2 sm:m-0">
                 <div className="object-cover h-52 xl:w-72 mr-4 md:w-96 mobile:w-1/2">
-                  <img
-                    src={productImg}
-                    alt=""
-                    className="w-full h-full"
-                  />
+                  <img src={productImg} alt="" className="w-full h-full" />
                 </div>
                 <div className="top-product-detail flex flex-col xl:justify-between sm:gap-0 lg:justify-start mobile:w-fit">
                   <p className="top-product-name xl:text-3xl lg:text-2xl">
@@ -264,9 +236,8 @@ function Home() {
             </div>
           </div>
         </div>
-
       </div>
-    </div >
+    </div>
   )
 }
 
