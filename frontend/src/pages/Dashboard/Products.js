@@ -72,7 +72,7 @@ function Product({ ...props }) {
             <tbody>
               {productData.map((item) => {
                 return (
-                  <tr className="text-center">
+                  <tr key={item.id} className="text-center">
                     <td>{item.image}</td>
                     <td>{item.category}</td>
                     <td>{item.entered}</td>
@@ -93,7 +93,10 @@ function Product({ ...props }) {
           <>
             {productData.map((item) => {
               return (
-                <table className="ml-5 mb-8 flex flex-row justify-around border-0 border-b-2 border-gray-200 border-solid ">
+                <table
+                  key={item.id}
+                  className="ml-5 mb-8 flex flex-row justify-around border-0 border-b-2 border-gray-200 border-solid "
+                >
                   <thead>
                     <tr className="flex flex-col">
                       {arrayTitle.map((item) => {
@@ -129,10 +132,7 @@ function Product({ ...props }) {
               {/* Form fields go here */}
               <form className="flex flex-col" onSubmit={handleSubmit}>
                 <label htmlFor="image">Image:</label>
-                <input
-                  type="file"
-                  onChange={(e) => setImage(e.target.value)}
-                />
+                <input type="file" onChange={(e) => setImage(e.target.value)} />
 
                 <label htmlFor="category">Category:</label>
                 <input
@@ -193,7 +193,6 @@ function Product({ ...props }) {
         )}
       </div>
     </div>
-
   )
 }
 

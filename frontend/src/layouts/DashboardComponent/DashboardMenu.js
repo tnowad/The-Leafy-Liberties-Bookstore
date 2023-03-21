@@ -48,7 +48,7 @@ function DashboardMenu({ ...props }) {
   return (
     <div className=" xl:w-64 bg-white ">
       <div className="sticky top-0 hidden xl:block">
-        <Link to="/dashboard" className="flex items-center justify-center py-4">
+        <Link to="/" className="flex items-center justify-center py-4">
           <img src={logo} alt="" />
 
           <h3 className="ml-12 sm:ml-0 text-green-800 text-xl">Dashboard</h3>
@@ -82,23 +82,20 @@ function DashboardMenu({ ...props }) {
         <div className="xl:hidden w-full">
           <div className="sticky top-0">
             <div className="flex flex-col justify-center px-3">
-              <Link
-                to="/dashboard"
-                className="object-cover w-14 h-14 mb-8"
-              >
-                <img src={logo} alt="" className='w-full h-full'/>
+              <Link to="/dashboard" className="object-cover w-14 h-14 mb-8">
+                <img src={logo} alt="" className="w-full h-full" />
               </Link>
               {arrayDashboard.map((item) => {
                 return (
                   <Tooltip message={item.name}>
                     <span
+                      key={item.name}
                       className={
                         'h-12 flex items-center hover:bg-primary hover:text-white cursor-pointer my-[2px] rounded-md box-border px-4 ' +
                         (window.location.href.endsWith(item.link)
                           ? 'bg-primary text-white'
                           : '')
                       }
-                      key={item.name}
                     >
                       <Link to={item.link}>
                         <FontAwesomeIcon icon={item.icon} />

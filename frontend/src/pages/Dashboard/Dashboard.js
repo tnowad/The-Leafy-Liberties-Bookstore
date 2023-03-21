@@ -134,7 +134,7 @@ function Dashboard() {
           chart: {
             type: 'bar',
             width: '550',
-            height: '500'
+            height: '500',
           },
           plotOptions: {
             bar: {

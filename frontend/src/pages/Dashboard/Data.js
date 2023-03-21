@@ -33,6 +33,7 @@ export const UserData = [
 
 export const customerData = [
   {
+    id: 1,
     profile: 'bao',
     name: 'Hoang Gia Bao',
     email: 'bao@gmail.com',
@@ -42,6 +43,7 @@ export const customerData = [
     createAt: '2015-01-01',
   },
   {
+    id: 2,
     profile: 'phat',
     name: 'Nguyen Tien Phat',
     email: 'phat@gmail.com',
@@ -51,6 +53,7 @@ export const customerData = [
     createAt: '2018-01-01',
   },
   {
+    id: 3,
     profile: 'Chinh',
     name: 'Mai Chung Chinh',
     email: 'chinh@gmail.com',
@@ -63,6 +66,7 @@ export const customerData = [
 
 export const productData = [
   {
+    id: 1,
     image: 'Conan',
     category: 'Therory',
     entered: 243,
@@ -71,6 +75,7 @@ export const productData = [
     amount: 140,
   },
   {
+    id: 2,
     image: 'Doraemon',
     category: 'Funny',
     entered: 122,
@@ -79,6 +84,7 @@ export const productData = [
     amount: 1212,
   },
   {
+    id: 3,
     image: 'Luffy',
     category: 'Comedy',
     entered: 45,

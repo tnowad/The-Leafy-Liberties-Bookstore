@@ -75,7 +75,7 @@ function Customer({ ...props }) {
             <tbody>
               {customerData.map((item) => {
                 return (
-                  <tr className="text-center">
+                  <tr key={item.id} className="text-center">
                     <td>{item.profile}</td>
                     <td>{item.name}</td>
                     <td>{item.email}</td>
@@ -97,7 +97,10 @@ function Customer({ ...props }) {
           <>
             {customerData.map((item) => {
               return (
-                <table className="ml-5 mb-8 flex flex-row justify-around border-0 border-b-2 border-gray-200 border-solid ">
+                <table
+                  key={item.id}
+                  className="ml-5 mb-8 flex flex-row justify-around border-0 border-b-2 border-gray-200 border-solid "
+                >
                   <thead>
                     <tr className="flex flex-col">
                       {arrayTitle.map((item) => {
@@ -132,10 +135,7 @@ function Customer({ ...props }) {
               <h2 className="text-xl font-bold mb-4">Add Customer</h2>
               <form className="flex flex-col" onSubmit={handleSubmit}>
                 <label htmlFor="image">Image:</label>
-                <input
-                  type="file"
-                  onChange={(e) => setImage(e.target.value)}
-                />
+                <input type="file" onChange={(e) => setImage(e.target.value)} />
 
                 <label htmlFor="name">Name:</label>
                 <input
@@ -196,7 +196,6 @@ function Customer({ ...props }) {
         )}
       </div>
     </div>
-
   )
 }
 
