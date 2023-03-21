@@ -70,41 +70,41 @@ function Dashboard() {
         breakpoint: 1670,
         options: {
           chart: {
-            width: "750"
-          }
-        }
+            width: '750',
+          },
+        },
       },
       {
         breakpoint: 1550,
         options: {
           chart: {
-            width: "650"
-          }
-        }
+            width: '650',
+          },
+        },
       },
       {
         breakpoint: 1440,
         options: {
           chart: {
-            width: "950"
-          }
-        }
+            width: '950',
+          },
+        },
       },
       {
         breakpoint: 1305,
         options: {
           chart: {
-            width: "800"
-          }
-        }
+            width: '800',
+          },
+        },
       },
       {
         breakpoint: 1201,
         options: {
           chart: {
-            width: "950"
-          }
-        }
+            width: '950',
+          },
+        },
       },
     ],
   }
@@ -113,7 +113,13 @@ function Dashboard() {
       <div className="w-full my-0 mx-auto">
         <div className="mt-10 min-h-screen box-border px-10 w-full">
           <div className="flex justify-between">
-            <h1 className="text-xl font-bold">{window.location.pathname.split('/').map(item => item.charAt(0).toUpperCase() + item.substring(1))}</h1>
+            <h1 className="text-xl font-bold">
+              {window.location.pathname
+                .split('/')
+                .map(
+                  (item) => item.charAt(0).toUpperCase() + item.substring(1)
+                )}
+            </h1>
           </div>
           <div className="top-wrap flex justify-between items-center flex-wrap">
             <GeneralStatistics
@@ -263,7 +269,6 @@ function Dashboard() {
                     </button>
                   </Table.Cell>
                 </Table.Row>
-
               </Table.Body>
             </Table>
           </div>

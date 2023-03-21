@@ -28,7 +28,7 @@ import Shop from '../pages/Shop/Shop'
 import { RouteBackend } from '../pages/Routes'
 
 import NotFound from '../pages/NotFound'
-import DashboardLayout from '../layouts/DashboardLayout/DashboardLayout';
+import DashboardLayout from '../layouts/DashboardLayout/DashboardLayout'
 
 // Public routes
 const publicRoutes = [
@@ -39,7 +39,7 @@ const publicRoutes = [
   // * pages shop
   { path: config.routes.home, component: Home },
   { path: config.routes.profile, component: Profile },
-  { path: config.routes.products, component: Product, layout: null },
+  { path: config.routes.products, component: Product },
   { path: config.routes.productInfo, component: ProductDetail },
   { path: config.routes.cart, component: Cart },
   { path: config.routes.checkout, component: Checkout },
@@ -51,7 +51,7 @@ const publicRoutes = [
   {
     path: config.routes.dashboard,
     component: Dashboard,
-    layout: DashboardLayout
+    layout: DashboardLayout,
   },
   {
     path: config.routes.statisticsDashboard,

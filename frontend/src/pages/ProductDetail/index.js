@@ -15,15 +15,15 @@ function ProductDetail() {
   return (
     <div className="pt-3 p-5 sm:pt-10 sm:p-12 md:p-25 md:pt-12 lg:p-36 lg:pt-20 box-border">
       {/* // ? option */}
-      <div className="flex flex-col justify-around lg:flex-row">
+      <div className="grid grid-cols-1 xl:grid-cols-2">
         <div
-          className="p-5 w-auto border border-solid border-gray-400 rounded-3xl box-border
+          className="p-5 border border-solid border-gray-400 rounded-3xl box-border
           flex justify-center
         "
         >
-          <img src={infoBookDetail} alt="book_detail" />
+          <img className="h-full" src={infoBookDetail} alt="book_detail" />
         </div>
-        <div className="p-10 mt-5 w-auto h-4/6 border border-solid border-gray-400 rounded-3xl box-border">
+        <div className="p-10 mt-5 lg:mt-0 w-auto h-auto border border-solid border-gray-400 rounded-3xl box-border">
           <p className="p-1 mb-6 text-sm text-green-400 bg-gray-200 inline-block">
             IN STOCK
           </p>
