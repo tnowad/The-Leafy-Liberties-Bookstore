@@ -26,7 +26,7 @@ function Dashboard() {
     chart: {
       type: 'bar',
       height: '350px',
-      width: '830px',
+      width: '900px',
     },
     plotOptions: {
       bar: {
@@ -70,15 +70,15 @@ function Dashboard() {
         breakpoint: 1670,
         options: {
           chart: {
-            width: "650"
+            width: "750"
           }
         }
       },
       {
-        breakpoint: 1533,
+        breakpoint: 1550,
         options: {
           chart: {
-            width: "600"
+            width: "650"
           }
         }
       },
@@ -86,7 +86,7 @@ function Dashboard() {
         breakpoint: 1440,
         options: {
           chart: {
-            width: "850"
+            width: "950"
           }
         }
       },
@@ -94,7 +94,7 @@ function Dashboard() {
         breakpoint: 1305,
         options: {
           chart: {
-            width: "750"
+            width: "800"
           }
         }
       },
@@ -110,8 +110,7 @@ function Dashboard() {
   }
   return (
     <div className="w-full bg-neutral-100">
-      <div className="grid grid-cols-[200px_auto]">
-        <DashboardMenu />
+      <div className="w-full my-0 mx-auto">
         <div className="mt-10 min-h-screen box-border px-10 w-full">
           <div className="flex justify-between">
             <h1 className="text-xl font-bold">{window.location.pathname.split('/').map(item => item.charAt(0).toUpperCase() + item.substring(1))}</h1>
@@ -139,7 +138,7 @@ function Dashboard() {
               className="bg-orange-400 border-orange-400 shadow-[0_0_5px_1px_rgba(255,138,76,0.3)] shadow-orange-400"
             />
           </div>
-          <div className="body-wrap mt-8 flex justify-between items-start flex-wrap hidden">
+          <div className="body-wrap mt-8 flex justify-between items-start flex-wrap">
             <div className="chart 2xl:w-[65.5%] px-6 py-4 bg-white rounded-2xl shadow-lg md:w-full">
               <div className="total-revuenes">
                 <p className="font-semibold text-2xl">Total Revuenes</p>
@@ -149,9 +148,11 @@ function Dashboard() {
                 series={options.series}
                 options={options}
                 type={options.chart.type}
+                width={options.chart.width}
+                height={options.chart.height}
               />
             </div>
-            <div className="most-sold-items 2xl:w-[31.5%] py-4 px-4 bg-white rounded-2xl shadow-l md:w-full md:mt-5 2xl:mt-0">
+            <div className="most-sold-items 2xl:w-[31.5%] py-4 px-4 bg-white rounded-2xl shadow-lg md:w-full md:mt-5 2xl:mt-0">
               <p className="font-bold text-2xl mb-5">Most Sold Items</p>
               <div className="flex flex-col gap-4">
                 <div className="text-base font-medium">Dark</div>
@@ -175,7 +176,7 @@ function Dashboard() {
               </div>
             </div>
           </div>
-          <div className="table-statistics mt-8">
+          <div className="table-statistics my-8 shadow-lg">
             <Table>
               <Table.Head className="text-[px]">
                 <Table.HeadCell>Products</Table.HeadCell>
