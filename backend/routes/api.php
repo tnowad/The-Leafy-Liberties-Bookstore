@@ -25,11 +25,10 @@ Route::group(['prefix' => 'auth'], function () {
   Route::get('user-profile', [LoginController::class, 'userProfile']);
 });
 
-// Routes for user management
-Route::group(['prefix' => 'user'], function () {
-  Route::get('index', [UserController::class, 'index']);
-  Route::get('show/{id}', [UserController::class, 'show']);
-  Route::post('store', [UserController::class, 'store']);
-  Route::put('update/{id}', [UserController::class, 'update']);
-  Route::delete('delete/{id}', [UserController::class, 'destroy']);
+Route::group(['prefix' => 'users'], function () {
+  Route::get('/', [UserController::class, 'index']);
+  Route::post('/', [UserController::class, 'create']);
+  Route::get('/{id}', [UserController::class, 'show']);
+  Route::put('/{id}', [UserController::class, 'update']);
+  Route::delete('/{id}', [UserController::class, 'delete']);
 });

@@ -23,7 +23,7 @@ const RouteTree = ({ routes }) => {
         <li key={group.prefix} className="flex items-center space-x-2">
           <span className="font-bold">{group.prefix}</span>
           {group.routes.length > 0 && (
-            <ul className="space-y-1 ml-4">
+            <ul className="ml-4 space-y-1">
               {group.routes.map((route) => (
                 <li key={route.Route} className="truncate">
                   <span className="px-1 py-0.5 text-sm font-medium text-green-800 bg-green-100 rounded-md">
