@@ -1,11 +1,5 @@
 import React from 'react'
-import {
-  homeImg,
-  bestOffer,
-  genresHorror,
-  productImg,
-  star,
-} from '../../assets/images'
+import { homeImg, bestOffer, productImg, star } from '../../assets/images'
 import Product from '../../components/Product/index'
 import Author from '../../components/Author/index'
 import SectionTitle from '../../components/SectionTitle'
