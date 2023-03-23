@@ -4,7 +4,7 @@ import { userData } from './FakeData'
 
 export const AuthContext = createContext()
 
-const AuthProvider = ({ children }) => {
+const AuthProvider = ({ children }, nameData) => {
   const [loggedIn, setLoggedIn] = useState(false)
   const [cookies, setCookie] = useCookies(['currentUser'])
   const [currentUser, setCurrentUser] = useState({
