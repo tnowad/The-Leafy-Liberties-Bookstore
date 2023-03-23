@@ -326,7 +326,7 @@ function Dashboard() {
                 <>
                   {dashboardData.map((item) => {
                     return (
-                      <table className="w-full text-sm text-left text-gray-500 border-collapse overflow-hidden flex flex-row justify-between border-0 border-solid border-gray-200 border-b-[1px]">
+                      <table className="w-full text-sm text-left text-gray-500 border-collapse overflow-hidden flex flex-row justify-between items-center border-0 border-solid border-gray-200 border-b-[1px]">
                         <thead className="text-xs text-gray-700 uppercase">
                           <tr className="flex flex-col">
                             {tableThead.map((item) => {
@@ -339,8 +339,8 @@ function Dashboard() {
                           </tr>
                         </thead>
                         <tbody>
-                          <tr className="bg-white flex flex-col justify-between">
-                            <td className="px-5 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                          <tr className="bg-white flex flex-col justify-between items-center">
+                            <td className="px-5 py-[10px] font-medium text-gray-900 whitespace-nowrap dark:text-white">
                               {item.products}
                             </td>
                             <td class="px-5 py-[10px] w-full">{item.order_id}</td>
