@@ -1,5 +1,4 @@
 import React, { createContext, useState } from 'react'
-import { useCookies } from 'react-cookie'
 import { userData } from './FakeData'
 import { setCookie } from '../../hooks/useCookie'
 
@@ -20,7 +19,6 @@ const AuthProvider = ({ children }, nameData) => {
         usernameCurrent: username,
         passwordCurrent: password,
       })
-      // setCookie('currentUser', currentUser, { path: '/' })
       setCookie('currentUser', currentUser, 5)
     }
     check ? (

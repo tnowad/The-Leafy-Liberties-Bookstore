@@ -1,5 +1,4 @@
-import DashboardMenu from '../../layouts/DashboardComponent/DashboardMenu'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { customerData } from './Data'
 import WindowSize from '../../components/WindowSize/WindowSize'
 import { Link } from 'react-router-dom'

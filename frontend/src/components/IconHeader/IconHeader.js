@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Dropdown from '../Dropdown/Dropdown'
 import { Link } from 'react-router-dom'
 import { deleteCookie } from '../../hooks/useCookie'
+import { userData } from '../../pages/Login/FakeData'
 
 function IconHeader({ className }) {
   const arrayIconsHeader = [
@@ -27,25 +28,21 @@ function IconHeader({ className }) {
                 icon={item.icon}
               />
             }
-            options={
-              index === 1
-                ? [
-                    { label: <Link to="/profile">Account setting</Link> },
-                    {
-                      label: (
-                        <Link
-                          to="/login"
-                          onClick={() => {
-                            deleteCookie('currentUser')
-                          }}
-                        >
-                          Logout
-                        </Link>
-                      ),
-                    },
-                  ]
-                : ''
-            }
+            options={[
+              { label: <Link to="/profile">Account setting</Link> },
+              {
+                label: (
+                  <Link
+                    to="/login"
+                    onClick={() => {
+                      deleteCookie('currentUser')
+                    }}
+                  >
+                    Logout
+                  </Link>
+                ),
+              },
+            ]}
           />
         ) : (
           <Dropdown

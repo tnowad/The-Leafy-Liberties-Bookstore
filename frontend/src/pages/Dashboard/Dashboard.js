@@ -1,6 +1,5 @@
 import React from 'react'
 import { useState } from 'react'
-import DashboardMenu from '../../layouts/DashboardComponent/DashboardMenu'
 import GeneralStatistics from '../../components/GeneralStatistics/GeneralStatistics'
 import {
   faArrowTrendUp,
@@ -331,7 +330,10 @@ function Dashboard() {
                           <tr className="flex flex-col">
                             {tableThead.map((item) => {
                               return (
-                                <th scope="col" className="px-5 py-[14px] w-full">
+                                <th
+                                  scope="col"
+                                  className="px-5 py-[14px] w-full"
+                                >
                                   {item.name}
                                 </th>
                               )
@@ -343,7 +345,9 @@ function Dashboard() {
                             <td className="px-5 py-[10px] font-medium text-gray-900 whitespace-nowrap dark:text-white">
                               {item.products}
                             </td>
-                            <td class="px-5 py-[10px] w-full">{item.order_id}</td>
+                            <td class="px-5 py-[10px] w-full">
+                              {item.order_id}
+                            </td>
                             <td class="px-5 py-[10px] w-full">{item.date}</td>
                             <td class="px-5 py-[10px] w-full">{item.name}</td>
                             <td class="px-5 py-[10px] w-full">{item.status}</td>
