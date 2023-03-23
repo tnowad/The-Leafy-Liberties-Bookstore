@@ -2,75 +2,120 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UserRequest;
 use App\Models\User;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
   /**
-   * Display a listing of the resource.
+   * Get all users. GET / users.
+   * Response Format: application/json
+   * - 200 : Success
+   * - 403 : User doesn't have permission to view users.
+   *
+   * @return list of users. Response Format : application / json { message : " You are not authorized to view users.
    */
-  public function index()
+  public function index(): JsonResponse
   {
-    // if have permission to view users
-    if (auth()->user()->can('user_show')) {
-      // get all users
-      $users = User::all();
-      // return users
-      return response()->json($users);
+    // If the user is not authorized to view users.
+    if (!auth()->user()->can('users.access')) {
+      return response()->json(['message' => 'You are not authorized to view users.'], 403);
     }
 
-    // if don't have permission to view users
-    return response()->json([
-      'message' => 'You don\'t have permission to view users',
-    ], 403);
+    $users = User::all();
+
+    return response()->json($users, 200);
   }
 
   /**
-   * Show the form for creating a new resource.
+   * Create a new user. Requires authentication.
+   * Response Format: application/json
+   * - 201 : User created.
+   * - Failure 403 : User doesn't have permission to create users.
+   *
+   * @param $request
+   *
+   * @return $user The user that was created or an error message if something went wrong with the request
    */
-  public function create()
+  public function create(UserRequest $request): JsonResponse
   {
+    // If the user is not authorized to create users.
+    if (!auth()->user()->can('users.create')) {
+      return response()->json(['message' => 'You are not authorized to create users.'], 403);
+    }
 
+    $user = User::create($request->all());
+
+    return response()->json($user, 201);
   }
 
   /**
-   * Store a newly created resource in storage.
+   * Return a single user Requires authentication.
+   * Response Format: application/json
+   * - 200 : Success
+   * - 403 : User doesn't have permission to view users.
+   *
+   * @param $id
+   *
+   * @return $user The user that was found or an error message if something went wrong with the request
    */
-  public function store(Request $request)
+  public function show(string $id): JsonResponse
   {
-    //
+    // If the user is not authorized to view users.
+    if (!auth()->user()->can('users.view')) {
+      return response()->json(['message' => 'You are not authorized to view users.'], 403);
+    }
+
+    $user = User::findOrFail($id);
+
+    return response()->json($user, 200);
   }
 
   /**
-   * Display the specified resource.
+   * Update a user in the database.
+   * Response Format: application/json
+   * - 200 : Success
+   * - 403 : User doesn't have permission to update users.
+   * - 404 : User doesn't exist.
+   *
+   * @param $request
+   * @param $id
+   *
+   * @return $user The user that was updated or an error message if something went wrong with the request
    */
-  public function show(string $id)
+  public function update(UserRequest $request, string $id): JsonResponse
   {
-    //
+    // If the user is not authorized to update users.
+    if (!auth()->user()->can('users.update')) {
+      return response()->json(['message' => 'You are not authorized to update users.'], 403);
+    }
+    $user = User::findOrFail($id);
+
+    $user->update($request->all());
+
+    return response()->json($user, 200);
   }
 
   /**
-   * Show the form for editing the specified resource.
-   */
-  public function edit(string $id)
-  {
-    //
-  }
-
-  /**
-   * Update the specified resource in storage.
-   */
-  public function update(Request $request, string $id)
-  {
-    //
-  }
-
-  /**
-   * Remove the specified resource from storage.
+   * Delete a user from the database. This is a DELETE request to / users / { id }.
+   *
+   * @param $id
+   *
+   * @return 204 if everything is fine 400 if there is a permission error. 404 if the user doesn't
    */
   public function destroy(string $id)
   {
-    //
+    // If the user is not authorized to delete users.
+    if (!auth()->user()->can('users.delete')) {
+      return response()->json(['message' => 'You are not authorized to delete users.'], 403);
+    }
+
+    $user = User::findOrFail($id);
+
+    $user->delete();
+
+    return response()->json(null, 204);
   }
 }
