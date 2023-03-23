@@ -24,7 +24,7 @@ function Header() {
   }
 
   return (
-    <header className="flex justify-center w-full sticky top-0 bg-white z-10">
+    <header className="flex justify-center w-full sticky top-0 bg-white z-10 border-0 border-solid border-gray-200 border-b-[1px]">
       <div className="mt-5 h-24 container flex justify-between items-center">
         <Link to="/" className="w-48">
           <img src={logo} alt="logo" className="h-20" />

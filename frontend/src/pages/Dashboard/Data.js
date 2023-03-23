@@ -93,3 +93,45 @@ export const productData = [
     amount: 123,
   },
 ]
+export const dashboardData = [
+  {
+    products: 'Iphone 13 Pro',
+    order_id: '#11232',
+    date: 'Jun 29,2022',
+    name: 'Jack Phat',
+    status: 'Delivered',
+    amount: '$400',
+  },
+  {
+    products: 'Iphone 13 Pro',
+    order_id: '#11232',
+    date: 'Jun 29,2022',
+    name: 'Jack Phat',
+    status: 'Delivered',
+    amount: '$400',
+  },
+  {
+    products: 'Iphone 13 Pro',
+    order_id: '#11232',
+    date: 'Jun 29,2022',
+    name: 'Jack Phat',
+    status: 'Delivered',
+    amount: '$400',
+  },
+  {
+    products: 'Iphone 13 Pro',
+    order_id: '#11232',
+    date: 'Jun 29,2022',
+    name: 'Jack Phat',
+    status: 'Delivered',
+    amount: '$400',
+  },
+  {
+    products: 'Iphone 13 Pro',
+    order_id: '#11232',
+    date: 'Jun 29,2022',
+    name: 'Jack Phat',
+    status: 'Delivered',
+    amount: '$400',
+  },
+]
