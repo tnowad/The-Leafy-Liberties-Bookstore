@@ -24,7 +24,7 @@ function Wishlist() {
   return (
     <div>
       <div
-        className="md:my-16
+        className="md:my-8
       flex flex-col items-center"
       >
         <FontAwesomeIcon className="text-6xl text-green-800" icon={faHeart} />

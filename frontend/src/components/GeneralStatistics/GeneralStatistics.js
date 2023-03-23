@@ -4,11 +4,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowTrendUp } from '@fortawesome/free-solid-svg-icons'
 export default function GeneralStatistics(props) {
   return (
-    <div className="mt-5 flex justify-between items-center p-6 bg-white rounded-2xl shadow-lg w-full">
+    <div className="mt-5 flex justify-between items-center p-5 bg-white rounded-2xl shadow-lg w-full">
       <div className="hero-one flex flex-col gap-1">
         <p className="font-semibold text-sm">{props.text}</p>
         <p className="font-bold text-lg">{props.money}</p>
-        <p className="text-gray-500">{props.desc}</p>
+        <p className="text-gray-500 break-words">{props.desc}</p>
       </div>
       <div
         className={`icon w-20 border-solid p-3 rounded-2xl text-center ${props.className}`}
