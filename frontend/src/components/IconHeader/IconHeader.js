@@ -21,11 +21,11 @@ function IconHeader({ className }) {
       {arrayIconsHeader.map((item, index) => {
         return index === 1 ? (
           <Dropdown
+            key={index}
             trigger={
               <FontAwesomeIcon
                 className="mt-2 md:mt-0 md:mr-2 cursor-pointer text-gray-800 hover:text-green-800 transition-all"
                 icon={item.icon}
-                key={index}
               />
             }
             options={
@@ -50,11 +50,11 @@ function IconHeader({ className }) {
           />
         ) : (
           <Dropdown
+            key={index}
             trigger={
               <FontAwesomeIcon
                 className="mt-2 md:mt-0 md:mr-2 cursor-pointer text-gray-800 hover:text-green-800 transition-all"
                 icon={item.icon}
-                key={index}
               />
             }
             path={item.path}
