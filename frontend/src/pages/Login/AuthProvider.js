@@ -1,5 +1,6 @@
 import React, { createContext, useState } from 'react'
 import { useCookies } from 'react-cookie'
+import { SetCookie } from '../../hooks/useCookie'
 import { userData } from './FakeData'
 
 export const AuthContext = createContext()
@@ -11,7 +12,6 @@ const AuthProvider = ({ children }) => {
     usernameCurrent: null,
     passwordCurrent: null,
   })
-  // console.log(setCookie('currentUser', currentUser, { path: '/' }))
   const login = (username, password) => {
     const check = userData.some((user) => {
       return username === user.username && password === user.password
@@ -21,7 +21,6 @@ const AuthProvider = ({ children }) => {
         usernameCurrent: username,
         passwordCurrent: password,
       })
-      // console.log(currentUser)
       setCookie('currentUser', currentUser, { path: '/' })
     }
     check ? (

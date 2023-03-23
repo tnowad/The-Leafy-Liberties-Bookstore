@@ -44,6 +44,7 @@ function Header() {
               { label: <Link to="/products?category=echill">Category 4</Link> },
               { label: <Link to="/products?category=echill">Category 5</Link> },
             ]}
+            changeTitle
           />
         </div>
         <div className="w-full box-border px-10">
