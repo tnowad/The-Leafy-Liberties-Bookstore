@@ -3,7 +3,8 @@ import { publicRoutes, protectedRoutes } from './routes/routes'
 import DefaultLayout from './layouts/DefaultLayout'
 import { Fragment } from 'react'
 import { ProtectedRoute } from './components/ProtectedRoute/ProtectedRoute'
-import { AuthProvider, useAuth } from './contexts/AuthContext'
+// import { AuthProvider, useAuth } from './contexts/AuthContext'
+import AuthProvider from './pages/Login/AuthProvider'
 
 function App() {
   const renderPublicRoutes = () => {
