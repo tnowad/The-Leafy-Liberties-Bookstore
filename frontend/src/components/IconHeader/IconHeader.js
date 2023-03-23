@@ -1,11 +1,10 @@
 import React from 'react'
-import { useCookies } from 'react-cookie'
 import { faHeart, faUser } from '@fortawesome/free-regular-svg-icons'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Dropdown from '../Dropdown/Dropdown'
 import { Link } from 'react-router-dom'
-import { RemoveCookie } from '../../hooks/useCookie'
+import { deleteCookie } from '../../hooks/useCookie'
 
 function IconHeader({ className }) {
   const arrayIconsHeader = [
@@ -37,7 +36,7 @@ function IconHeader({ className }) {
                         <Link
                           to="/login"
                           onClick={() => {
-                            RemoveCookie('currentUser')
+                            deleteCookie('currentUser')
                           }}
                         >
                           Logout
