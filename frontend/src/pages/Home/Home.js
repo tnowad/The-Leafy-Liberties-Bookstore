@@ -1,11 +1,5 @@
-import React from 'react'
-import {
-  homeImg,
-  bestOffer,
-  genresHorror,
-  productImg,
-  star,
-} from '../../assets/images'
+import React, { useEffect, useState } from 'react'
+import { homeImg, bestOffer, productImg, star } from '../../assets/images'
 import Product from '../../components/Product/index'
 import Author from '../../components/Author/index'
 import SectionTitle from '../../components/SectionTitle'
@@ -13,7 +7,19 @@ import { ProductHorizontal } from '../../components/Product/index'
 import GenresKind from '../../components/GenresKind/GenresKind'
 import { Carousel } from 'flowbite-react'
 import Slider from 'react-slick'
+import { useCookies } from 'react-cookie'
+
 function Home() {
+  const [cookies, setCookie] = useCookies(['currentUser'])
+  const [currentUser, setCurrentUser] = useState(null)
+
+  useEffect(() => {
+    const storedUser = cookies.currentUser
+    if (storedUser) {
+      setCurrentUser(storedUser)
+    } else window.location.href = '/login'
+  }, [])
+
   var settings = {
     infinite: true,
     cssEase: 'linear',

@@ -29,11 +29,12 @@ import { RouteBackend } from '../pages/Routes'
 
 import NotFound from '../pages/NotFound'
 import DashboardLayout from '../layouts/DashboardLayout/DashboardLayout'
+import AuthLogin from '../pages/Login/AuthLogin'
 
 // Public routes
 const publicRoutes = [
   // * account
-  { path: config.routes.login, component: Login },
+  { path: config.routes.login, component: AuthLogin },
   { path: config.routes.register, component: Register },
   { path: config.routes.forgotPassword, component: ForgotPassword },
   // * pages shop

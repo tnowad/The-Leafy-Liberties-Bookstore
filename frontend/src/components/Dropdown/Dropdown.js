@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const Dropdown = ({ options, trigger }) => {
+const Dropdown = ({ options, trigger, changeTitle, path }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [selectedOption, setSelectedOption] = useState(null)
 
@@ -13,10 +13,16 @@ const Dropdown = ({ options, trigger }) => {
     <div className="relative w-full">
       <button
         type="button"
-        className="whitespace-nowrap inline-flex items-center justify-between w-full px-4 py-2 border border-gray-300 rounded-full shadow-sm bg-primary text-sm font-medium text-white hover:bg-primary-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
-        onClick={() => setIsOpen(!isOpen)}
+        className={`whitespace-nowrap inline-flex items-center justify-between w-full px-4 py-2 border border-gray-300 rounded-full shadow-sm  text-sm font-medium text-white ${
+          changeTitle ? `bg-primary hover:bg-primary-800 ` : ''
+        } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500`}
+        onClick={() =>
+          options
+            ? setIsOpen(!isOpen)
+            : (window.location.href = path ? path : '')
+        }
       >
-        {selectedOption ? selectedOption.label : trigger}
+        {selectedOption && changeTitle ? selectedOption.label : trigger}
         <svg
           className="-mr-1 ml-2 h-5 w-5"
           xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +37,7 @@ const Dropdown = ({ options, trigger }) => {
           />
         </svg>
       </button>
-      {isOpen && (
+      {isOpen && options && (
         <div className="absolute z-10 w-full mt-2 rounded-md bg-white shadow-lg">
           {options.map((option) => (
             <button
