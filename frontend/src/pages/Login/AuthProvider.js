@@ -1,6 +1,5 @@
 import React, { createContext, useState } from 'react'
 import { useCookies } from 'react-cookie'
-import { SetCookie } from '../../hooks/useCookie'
 import { userData } from './FakeData'
 
 export const AuthContext = createContext()
