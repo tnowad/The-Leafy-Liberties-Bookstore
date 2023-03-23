@@ -66,6 +66,7 @@ function Product({ ...props }) {
                     {arrayTitle.map((item) => {
                       return (
                         <th
+                          key={item.name}
                           scope="col"
                           colSpan={item.action === 'Action' ? 2 : 1}
                           className="px-6 py-3"
@@ -79,7 +80,10 @@ function Product({ ...props }) {
                 <tbody>
                   {productData.map((item) => {
                     return (
-                      <tr className="bg-white border-b hover:bg-gray-200 transition-opacity">
+                      <tr
+                        key={item.id}
+                        className="bg-white border-b hover:bg-gray-200 transition-opacity"
+                      >
                         <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                           {item.image}
                         </td>
@@ -105,7 +109,10 @@ function Product({ ...props }) {
               <>
                 {productData.map((item) => {
                   return (
-                    <table className="w-full text-sm text-left text-gray-500 border-collapse overflow-hidden flex flex-row justify-between border-0 border-solid border-gray-200 border-b-[1px]">
+                    <table
+                      key={item.id}
+                      className="w-full text-sm text-left text-gray-500 border-collapse overflow-hidden flex flex-row justify-between border-0 border-solid border-gray-200 border-b-[1px]"
+                    >
                       <thead className="text-xs text-gray-700 uppercase">
                         <tr className="flex flex-col">
                           {arrayTitle.map((item) => {
@@ -171,12 +178,6 @@ function Product({ ...props }) {
                   value={remaining}
                   onChange={(e) => setRemaining(e.target.value)}
                 />
-                {/* <label htmlFor="totalBuy">Total buy:</label>
-                    <input
-                      type="number"
-                      value={totalBuy}
-                      onChange={(e) => setTotalBuy(e.target.value)}
-                    /> */}
                 <label htmlFor="status">Status:</label>
                 <select
                   value={status}
