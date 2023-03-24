@@ -67,8 +67,7 @@ function DashboardMenu({ ...props }) {
                 key={item.name}
               >
                 <FontAwesomeIcon icon={item.icon} />
-                <Link to={item.link} className="ml-2">
-                  {' '}
+                <Link to={item.link} className="ml-2 w-full">
                   {item.name}
                 </Link>
               </span>
