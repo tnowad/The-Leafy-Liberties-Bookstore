@@ -29,7 +29,7 @@ function IconHeader({ className }) {
               />
             }
             options={[
-              { label: <Link to="/profile">Account setting</Link> },
+              { label: <Link to="/profile">Profile</Link> },
               {
                 label: (
                   <Link
@@ -42,6 +42,7 @@ function IconHeader({ className }) {
                   </Link>
                 ),
               },
+              {},
             ]}
           />
         ) : (

@@ -15,11 +15,8 @@ const AuthProvider = ({ children }, nameData) => {
       return username === user.username && password === user.password
     })
     if (check) {
-      setCurrentUser({
-        usernameCurrent: username,
-        passwordCurrent: password,
-      })
-      setCookie('currentUser', currentUser, 5)
+      setCurrentUser(username, password)
+      setCookie('currentUser', JSON.stringify({ username, password }), 5)
     }
     check ? (
       setLoggedIn(true)
