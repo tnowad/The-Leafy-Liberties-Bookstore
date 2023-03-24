@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { AuthContext } from './AuthProvider'
+
 export default function Login() {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')

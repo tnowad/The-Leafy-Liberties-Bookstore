@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { homeImg, bestOffer, productImg, star } from '../../assets/images'
 import Product from '../../components/Product/index'
 import Author from '../../components/Author/index'
@@ -7,17 +7,13 @@ import { ProductHorizontal } from '../../components/Product/index'
 import GenresKind from '../../components/GenresKind/GenresKind'
 import { Carousel } from 'flowbite-react'
 import Slider from 'react-slick'
-import { useCookies } from 'react-cookie'
 import { getCookie } from '../../hooks/useCookie'
 
 function Home() {
-  const [cookies, setCookie] = useCookies(['currentUser'])
-
   useEffect(() => {
-    const storedUser = cookies.currentUser
     const currentUserCookie = getCookie('currentUser')
-    console.log(currentUserCookie['username'])
-    if (!storedUser) window.location.href = '/login'
+
+    if (!currentUserCookie) window.location.href = '/login'
   }, [])
 
   var settings = {

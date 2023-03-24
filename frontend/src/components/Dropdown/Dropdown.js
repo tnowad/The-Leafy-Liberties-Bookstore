@@ -44,16 +44,20 @@ const Dropdown = ({ options, trigger, changeTitle, path }) => {
       </button>
       {isOpen && options && (
         <div className="absolute top-8 z-10 w-auto mt-2 rounded-md bg-white shadow-lg">
-          {options.map((option) => (
-            <button
-              key={option.value}
-              type="button"
-              className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-              onClick={() => handleOptionClick(option)}
-            >
-              {option.label}
-            </button>
-          ))}
+          {options.map((option) =>
+            option.label ? (
+              <button
+                key={option.value}
+                type="button"
+                className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                onClick={() => handleOptionClick(option)}
+              >
+                {option.label}
+              </button>
+            ) : (
+              ''
+            )
+          )}
         </div>
       )}
     </div>
