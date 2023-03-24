@@ -135,3 +135,46 @@ export const dashboardData = [
     amount: '$400',
   },
 ]
+export const CouponData = [
+  {
+    code: 'APP10K',
+    desc: 'Giảm cố định 10.000 VND trên tổng giá',
+    date: '11/11/2022 00:00',
+    experied: 'End less',
+    usage: '5',
+    status: 'Active'
+  },
+  {
+    code: 'APP10K',
+    desc: 'Giảm ngay 10k cho mọi sản phẩm ',
+    date: '11/11/2022 00:00',
+    experied: 'End less',
+    usage: '1',
+    status: 'Active'
+  },
+  {
+    code: 'APP10K',
+    desc: 'Giảm ngay 10k cho mọi sản phẩm ',
+    date: '11/11/2022 00:00',
+    experied: 'End less',
+    usage: '7',
+    status: 'Active'
+  },
+  {
+    code: 'APP10K',
+    desc: 'Giảm ngay 10k cho mọi sản phẩm ',
+    date: '11/11/2022 00:00',
+    experied: 'End less',
+    usage: '4',
+    status: 'Active'
+  },
+  {
+    code: 'APP10K',
+    desc: 'Giảm ngay 10k cho mọi sản phẩm ',
+    date: '11/11/2022 00:00',
+    experied: '27/10/2022 23:59',
+    usage: '10',
+    status: 'Active'
+  },
+
+]

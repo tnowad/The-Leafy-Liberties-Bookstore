@@ -153,7 +153,7 @@ function Product({ ...props }) {
         </div>
         {isFormVisible && (
           <div className="absolute top-0 left-0 h-full w-full flex justify-center items-center bg-gray-500 bg-opacity-75 z-10">
-            <div className="bg-white p-8 rounded-md shadow-lg">
+            <div className="bg-white p-8 rounded-md shadow-lg w-[500px]">
               <h2 className="text-xl font-bold mb-4">Add Product</h2>
               {/* Form fields go here */}
               <form className="flex flex-col" onSubmit={handleSubmit}>
@@ -206,7 +206,7 @@ function Product({ ...props }) {
                 />
 
                 <button
-                  className="mt-2 bg-green-800 hover:bg-green-600 text-white font-bold py-2 px-4 rounded"
+                  className="mt-2 bg-green-800 hover:bg-green-600 transition-colors text-white font-bold py-2 px-4 rounded"
                   type="submit"
                 >
                   Submit

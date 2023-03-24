@@ -8,6 +8,7 @@ import {
   faUserGroup,
   faBars,
   faClose,
+  faTicket
 } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 import { logo } from '../../assets/images'
@@ -43,6 +44,11 @@ function DashboardMenu({ ...props }) {
       link: '/dashboard/message',
       icon: faMessage,
     },
+    {
+      name: 'Coupon',
+      link: '/dashboard/coupon',
+      icon: faTicket
+    }
   ]
 
   return (

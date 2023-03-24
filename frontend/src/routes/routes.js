@@ -22,6 +22,7 @@ import Customer from '../pages/Dashboard/Customer'
 import Statistics from '../pages/Dashboard/Statistics'
 import Payment from '../pages/Dashboard/Payment'
 import Message from '../pages/Dashboard/Message'
+import Coupon from '../pages/Dashboard/Coupon'
 import Shop from '../pages/Shop/Shop'
 
 //  *Backend
@@ -76,6 +77,11 @@ const publicRoutes = [
   {
     path: config.routes.messageDashboard,
     component: Message,
+    layout: DashboardLayout,
+  },
+  {
+    path: config.routes.couponDashboard,
+    component: Coupon,
     layout: DashboardLayout,
   },
   // * backend routes

@@ -21,7 +21,7 @@ const routes = {
   statisticsDashboard: '/dashboard/statistics',
   paymentDashboard: '/dashboard/payment',
   messageDashboard: '/dashboard/message',
-
+  couponDashboard: '/dashboard/coupon',
   routes: '/routes',
 }
 
