@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { faHeart, faUser } from '@fortawesome/free-regular-svg-icons'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Dropdown from '../Dropdown/Dropdown'
 import { Link } from 'react-router-dom'
-import { deleteCookie } from '../../hooks/useCookie'
+import { deleteCookie, getCookie } from '../../hooks/useCookie'
 import { userData } from '../../pages/Login/FakeData'
 
 function IconHeader({ className }) {
@@ -13,6 +13,17 @@ function IconHeader({ className }) {
     { icon: faUser },
     { icon: faShoppingCart, path: '/cart' },
   ]
+
+  // const [checkStatusCookie, setCheckStatusCookie] = useState(false)
+
+  // const currentUser = getCookie('currentUser')
+  // const currentUserData = () => {
+  //   return userData.find(
+  //     (user) =>
+  //       user.username === currentUser.username &&
+  //       user.password === currentUser.password
+  //   ).role
+  // }
 
   return (
     <div
@@ -29,7 +40,7 @@ function IconHeader({ className }) {
               />
             }
             options={[
-              { label: <Link to="/profile">Profile</Link> },
+              { label: <Link to="/profile">Settings</Link> },
               {
                 label: (
                   <Link
@@ -42,7 +53,9 @@ function IconHeader({ className }) {
                   </Link>
                 ),
               },
-              {},
+              // checkStatusCookie && currentUserData === 'admin'
+              //   ? { label: <Link to="/dashboard">Dashboard</Link> }
+              //   : '',
             ]}
           />
         ) : (

@@ -10,13 +10,14 @@ export const setCookie = (name, value, days) => {
 
 export const getCookie = (name) => {
   const cookieString = decodeURIComponent(document.cookie)
+  if (!cookieString) return null
   const cookies = cookieString.split(';')
   const cookieObject = {}
   cookies.forEach((cookie) => {
     const [cookieName, cookieValue] = cookie.split('=')
     cookieObject[cookieName.trim()] = cookieValue.trim()
   })
-  return cookieObject[name]
+  return JSON.parse(cookieObject[name])
 }
 
 export const updateCookie = (name, value, days) => {
