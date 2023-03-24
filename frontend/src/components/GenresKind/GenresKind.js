@@ -2,8 +2,8 @@ import React from 'react'
 import { genresHorror } from '../../assets/images'
 export default function GenresKind(props) {
   return (
-    <div className={`genres-detail relative overflow-hidden rounded-3xl cursor-pointer`}>
-      <div className="img overflow-hidden w-[450px] rounded-3xl">
+    <div className={`genres-detail relative overflow-hidden rounded-3xl cursor-pointer mr-2 w-full`}>
+      <div className="img overflow-hidden w-[90%] rounded-3xl">
         <img
           src={genresHorror}
           alt=""

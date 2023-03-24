@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 function Message() {
   const arrayTitle = [
-    { name: 'Name' },
+    { name: 'Book Name' },
     { name: 'User post ' },
     { name: 'Content' },
     { name: 'Time' },
@@ -53,7 +53,7 @@ function Message() {
                           key={item.name}
                           scope="col"
                           colSpan={item.action === 'Action' ? 2 : 1}
-                          className="px-6 py-3 text-center"
+                          className="px-6 py-3"
                         >
                           {item.name}
                         </th>
@@ -68,16 +68,16 @@ function Message() {
                         key={item.id}
                         className="bg-white border-b hover:bg-gray-200 transition-opacity"
                       >
-                        <td class="px-5 py-4 text-center">
+                        <td class="px-5 py-4">
                           {item.productName}
                         </td>
-                        <td class="px-5 py-4 text-center ">{item.user}</td>
-                        <td class="px-5 py-4 text-center ">{item.content}</td>
-                        <td class="px-5 py-4 text-center ">{item.time}</td>
-                        <td class="px-6 py-4 text-center ">
+                        <td class="px-5 py-4">{item.user}</td>
+                        <td class="px-5 py-4">{item.content}</td>
+                        <td class="px-5 py-4">{item.time}</td>
+                        <td class="px-6 py-4">
                           <Link
                             to="#"
-                            class="font-medium text-white px-4 py-2 bg-green-700 rounded-lg"
+                            class="font-medium text-white px-4 py-2 bg-green-700 rounded-lg hover:bg-green-500 transition-colors"
                           >
                             •••
                           </Link>
@@ -119,7 +119,7 @@ function Message() {
                           <td class="px-5 py-4 w-full">
                             <Link
                               to="#"
-                              class="font-medium text-white px-4 py-2 bg-green-700 rounded-lg"
+                              class="font-medium text-white px-4 py-2 bg-green-700 rounded-lg hover:bg-green-500 transition-colors"
                             >
                               •••
                             </Link>

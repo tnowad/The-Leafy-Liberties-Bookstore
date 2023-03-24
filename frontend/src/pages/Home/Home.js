@@ -20,7 +20,7 @@ function Home() {
     infinite: true,
     cssEase: 'linear',
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 2000,
     arrows: false,
     dots: false,
     speed: 1000,
@@ -60,7 +60,7 @@ function Home() {
     autoplaySpeed: 3000,
     arrows: false,
     dots: false,
-    speed: 1000,
+    speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
     responsive: [
@@ -148,7 +148,7 @@ function Home() {
                 <p className="text-lg text-white font-normal xl:text-base">
                   Best Offer
                 </p>
-                <p className="text-4xl xl:text-3xl text-white">Save 50%</p>
+                <p className="text-4xl xl:text-3xl text-white">Save 100%</p>
                 <button className=" bg-white w-32 text-lg text-pink-400 font-bold p-2 rounded-full mt-3">
                   See more
                 </button>

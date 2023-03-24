@@ -6,6 +6,7 @@ import {
   faUserGroup,
   faDollarSign,
   faBookBible,
+  faBagShopping
 } from '@fortawesome/free-solid-svg-icons'
 import Chart from 'react-apexcharts'
 import { Progress } from 'flowbite-react'
@@ -33,11 +34,6 @@ function Dashboard() {
         data: [44, 55, 57, 56, 61, 58, 63, 60, 66],
       },
     ],
-    chart: {
-      type: 'bar',
-      height: '350px',
-      width: '900px',
-    },
     plotOptions: {
       bar: {
         horizontal: false,
@@ -73,118 +69,7 @@ function Dashboard() {
     },
     fill: {
       opacity: 1,
-      // colors: ['#F44336', '#E91E63'],
     },
-    responsive: [
-      {
-        breakpoint: 1670,
-        options: {
-          chart: {
-            width: '750',
-          },
-          plotOptions: {
-            bar: {
-              borderRadius: 4,
-              horizontal: false,
-            },
-          },
-        },
-      },
-      {
-        breakpoint: 1550,
-        options: {
-          chart: {
-            width: '650',
-          },
-        },
-      },
-      {
-        breakpoint: 1440,
-        options: {
-          chart: {
-            width: '950',
-          },
-        },
-      },
-      {
-        breakpoint: 1305,
-        options: {
-          chart: {
-            width: '800',
-          },
-        },
-      },
-      {
-        breakpoint: 1201,
-        options: {
-          chart: {
-            width: '950',
-          },
-        },
-      },
-      {
-        breakpoint: 1105,
-        options: {
-          chart: {
-            width: '800',
-          },
-        },
-      },
-      {
-        breakpoint: 982,
-        options: {
-          chart: {
-            width: '700',
-          },
-          plotOptions: {
-            bar: {
-              borderRadius: 4,
-              horizontal: false,
-            },
-          },
-        },
-      },
-      {
-        breakpoint: 888,
-        options: {
-          chart: {
-            type: 'bar',
-            width: '550',
-            height: '500',
-          },
-          plotOptions: {
-            bar: {
-              borderRadius: 4,
-              horizontal: true,
-            },
-          },
-        },
-      },
-      {
-        breakpoint: 740,
-        options: {
-          chart: {
-            width: '450',
-          },
-        },
-      },
-      {
-        breakpoint: 640,
-        options: {
-          chart: {
-            width: '350',
-          },
-        },
-      },
-      {
-        breakpoint: 530,
-        options: {
-          chart: {
-            width: '250',
-          },
-        },
-      },
-    ],
   }
   const tableThead = [
     { name: 'Products' },
@@ -231,10 +116,10 @@ function Dashboard() {
               className="bg-orange-400 border-orange-400 shadow-[0_0_5px_1px_rgba(255,138,76,0.3)] shadow-orange-400"
             />
             <GeneralStatistics
-              iconic={faUserGroup}
-              text="New Product"
+              iconic={faBagShopping}
+              text="New Order"
               money="12"
-              desc="More product for sales"
+              desc="New things coming' up"
               className="bg-red-400 border-red-400 shadow-[0_0_5px_1px_rgba(255,138,76,0.3)] shadow-red-400"
             />
           </div>
@@ -247,9 +132,9 @@ function Dashboard() {
               <Chart
                 series={options.series}
                 options={options}
-                type={options.chart.type}
-                width={options.chart.width}
-                height={options.chart.height}
+                type="bar"
+                width="100%"
+                height="350px"
               />
             </div>
             <div className="most-sold-items 2xl:w-[31.5%] py-4 px-4 bg-white rounded-2xl shadow-lg mobile:w-full mobile:mt-5 2xl:mt-0">
@@ -311,7 +196,7 @@ function Dashboard() {
                           <td class="px-6 py-4">
                             <Link
                               to="#"
-                              class="font-medium text-white px-4 py-2 bg-green-700 rounded-lg"
+                              class="font-medium text-white px-4 py-2 bg-green-700 rounded-lg hover:bg-green-500 transition-colors"
                             >
                               •••
                             </Link>
@@ -355,7 +240,7 @@ function Dashboard() {
                             <td class="px-5 py-[10px] w-full">
                               <Link
                                 to="#"
-                                class="font-medium text-white px-4 py-2 bg-green-700 rounded-lg"
+                                class="font-medium text-white px-4 py-2 bg-green-700 rounded-lg hover:bg-green-500 transition-colors"
                               >
                                 •••
                               </Link>
