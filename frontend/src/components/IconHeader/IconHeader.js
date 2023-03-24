@@ -14,17 +14,17 @@ function IconHeader({ className }) {
     { icon: faShoppingCart, path: '/cart' },
   ]
 
-  // const [checkStatusCookie, setCheckStatusCookie] = useState(false)
-
-  // const currentUser = getCookie('currentUser')
-  // const currentUserData = () => {
-  //   return userData.find(
-  //     (user) =>
-  //       user.username === currentUser.username &&
-  //       user.password === currentUser.password
-  //   ).role
-  // }
-
+  const checkRole = () => {
+    const currentUser = getCookie('currentUser')
+    const currentUserData = currentUser
+      ? userData.find(
+          (user) =>
+            user.username === currentUser.username &&
+            user.password === currentUser.password
+        ).role
+      : null
+    return currentUser !== null ? currentUserData : currentUser
+  }
   return (
     <div
       className={`flex flex-col md:flex-row justify-between ${className} md:flex`}
@@ -53,9 +53,9 @@ function IconHeader({ className }) {
                   </Link>
                 ),
               },
-              // checkStatusCookie && currentUserData === 'admin'
-              //   ? { label: <Link to="/dashboard">Dashboard</Link> }
-              //   : '',
+              checkRole() != null && checkRole() === 'admin'
+                ? { label: <Link to="/dashboard">Dashboard</Link> }
+                : '',
             ]}
           />
         ) : (
