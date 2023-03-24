@@ -8,16 +8,16 @@ import GenresKind from '../../components/GenresKind/GenresKind'
 import { Carousel } from 'flowbite-react'
 import Slider from 'react-slick'
 import { useCookies } from 'react-cookie'
+import { getCookie } from '../../hooks/useCookie'
 
 function Home() {
   const [cookies, setCookie] = useCookies(['currentUser'])
-  const [currentUser, setCurrentUser] = useState(null)
 
   useEffect(() => {
     const storedUser = cookies.currentUser
-    if (storedUser) {
-      setCurrentUser(storedUser)
-    } else window.location.href = '/login'
+    const currentUserCookie = getCookie('currentUser')
+    console.log(currentUserCookie['username'])
+    if (!storedUser) window.location.href = '/login'
   }, [])
 
   var settings = {

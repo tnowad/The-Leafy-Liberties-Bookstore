@@ -11,7 +11,7 @@ const Dropdown = ({ options, trigger, changeTitle, path }) => {
   }
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full flex flex-col items-center">
       <button
         type="button"
         className={`whitespace-nowrap inline-flex items-center justify-between w-full px-4 py-2 border border-gray-300 rounded-full shadow-md text-sm font-medium text-white ${
@@ -24,23 +24,26 @@ const Dropdown = ({ options, trigger, changeTitle, path }) => {
         }
       >
         {selectedOption && changeTitle ? selectedOption.label : trigger}
-      {changeTitle?  <svg
-          className="h-5 w-5"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          aria-hidden="true"
-        >
-          <path
-            fillRule="evenodd"
-            d="M10.707 14.707a1 1 0 0 1-1.414 0l-3.5-3.5a1 1 0 0 1 1.414-1.414L10 12.586l3.293-3.293a1 1 0 0 1 1.414 1.414l-3.5 3.5z"
-            clipRule="evenodd"
-          />
-        </svg>:''}
-        {/* <FontAwesomeIcon icon={faChevronDown} /> */}
+        {changeTitle ? (
+          <svg
+            className="h-5 w-5"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              fillRule="evenodd"
+              d="M10.707 14.707a1 1 0 0 1-1.414 0l-3.5-3.5a1 1 0 0 1 1.414-1.414L10 12.586l3.293-3.293a1 1 0 0 1 1.414 1.414l-3.5 3.5z"
+              clipRule="evenodd"
+            />
+          </svg>
+        ) : (
+          ''
+        )}
       </button>
       {isOpen && options && (
-        <div className="absolute z-10 w-full mt-2 rounded-md bg-white shadow-lg">
+        <div className="absolute top-8 z-10 w-auto mt-2 rounded-md bg-white shadow-lg">
           {options.map((option) => (
             <button
               key={option.value}
