@@ -23,7 +23,7 @@ function IconHeader({ className }) {
             key={index}
             trigger={
               <FontAwesomeIcon
-                className="mt-2 md:mt-0 md:mr-2 cursor-pointer text-gray-800 hover:text-green-800 transition-all"
+                className="mt-2 md:mt-0 cursor-pointer text-gray-800 hover:text-green-800 transition-all"
                 icon={item.icon}
               />
             }
@@ -52,7 +52,7 @@ function IconHeader({ className }) {
             key={index}
             trigger={
               <FontAwesomeIcon
-                className="mt-2 md:mt-0 md:mr-2 cursor-pointer text-gray-800 hover:text-green-800 transition-all"
+                className="mt-2 md:mt-0 cursor-pointer text-gray-800 hover:text-green-800 transition-all"
                 icon={item.icon}
               />
             }

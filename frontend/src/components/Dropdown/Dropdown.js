@@ -1,5 +1,6 @@
 import { useState } from 'react'
-
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 const Dropdown = ({ options, trigger, changeTitle, path }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [selectedOption, setSelectedOption] = useState(null)
@@ -13,7 +14,7 @@ const Dropdown = ({ options, trigger, changeTitle, path }) => {
     <div className="relative w-full">
       <button
         type="button"
-        className={`whitespace-nowrap inline-flex items-center justify-between w-full px-4 py-2 border border-gray-300 rounded-full shadow-sm  text-sm font-medium text-white ${
+        className={`whitespace-nowrap inline-flex items-center justify-between w-full px-4 py-2 border border-gray-300 rounded-full shadow-md text-sm font-medium text-white ${
           changeTitle ? `bg-primary hover:bg-primary-800 ` : ''
         } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500`}
         onClick={() =>
@@ -23,8 +24,8 @@ const Dropdown = ({ options, trigger, changeTitle, path }) => {
         }
       >
         {selectedOption && changeTitle ? selectedOption.label : trigger}
-        <svg
-          className="-mr-1 ml-2 h-5 w-5"
+      {changeTitle?  <svg
+          className="h-5 w-5"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
           fill="currentColor"
@@ -35,7 +36,8 @@ const Dropdown = ({ options, trigger, changeTitle, path }) => {
             d="M10.707 14.707a1 1 0 0 1-1.414 0l-3.5-3.5a1 1 0 0 1 1.414-1.414L10 12.586l3.293-3.293a1 1 0 0 1 1.414 1.414l-3.5 3.5z"
             clipRule="evenodd"
           />
-        </svg>
+        </svg>:''}
+        {/* <FontAwesomeIcon icon={faChevronDown} /> */}
       </button>
       {isOpen && options && (
         <div className="absolute z-10 w-full mt-2 rounded-md bg-white shadow-lg">
