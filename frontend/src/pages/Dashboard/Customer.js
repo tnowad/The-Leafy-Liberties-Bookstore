@@ -50,7 +50,7 @@ function Customer({ ...props }) {
     <div className="w-full my-0 mx-auto overflow-x-hidden">
       <div className="mt-10 min-h-screen box-border w-full px-10 mobile:px-5">
         <div className="flex justify-between">
-          <h1 className="text-xl">Customer</h1>
+          <h1 className="text-xl font-bold">Customer</h1>
           <button
             className="w-5 h-5 text-2xl "
             onClick={() => setIsFormVisible(!isFormVisible)}
@@ -94,7 +94,7 @@ function Customer({ ...props }) {
                         <td class="px-6 py-4">
                           <Link
                             to="#"
-                            class="font-medium text-white px-4 py-2 bg-green-700 rounded-lg"
+                            class="font-medium text-white px-4 py-2 bg-green-700 rounded-lg hover:bg-green-500 transition-colors"
                           >
                             •••
                           </Link>
@@ -134,7 +134,7 @@ function Customer({ ...props }) {
                           <td class="px-5 py-4 w-full">
                             <Link
                               to="#"
-                              class="font-medium text-white px-4 py-2 bg-green-700 rounded-lg"
+                              class="font-medium text-white px-4 py-2 bg-green-700 rounded-lg hover:bg-green-500 transition-colors"
                             >
                               •••
                             </Link>
@@ -161,29 +161,34 @@ function Customer({ ...props }) {
                   type="text"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
+                  className="bg-gray-100 px-2 focus:outline-none rounded-lg"
                 />
                 <label htmlFor="name">Email:</label>
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  className="bg-gray-100 px-2 focus:outline-none rounded-lg"
                 />
                 <label htmlFor="phone">Phone:</label>
                 <input
                   type="tel"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
+                  className="bg-gray-100 px-2 focus:outline-none rounded-lg"
                 />
                 <label htmlFor="totalBuy">Total buy:</label>
                 <input
                   type="number"
                   value={totalBuy}
                   onChange={(e) => setTotalBuy(e.target.value)}
+                  className="bg-gray-100 px-2 focus:outline-none rounded-lg"
                 />
                 <label htmlFor="status">Status:</label>
                 <select
                   value={status}
                   onChange={(e) => setStatus(e.target.value)}
+                  className="bg-gray-100 px-2 focus:outline-none rounded-lg"
                 >
                   <option value="">Select status</option>
                   <option value="active">Active</option>
@@ -195,6 +200,7 @@ function Customer({ ...props }) {
                   type="date"
                   value={createAt}
                   onChange={(e) => setCreateAt(e.target.value)}
+                  className="bg-gray-100 px-2 focus:outline-none rounded-lg"
                 />
 
                 <button

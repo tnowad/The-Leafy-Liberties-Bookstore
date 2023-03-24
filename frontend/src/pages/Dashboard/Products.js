@@ -95,7 +95,7 @@ function Product({ ...props }) {
                         <td class="px-6 py-4">
                           <Link
                             to="#"
-                            class="font-medium text-white px-4 py-2 bg-green-700 rounded-lg"
+                            class="font-medium text-white px-4 py-2 bg-green-700 rounded-lg hover:bg-green-500 transition-colors"
                           >
                             •••
                           </Link>
@@ -137,7 +137,7 @@ function Product({ ...props }) {
                           <td class="px-5 py-4 w-full">
                             <Link
                               to="#"
-                              class="font-medium text-white px-4 py-2 bg-green-700 rounded-lg"
+                              class="font-medium text-white px-4 py-2 bg-green-700 rounded-lg hover:bg-green-500 transition-colors"
                             >
                               •••
                             </Link>
@@ -165,23 +165,31 @@ function Product({ ...props }) {
                   type="text"
                   value={category}
                   onChange={(e) => setCategory(e.target.value)}
+                  className="bg-gray-100 px-2 focus:outline-none rounded-lg"
+
                 />
                 <label htmlFor="entered">Entered:</label>
                 <input
                   type="number"
                   value={entered}
                   onChange={(e) => setEntered(e.target.value)}
+                  className="bg-gray-100 px-2 focus:outline-none rounded-lg"
+
                 />
                 <label htmlFor="remaining">Remaining:</label>
                 <input
                   type="number"
                   value={remaining}
                   onChange={(e) => setRemaining(e.target.value)}
+                  className="bg-gray-100 px-2 focus:outline-none rounded-lg"
+
                 />
                 <label htmlFor="status">Status:</label>
                 <select
                   value={status}
                   onChange={(e) => setStatus(e.target.value)}
+                  className="bg-gray-100 px-2 focus:outline-none rounded-lg"
+
                 >
                   <option value="">Select status</option>
                   <option value="active">Active</option>
@@ -193,6 +201,8 @@ function Product({ ...props }) {
                   type="date"
                   value={amount}
                   onChange={(e) => setAmount(e.target.value)}
+                  className="bg-gray-100 px-2 focus:outline-none rounded-lg"
+
                 />
 
                 <button

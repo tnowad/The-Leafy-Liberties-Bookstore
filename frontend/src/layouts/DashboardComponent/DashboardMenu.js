@@ -39,7 +39,7 @@ function DashboardMenu({ ...props }) {
       icon: faBagShopping,
     },
     {
-      name: 'Message',
+      name: 'Comment',
       link: '/dashboard/message',
       icon: faMessage,
     },
