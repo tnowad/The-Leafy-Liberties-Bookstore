@@ -34,10 +34,10 @@ function Footer() {
           </div>
           <div className="w-full h-12 mt-6 pl-3">
             <div className="flex justify-evenly">
-              <FontAwesomeIcon icon={faFacebookF} size="2x" color="#999999" />
-              <FontAwesomeIcon icon={faYoutube} size="2x" color="#999999" />
-              <FontAwesomeIcon icon={faInstagram} size="2x" color="#999999" />
-              <FontAwesomeIcon icon={faTwitter} size="2x" color="#999999" />
+              <FontAwesomeIcon icon={faFacebookF} size="2x" color="#999999" className="hover:text-blue-500 transition-colors cursor-pointer"/>
+              <FontAwesomeIcon icon={faYoutube} size="2x" color="#999999" className="hover:text-red-500 transition-colors cursor-pointer" />
+              <FontAwesomeIcon icon={faInstagram} size="2x" color="#999999" className="hover:text-pink-500 transition-colors cursor-pointer"/>
+              <FontAwesomeIcon icon={faTwitter} size="2x" color="#999999" className="hover:text-blue-400 transition-colors cursor-pointer" />
             </div>
           </div>
         </div>

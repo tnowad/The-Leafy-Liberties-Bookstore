@@ -35,82 +35,46 @@ function Message() {
   }
 
   return (
-    <div>
-      <div className="table-product-statistics my-8 shadow-lg cursor-pointer rounded-2xl overflow-hidden bg-white">
-        <div className="relative">
-          <WindowSize onSizeChange={handleSizeChange} />
-          {window.innerWidth > 882 ? (
-            <table className="w-full text-sm text-left text-gray-500 rounded-2xl border-collapse overflow-hidden">
-              <thead className="text-xs text-gray-700 uppercase bg-gray-50">
-                <tr>
-                  {arrayTitle.map((item) => {
-                    return (
-                      <th
-                        key={item.name}
-                        scope="col"
-                        colSpan={item.action === 'Action' ? 2 : 1}
-                        className="px-6 py-3 text-center"
-                      >
-                        {item.name}
-                      </th>
-                    )
-                  })}
-                </tr>
-              </thead>
-              <tbody>
-                {arrayData.map((item) => {
-                  return (
-                    <tr
-                      key={item.id}
-                      className="bg-white border-b hover:bg-gray-200 transition-opacity"
-                    >
-                      <td class="px-5 py-4 text-center">{item.productName}</td>
-                      <td class="px-5 py-4 text-center ">{item.user}</td>
-                      <td class="px-5 py-4 text-center ">{item.content}</td>
-                      <td class="px-5 py-4 text-center ">{item.time}</td>
-                      <td class="px-6 py-4 text-center ">
-                        <Link
-                          to="#"
-                          class="font-medium text-white px-4 py-2 bg-green-700 rounded-lg"
+    <div className="w-full my-0 mx-auto overflow-x-hidden">
+      <div className="mt-10 min-h-screen box-border w-full px-10 mobile:px-5">
+      <div className="flex justify-between">
+          <h1 className="text-xl font-bold">Comment Section</h1>
+        </div>
+        <div className="table-product-statistics my-8 shadow-lg cursor-pointer rounded-2xl overflow-hidden bg-white">
+          <div className="relative">
+            <WindowSize onSizeChange={handleSizeChange} />
+            {window.innerWidth > 882 ? (
+              <table className="w-full text-sm text-left text-gray-500 rounded-2xl border-collapse overflow-hidden">
+                <thead className="text-xs text-gray-700 uppercase bg-gray-50">
+                  <tr>
+                    {arrayTitle.map((item) => {
+                      return (
+                        <th
+                          key={item.name}
+                          scope="col"
+                          colSpan={item.action === 'Action' ? 2 : 1}
+                          className="px-6 py-3 text-center"
                         >
-                          •••
-                        </Link>
-                      </td>
-                    </tr>
-                  )
-                })}
-              </tbody>
-            </table>
-          ) : (
-            <>
-              {arrayData.map((item) => {
-                return (
-                  <table
-                    key={item.id}
-                    className="w-full text-sm text-left text-gray-500 border-collapse overflow-hidden flex flex-row justify-between border-0 border-solid border-gray-200 border-b-[1px]"
-                  >
-                    <thead className="text-xs text-gray-700 uppercase">
-                      <tr className="flex flex-col">
-                        {arrayTitle.map((item) => {
-                          return (
-                            <th
-                              key={item.name}
-                              scope="col"
-                              className="px-5 py-[18px] w-full"
-                            >
-                              {item.name}
-                            </th>
-                          )
-                        })}
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr className="bg-white flex flex-col justify-between">
-                        <td class="px-5 py-4 w-full">{item.productName}</td>
-                        <td class="px-5 py-4 w-full">{item.user}</td>
-                        <td class="px-5 py-4 w-full">{item.content}</td>
-                        <td class="px-5 py-4 w-full">{item.time}</td>
-                        <td class="px-5 py-4 w-full">
+                          {item.name}
+                        </th>
+                      )
+                    })}
+                  </tr>
+                </thead>
+                <tbody>
+                  {arrayData.map((item) => {
+                    return (
+                      <tr
+                        key={item.id}
+                        className="bg-white border-b hover:bg-gray-200 transition-opacity"
+                      >
+                        <td class="px-5 py-4 text-center">
+                          {item.productName}
+                        </td>
+                        <td class="px-5 py-4 text-center ">{item.user}</td>
+                        <td class="px-5 py-4 text-center ">{item.content}</td>
+                        <td class="px-5 py-4 text-center ">{item.time}</td>
+                        <td class="px-6 py-4 text-center ">
                           <Link
                             to="#"
                             class="font-medium text-white px-4 py-2 bg-green-700 rounded-lg"
@@ -119,12 +83,55 @@ function Message() {
                           </Link>
                         </td>
                       </tr>
-                    </tbody>
-                  </table>
-                )
-              })}
-            </>
-          )}
+                    )
+                  })}
+                </tbody>
+              </table>
+            ) : (
+              <>
+                {arrayData.map((item) => {
+                  return (
+                    <table
+                      key={item.id}
+                      className="w-full text-sm text-left text-gray-500 border-collapse overflow-hidden flex flex-row justify-between border-0 border-solid border-gray-200 border-b-[1px]"
+                    >
+                      <thead className="text-xs text-gray-700 uppercase">
+                        <tr className="flex flex-col">
+                          {arrayTitle.map((item) => {
+                            return (
+                              <th
+                                key={item.name}
+                                scope="col"
+                                className="px-5 py-[18px] w-full"
+                              >
+                                {item.name}
+                              </th>
+                            )
+                          })}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr className="bg-white flex flex-col justify-between">
+                          <td class="px-5 py-4 w-full">{item.productName}</td>
+                          <td class="px-5 py-4 w-full">{item.user}</td>
+                          <td class="px-5 py-4 w-full">{item.content}</td>
+                          <td class="px-5 py-4 w-full">{item.time}</td>
+                          <td class="px-5 py-4 w-full">
+                            <Link
+                              to="#"
+                              class="font-medium text-white px-4 py-2 bg-green-700 rounded-lg"
+                            >
+                              •••
+                            </Link>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  )
+                })}
+              </>
+            )}
+          </div>
         </div>
       </div>
     </div>
