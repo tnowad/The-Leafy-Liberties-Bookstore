@@ -6,18 +6,14 @@ import {
   faMessage,
   faSignal,
   faUserGroup,
-  faBars,
-  faClose,
-  faTicket
+  faTicket,
 } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 import { logo } from '../../assets/images'
 import { useState } from 'react'
-// import { Tooltip } from '@material-tailwind/react'
 import { Tooltip } from '../../components/Tooltip/Tooltip'
 function DashboardMenu({ ...props }) {
   const [isIconsVisible, setIconsVisibility] = useState(false)
-  // const tooltip = new Tooltip("Test Hover", , options);
   const toggleIconsVisibility = () => {
     setIconsVisibility(!isIconsVisible)
   }
@@ -47,8 +43,8 @@ function DashboardMenu({ ...props }) {
     {
       name: 'Coupon',
       link: '/dashboard/coupon',
-      icon: faTicket
-    }
+      icon: faTicket,
+    },
   ]
 
   return (
@@ -92,7 +88,7 @@ function DashboardMenu({ ...props }) {
               </Link>
               {arrayDashboard.map((item) => {
                 return (
-                  <Tooltip message={item.name}>
+                  <Tooltip message={item.name} key={item.name}>
                     <span
                       key={item.name}
                       className={

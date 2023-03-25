@@ -3,7 +3,7 @@ import config from '../config'
 import Register from '../pages/Register'
 import Login from '../pages/Login'
 import ForgotPassword from '../pages/ForgotPassword/ForgotPassword'
-import Profile from '../pages/Profile'
+import Profile from '../pages/Profile/Profile'
 
 // * Pages
 import Home from '../pages/Home'

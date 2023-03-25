@@ -1,12 +1,17 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { publicRoutes, protectedRoutes } from './routes/routes'
 import DefaultLayout from './layouts/DefaultLayout'
 import { Fragment } from 'react'
 import { ProtectedRoute } from './components/ProtectedRoute/ProtectedRoute'
-// import { AuthProvider, useAuth } from './contexts/AuthContext'
 import AuthProvider from './pages/Login/AuthProvider'
+import { getCookie } from './hooks/useCookie'
 
 function App() {
+  const currentUserCookie = getCookie('currentUser')
+  const currentPath = window.location.pathname
+  if (!currentUserCookie && currentPath !== '/login' && currentPath !== '/')
+    window.location.href = '/login'
+
   const renderPublicRoutes = () => {
     return publicRoutes.map((route, index) => {
       const Page = route.component
