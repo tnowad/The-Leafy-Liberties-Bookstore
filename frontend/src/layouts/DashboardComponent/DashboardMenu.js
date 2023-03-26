@@ -52,14 +52,11 @@ function DashboardMenu({ ...props }) {
   ]
 
   return (
-    <div className=" xl:w-64 bg-white ">
+    <div className=" xl:w-64 bg-white shadow-md">
       <div className="sticky top-0 hidden xl:block">
         <Link to="/" className="flex items-center justify-center py-4">
           <img src={logo} alt="" />
-
-          <h3 className="ml-12 sm:ml-0 text-green-800 text-xl">Dashboard</h3>
         </Link>
-
         <div className="flex flex-col justify-center px-5">
           {arrayDashboard.map((item) => {
             return (
@@ -73,7 +70,7 @@ function DashboardMenu({ ...props }) {
                 key={item.name}
               >
                 <FontAwesomeIcon icon={item.icon} />
-                <Link to={item.link} className="ml-2 w-full">
+                <Link to={item.link} className="ml-2 w-full h-full flex items-center">
                   {item.name}
                 </Link>
               </span>
