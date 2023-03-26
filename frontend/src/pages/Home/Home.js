@@ -1,21 +1,16 @@
 import React, { useEffect } from 'react'
-import { homeImg, bestOffer, productImg, star } from '../../assets/images'
-import Product from '../../components/Product/index'
+import { Navigate } from 'react-router-dom'
 import Author from '../../components/Author/index'
+import Product from '../../components/Product/index'
 import SectionTitle from '../../components/SectionTitle'
 import { ProductHorizontal } from '../../components/Product/index'
 import GenresKind from '../../components/GenresKind/GenresKind'
 import { Carousel } from 'flowbite-react'
 import Slider from 'react-slick'
 import { getCookie } from '../../hooks/useCookie'
+import { homeImg, bestOffer, productImg, star } from '../../assets/images'
 
 function Home() {
-  useEffect(() => {
-    const currentUserCookie = getCookie('currentUser')
-
-    if (!currentUserCookie) window.location.href = '/login'
-  }, [])
-
   var settings = {
     infinite: true,
     cssEase: 'linear',
