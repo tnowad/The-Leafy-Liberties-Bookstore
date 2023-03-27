@@ -58,7 +58,7 @@ function DashboardMenu({ ...props }) {
             return (
               <span
                 className={
-                  'h-12 flex items-center hover:bg-primary hover:text-white cursor-pointer my-[2px] rounded-md box-border px-4 ' +
+                  'h-12 flex items-center transition-colors hover:bg-primary hover:text-white cursor-pointer my-[2px] rounded-md box-border px-4 ' +
                   (window.location.href.endsWith(item.link)
                     ? 'bg-primary text-white'
                     : '')

@@ -55,7 +55,7 @@ function DashboardHeader() {
             />
 
             {isOpen && (
-              <ul className="absolute top-full right-[0%] flex flex-col gap-2 bg-white p-2 rounded-lg">
+              <ul className="absolute top-full right-[0%] flex flex-col gap-2 bg-white p-2 rounded-lg shadow-md">
                 <li className="whitespace-nowrap hover:bg-primary-200  transition-all cursor-pointer p-2 text-left text-gray-600">
                   <Link to="/">User Setting</Link>
                 </li>

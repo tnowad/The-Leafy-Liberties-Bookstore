@@ -42,3 +42,25 @@ ol,
 ul {
   list-style: none;
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+
+}
+
+.cart-list::-webkit-scrollbar {
+  background-clip: padding-box;
+  margin-block: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+
+}
