@@ -15,7 +15,7 @@ function Home() {
     infinite: true,
     cssEase: 'linear',
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 5000,
     arrows: false,
     dots: false,
     speed: 1000,
