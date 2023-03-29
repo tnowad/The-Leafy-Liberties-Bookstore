@@ -16,11 +16,17 @@ function App() {
     if (isAlertShown) {
       alert('Bạn chưa đăng nhập,  vui lòng đăng nhập')
     }
-    if (!currentUserCookie && currentPath !== '/login' && currentPath !== '/') {
+    if (
+      !currentUserCookie &&
+      currentPath !== '/login' &&
+      currentPath !== '/cart' &&
+      currentPath !== '/wishlist' &&
+      currentPath !== '/'
+    ) {
       setIsAlertShown(true)
       window.location.href = '/login'
     }
-  }, [isAlertShown])
+  }, [currentPath, currentUserCookie, isAlertShown])
   const renderPublicRoutes = () => {
     return publicRoutes.map((route, index) => {
       const Page = route.component
