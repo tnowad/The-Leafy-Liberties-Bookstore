@@ -40,7 +40,9 @@ function IconHeader({ className }) {
               />
             }
             options={[
-              { label: <Link to="/profile">Settings</Link> },
+              checkRole() !== null
+                ? { label: <Link to="/profile">Settings</Link> }
+                : '',
               {
                 label: (
                   <Link
@@ -49,7 +51,7 @@ function IconHeader({ className }) {
                       deleteCookie('currentUser')
                     }}
                   >
-                    Logout
+                    {checkRole() !== null ? 'Logout' : 'Login'}
                   </Link>
                 ),
               },

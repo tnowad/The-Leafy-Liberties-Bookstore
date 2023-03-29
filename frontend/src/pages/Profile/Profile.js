@@ -12,8 +12,8 @@ export default function Profile() {
     <div className="w-full bg-white flex justify-center">
       {/* //? information */}
       <div className="container">
-        <div className=" mt-5 md:mt-20 flex border border-b-2 border-green-300 box-border w-full">
-          <div className="flex md:flex-col flex-row justify-around md:justify-start w-1/4">
+        <div className=" mt-5 md:mt-20 flex flex-col md:flex-row border border-b-2 border-green-300 box-border w-full">
+          <div className="w-3/4 flex md:flex-col flex-row justify-around md:justify-start md:w-1/4">
             <div className="flex flex-col justify-center items-center">
               <img src={avatar} className="w-3/6" alt="avatar" />
               <h1 className="mt-5 text-xl w-8/12 lg:w-5/12 inline-block  lg:text-center">
@@ -44,7 +44,7 @@ export default function Profile() {
             </div>
           </div>
           {/* //? information detail */}
-          <div className="w-3/4">
+          <div className="p-2 w-full md:w-3/4">
             <form className="flex flex-col">
               {/* //? group full name */}
               <div className="flex flex-row justify-between">
@@ -111,21 +111,31 @@ export default function Profile() {
               </div>
 
               <label>Birthday *</label>
-              <div className="h-10 w-3/5 md:w-2/4 flex justify-between">
+              <div className="h-8 md:h-10 w-full md:w-2/4 flex justify-between">
                 <input
                   type="number"
                   min="1"
                   max="31"
                   className="p-1 pl-6  text-base md:text-2xl border border-solid border-gray-300 rounded"
                 />
-                <div className="h-10 p-1 border border-solid border-gray-300 rounded">
-                  <span>Month</span>
-                  <input type="number" className="pl-2" min="1" max="12" />
+                <div className="h-8 md:h-10 p-1 border border-solid border-gray-300 rounded">
+                  <span>Month:</span>
+                  <input
+                    type="number"
+                    className="pl-1 w-8 md:pl-2 h-2 md:h-8"
+                    min="1"
+                    max="12"
+                  />
                 </div>
 
                 <div className="p-1 border border-solid border-gray-300 rounded">
-                  <span>Year</span>
-                  <input type="number" className="pl-2" min="1900" max="2023" />
+                  <span>Year:</span>
+                  <input
+                    type="number"
+                    className="pl-1 md:pl-2 h-2 md:h-8"
+                    min="1900"
+                    max="2023"
+                  />
                 </div>
               </div>
               <label className="ml-10 mt-10">Password change</label>
@@ -168,4 +178,3 @@ export default function Profile() {
     </div>
   )
 }
-
