@@ -192,7 +192,7 @@ function Home() {
             />
             <div className="list-author-bestselling">
               <div className=" h-fit top-product flex sm:w-full mobile:w-screen sm:gap-0 mobile:gap-2 sm:m-0">
-                <div className="object-cover h-52 xl:w-72 mr-4 md:w-96 mobile:w-1/2">
+                <div className="object-cover h-52 w-64">
                   <img src={productImg} alt="" className="w-full h-full" />
                 </div>
                 <div className="top-product-detail flex flex-col xl:justify-between sm:gap-0 lg:justify-start mobile:w-fit">
