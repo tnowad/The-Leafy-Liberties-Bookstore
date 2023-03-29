@@ -1,7 +1,12 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useState } from 'react'
 
 import Product from '../../components/Product/index'
-
+import {
+  faChevronRight,
+  faChevronLeft,
+} from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom'
 function FilterItem({ title, options }) {
   return (
     <div className="w-full">
@@ -43,7 +48,13 @@ function Filter({ data, ...props }) {
     </form>
   )
 }
-
+// function Pagination(props) {
+//   return (
+//     <li className={`pagination-items p-2 bg-gray-200 rounded-full`}>
+//       <Link to={props.link}>{props.name}</Link>
+//     </li>
+//   )
+// }
 function Shop() {
   const [filter, setFilter] = useState([
     {
@@ -106,17 +117,61 @@ function Shop() {
       ],
     },
   ])
-
+  // const pagePagination = [
+  //   {
+  //     value: 'Previous',
+  //   },
+  //   {
+  //     value: '1',
+  //   },
+  //   {
+  //     value: '2',
+  //   },
+  //   {
+  //     value: '3',
+  //   },
+  //   {
+  //     value: '4',
+  //   },
+  //   {
+  //     value: 'Next',
+  //   },
+  // ]
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center my-10">
       <div className="container grid lg:grid-cols-[200px,auto] 2xl:grid-cols-[250px,auto]">
         <div className="box-border mx-2">
-          <Filter data={filter} className="lg:sticky lg:top-32" />
+          <Filter data={filter}/>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
-          {[...Array(24)].map((e, i) => {
-            return <Product />
-          })}
+        <div className="shop-container">
+          <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
+            {[...Array(24)].map((e, i) => {
+              return <Product />
+            })}
+          </div>
+          <div className="my-5">
+            <ul className="pagination flex justify-center items-center gap-5 text-center">
+              <li className={`pagination-items p-2 bg-gray-100 rounded-full text-primary-600 font-semibold hover:text-white hover:bg-primary transition-all`}>
+                <Link to="/">Previous</Link>
+              </li>
+              <li className={`pagination-items p-2 bg-primary text-white rounded-full w-10 h-10 font-semibold hover:text-white hover:bg-primary transition-all`}>
+                <Link to="/">1</Link>
+              </li>
+              <li className={`pagination-items p-2 bg-gray-100 rounded-full w-10 h-10 text-primary-600 font-semibold hover:text-white hover:bg-primary transition-all`}>
+                <Link to="/">2</Link>
+              </li>
+              <li className={`pagination-items p-2 bg-gray-100 rounded-full w-10 h-10 text-primary-600 font-semibold hover:text-white hover:bg-primary transition-all`}>
+                <Link to="/">3</Link>
+              </li>
+              <li className={`pagination-items p-2 bg-gray-100 rounded-full w-10 h-10 text-primary-600 font-semibold hover:text-white hover:bg-primary transition-all`}>
+                <Link to="/">4</Link>
+              </li>
+              <li className={`pagination-items p-2 bg-gray-100 rounded-full text-primary-600 font-semibold hover:text-white hover:bg-primary transition-all`}>
+                <Link to="/">Next</Link>
+              </li>
+
+            </ul>
+          </div>
         </div>
       </div>
     </div>
