@@ -189,7 +189,7 @@
     "method": "GET",
     "sortNum": 20000,
     "created": "2023-03-14T21:33:28.123Z",
-    "modified": "2023-03-30T03:01:20.668Z",
+    "modified": "2023-03-30T03:48:44.340Z",
     "headers": [
       {
         "name": "Accept",
@@ -208,7 +208,7 @@
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"filter\": \"name\",\n  \"filter_value\": \"Furman\"\n}",
+      "raw": "{\n  \"filter\": {\"id\": \"2\", \"name\": \"y\"}\n}",
       "form": []
     },
     "tests": []
