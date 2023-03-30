@@ -185,11 +185,11 @@
     "colId": "be2ce8d4-79a3-4214-95cd-c4067cb4ab94",
     "containerId": "",
     "name": "Get All Users",
-    "url": "{{base_url}}/api/user/index",
+    "url": "{{base_url}}/api/users",
     "method": "GET",
     "sortNum": 20000,
     "created": "2023-03-14T21:33:28.123Z",
-    "modified": "2023-03-14T21:41:12.122Z",
+    "modified": "2023-03-30T03:01:20.668Z",
     "headers": [
       {
         "name": "Accept",
@@ -206,6 +206,11 @@
       }
     ],
     "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"filter\": \"name\",\n  \"filter_value\": \"Furman\"\n}",
+      "form": []
+    },
     "tests": []
   }
 ]

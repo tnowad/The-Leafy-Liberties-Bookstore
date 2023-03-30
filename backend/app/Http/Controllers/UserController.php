@@ -9,113 +9,58 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-  /**
-   * Get all users. GET / users.
-   * Response Format: application/json
-   * - 200 : Success
-   * - 403 : User doesn't have permission to view users.
-   *
-   * @return list of users. Response Format : application / json { message : " You are not authorized to view users.
-   */
-  public function index(): JsonResponse
+  public function __construct()
   {
-    // If the user is not authorized to view users.
-    if (!auth()->user()->can('users.access')) {
-      return response()->json(['message' => 'You are not authorized to view users.'], 403);
-    }
-
-    $users = User::all();
-
-    return response()->json($users, 200);
+    // $this->middleware('auth:api');
+    // $this->middleware('permission:user-list|user-create|user-edit|user-soft-delete|user-delete', ['only' => ['index', 'show']]);
+    // $this->middleware('permission:user-create', ['only' => ['store']]);
+    // $this->middleware('permission:user-edit', ['only' => ['update']]);
+    // $this->middleware('permission:user-soft-delete', ['only' => ['softDelete']]);
+    // $this->middleware('permission:user-delete', ['only' => ['destroy']]);
   }
 
-  /**
-   * Create a new user. Requires authentication.
-   * Response Format: application/json
-   * - 201 : User created.
-   * - Failure 403 : User doesn't have permission to create users.
-   *
-   * @param $request
-   *
-   * @return $user The user that was created or an error message if something went wrong with the request
-   */
-  public function create(UserRequest $request): JsonResponse
+  public function index(Request $request): JsonResponse
   {
-    // If the user is not authorized to create users.
-    if (!auth()->user()->can('users.create')) {
-      return response()->json(['message' => 'You are not authorized to create users.'], 403);
+    $query = User::query();
+
+    // Handle pagination
+    $perPage = $request->get('per_page', 10);
+    $page = $request->get('page', 1);
+
+    // Handle sorting
+    $sortField = $request->get('sort_field', 'id');
+    $sortOrder = $request->get('sort_order', 'asc');
+    // Handle filtering
+    $filter = $request->get('filter', 'name');
+    $filterValue = $request->get('filter_value', '');
+
+    if ($filterValue) {
+      // full name search
+      if ($filter === 'name') {
+        $query->orWhere('first_name', 'like', "%$filterValue%")
+          ->orWhere('last_name', 'like', "%$filterValue%");
+      } else {
+
+        $query->where($filter, 'like', "%$filterValue%");
+      }
     }
 
-    $user = User::create($request->all());
+    $query->orderBy($sortField, $sortOrder)
+      ->skip(($page - 1) * $perPage)
+      ->take($perPage);
 
-    return response()->json($user, 201);
-  }
+    $users = $query->get();
 
-  /**
-   * Return a single user Requires authentication.
-   * Response Format: application/json
-   * - 200 : Success
-   * - 403 : User doesn't have permission to view users.
-   *
-   * @param $id
-   *
-   * @return $user The user that was found or an error message if something went wrong with the request
-   */
-  public function show(string $id): JsonResponse
-  {
-    // If the user is not authorized to view users.
-    if (!auth()->user()->can('users.view')) {
-      return response()->json(['message' => 'You are not authorized to view users.'], 403);
-    }
-
-    $user = User::findOrFail($id);
-
-    return response()->json($user, 200);
-  }
-
-  /**
-   * Update a user in the database.
-   * Response Format: application/json
-   * - 200 : Success
-   * - 403 : User doesn't have permission to update users.
-   * - 404 : User doesn't exist.
-   *
-   * @param $request
-   * @param $id
-   *
-   * @return $user The user that was updated or an error message if something went wrong with the request
-   */
-  public function update(UserRequest $request, string $id): JsonResponse
-  {
-    // If the user is not authorized to update users.
-    if (!auth()->user()->can('users.update')) {
-      return response()->json(['message' => 'You are not authorized to update users.'], 403);
-    }
-    $user = User::findOrFail($id);
-
-    $user->update($request->all());
-
-    return response()->json($user, 200);
-  }
-
-  /**
-   * Delete a user from the database. This is a DELETE request to / users / { id }.
-   *
-   * @param $id
-   *
-   * @return 204 if everything is fine 400 if there is a permission error. 404 if the user doesn't
-   */
-  public function destroy(string $id)
-  {
-    // If the user is not authorized to delete users.
-    if (!auth()->user()->can('users.delete')) {
-      return response()->json(['message' => 'You are not authorized to delete users.'], 403);
-    }
-
-    $user = User::findOrFail($id);
-
-    $user->delete();
-
-    return response()->json(null, 204);
+    return response()->json([
+      'data' => $users,
+      'pagination' => [
+        'total' => $users->count(),
+        'per_page' => $perPage,
+        'current_page' => $page,
+        'last_page' => ceil(User::count() / $perPage),
+        'from' => ($page - 1) * $perPage + 1,
+        'to' => $page * $perPage > User::count() ? User::count() : $page * $perPage
+      ]
+    ], 200);
   }
 }
