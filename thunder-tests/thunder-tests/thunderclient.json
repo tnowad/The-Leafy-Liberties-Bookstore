@@ -76,9 +76,9 @@
     "name": "User Logout",
     "url": "{{base_url}}/api/auth/logout",
     "method": "POST",
-    "sortNum": 40000,
+    "sortNum": 20000,
     "created": "2023-03-12T19:42:46.360Z",
-    "modified": "2023-03-12T19:42:46.360Z",
+    "modified": "2023-03-30T06:05:03.164Z",
     "headers": [
       {
         "name": "Accept",
@@ -147,7 +147,7 @@
     "method": "POST",
     "sortNum": 60000,
     "created": "2023-03-12T21:09:27.342Z",
-    "modified": "2023-03-12T21:26:07.502Z",
+    "modified": "2023-03-30T06:08:17.163Z",
     "headers": [
       {
         "name": "Accept",
@@ -162,7 +162,7 @@
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"first_name\": \"Minh Tuan\",\n  \"last_name\": \"Nguyen\",\n  \"phone\": \"0379713541\",\n  \"username\": \"tnowad\",\n  \"email\": \"tnowad@gmail.com\",\n  \"password\": \"password\",\n  \"password_confirmation\": \"password\"\n}",
+      "raw": "{\n  \"first_name\": \"New User\",\n  \"last_name\": \"New User\",\n  \"phone\": \"0123456789\",\n  \"username\": \"new_user\",\n  \"email\": \"new_user@newuser.com\",\n  \"password\": \"password\",\n  \"password_confirmation\": \"password\"\n}",
       "form": []
     },
     "tests": [
@@ -212,5 +212,150 @@
       "form": []
     },
     "tests": []
+  },
+  {
+    "_id": "ca2f84d2-3530-46b6-9748-d959ccaa3d6e",
+    "colId": "be2ce8d4-79a3-4214-95cd-c4067cb4ab94",
+    "containerId": "",
+    "name": "Create A User",
+    "url": "{{base_url}}/api/users",
+    "method": "POST",
+    "sortNum": 30000,
+    "created": "2023-03-30T03:50:00.119Z",
+    "modified": "2023-03-30T03:51:24.230Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "application/json"
+      }
+    ],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "cefab8d0-fba9-4fef-b222-a69cf3b3a5c8",
+    "colId": "d8d1f217-ab89-49a2-bd80-ef30d3c72f4c",
+    "containerId": "",
+    "name": "Admin Login",
+    "url": "{{base_url}}/api/auth/login",
+    "method": "POST",
+    "sortNum": 5000,
+    "created": "2023-03-30T06:01:16.225Z",
+    "modified": "2023-03-30T06:04:53.674Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "application/json"
+      },
+      {
+        "name": "User-Agent",
+        "value": "Thunder Client (https://www.thunderclient.com)",
+        "isDisabled": true
+      }
+    ],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"email\": \"admin@admin.com\",\n  \"password\": \"password\"\n}",
+      "form": []
+    },
+    "tests": [
+      {
+        "type": "set-env-var",
+        "custom": "json.data.access_token",
+        "action": "setto",
+        "value": "{{access_token}}"
+      },
+      {
+        "type": "set-env-var",
+        "custom": "json.data.token_type",
+        "action": "setto",
+        "value": "{{token_type}}"
+      }
+    ]
+  },
+  {
+    "_id": "85845b6c-c192-46c6-a7d5-668fb564dc36",
+    "colId": "d8d1f217-ab89-49a2-bd80-ef30d3c72f4c",
+    "containerId": "",
+    "name": "Moderator Login",
+    "url": "{{base_url}}/api/auth/login",
+    "method": "POST",
+    "sortNum": 7500,
+    "created": "2023-03-30T06:01:42.807Z",
+    "modified": "2023-03-30T06:04:56.439Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "application/json"
+      },
+      {
+        "name": "User-Agent",
+        "value": "Thunder Client (https://www.thunderclient.com)",
+        "isDisabled": true
+      }
+    ],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"email\": \"moderator@moderator.com\",\n  \"password\": \"password\"\n}",
+      "form": []
+    },
+    "tests": [
+      {
+        "type": "set-env-var",
+        "custom": "json.data.access_token",
+        "action": "setto",
+        "value": "{{access_token}}"
+      },
+      {
+        "type": "set-env-var",
+        "custom": "json.data.token_type",
+        "action": "setto",
+        "value": "{{token_type}}"
+      }
+    ]
+  },
+  {
+    "_id": "e38461bb-8276-47f5-bb47-3b3db50525b8",
+    "colId": "d8d1f217-ab89-49a2-bd80-ef30d3c72f4c",
+    "containerId": "",
+    "name": "New User Login",
+    "url": "{{base_url}}/api/auth/login",
+    "method": "POST",
+    "sortNum": 15000,
+    "created": "2023-03-30T06:09:14.792Z",
+    "modified": "2023-03-30T06:09:39.646Z",
+    "headers": [
+      {
+        "name": "Accept",
+        "value": "application/json"
+      },
+      {
+        "name": "User-Agent",
+        "value": "Thunder Client (https://www.thunderclient.com)",
+        "isDisabled": true
+      }
+    ],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"email\": \"new_user@newuser.com\",\n  \"password\": \"password\"\n}",
+      "form": []
+    },
+    "tests": [
+      {
+        "type": "set-env-var",
+        "custom": "json.data.access_token",
+        "action": "setto",
+        "value": "{{access_token}}"
+      },
+      {
+        "type": "set-env-var",
+        "custom": "json.data.token_type",
+        "action": "setto",
+        "value": "{{token_type}}"
+      }
+    ]
   }
 ]
