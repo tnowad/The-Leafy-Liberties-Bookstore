@@ -145,9 +145,9 @@
     "name": "User Register",
     "url": "{{base_url}}/api/auth/register",
     "method": "POST",
-    "sortNum": 60000,
+    "sortNum": 2500,
     "created": "2023-03-12T21:09:27.342Z",
-    "modified": "2023-03-30T06:08:17.163Z",
+    "modified": "2023-03-30T07:27:51.371Z",
     "headers": [
       {
         "name": "Accept",
@@ -222,14 +222,28 @@
     "method": "POST",
     "sortNum": 30000,
     "created": "2023-03-30T03:50:00.119Z",
-    "modified": "2023-03-30T03:51:24.230Z",
+    "modified": "2023-03-30T07:33:48.463Z",
     "headers": [
       {
         "name": "Accept",
         "value": "application/json"
+      },
+      {
+        "name": "Authorization",
+        "value": "{{token_type}} {{access_token}}"
+      },
+      {
+        "name": "User-Agent",
+        "value": "Thunder Client (https://www.thunderclient.com)",
+        "isDisabled": true
       }
     ],
     "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"first_name\": \"Created User\",\n  \"last_name\": \"Created User\",\n  \"username\": \"createduser\",\n  \"email\": \"createduser@createduser.com\",\n  \"phone\": \"0987654321\",\n  \"password\": \"password\",\n  \"password_confirmation\": \"password\",\n  \"status\": 1\n}",
+      "form": []
+    },
     "tests": []
   },
   {
