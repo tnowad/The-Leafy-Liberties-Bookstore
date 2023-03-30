@@ -12,25 +12,19 @@ class UserController extends Controller
   public function __construct()
   {
     $this->middleware('auth:api');
-    $this->middleware('permission:user-list|user-create|user-edit|user-soft-delete|user-delete', ['only' => ['index', 'show']]);
+    $this->middleware('permission:user-list|user-create|user-edit|user-delete', ['only' => ['index', 'show']]);
     $this->middleware('permission:user-create', ['only' => ['store']]);
     $this->middleware('permission:user-edit', ['only' => ['update']]);
-    $this->middleware('permission:user-soft-delete', ['only' => ['softDelete']]);
-    $this->middleware('permission:user-delete', ['only' => ['destroy']]);
+    $this->middleware('permission:user-delete', ['only' => ['delete']]);
   }
 
   public function index(Request $request): JsonResponse
   {
     $query = User::query();
-
-    // Handle pagination
     $perPage = $request->get('per_page', 10);
     $page = $request->get('page', 1);
-
-    // Handle sorting
     $sortField = $request->get('sort_field', 'id');
     $sortOrder = $request->get('sort_order', 'asc');
-    // Handle filtering
     $filter = $request->get('filter', null);
 
     if (is_array($filter)) {
@@ -93,23 +87,19 @@ class UserController extends Controller
     ], 200);
   }
 
-  public function softDelete(User $user): JsonResponse
+  public function delete(User $user): JsonResponse
   {
-    $user->delete();
-
-    return response()->json([
-      'data' => $user,
-      'message' => 'User soft deleted successfully',
-    ], 200);
-  }
-
-  public function destroy(User $user): JsonResponse
-  {
+    if (!$user->deleted_at) {
+      $user->delete();
+      return response()->json([
+        'data' => $user,
+        'message' => 'User soft deleted successfully',
+      ], 200);
+    }
     $user->forceDelete();
-
     return response()->json([
       'data' => $user,
-      'message' => 'User deleted successfully',
+      'message' => 'User deleted permanently successfully',
     ], 200);
   }
 }
