@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { CouponData } from './Data'
 import WindowSize from '../../components/WindowSize/WindowSize'
 import { useState } from 'react'
+import ButtonDashBoard from '../../components/Button/ButtonDashBoard'
 
 function Coupon() {
   let i = 1
@@ -58,7 +59,7 @@ function Coupon() {
           <div className="relative">
             <WindowSize onSizeChange={handleSizeChange} />
             {window.innerWidth > 882 ? (
-              <table className="w-full text-sm text-left text-gray-500 rounded-2xl border-collapse overflow-hidden">
+              <table className="w-full text-sm text-center text-gray-500 rounded-2xl border-collapse overflow-hidden">
                 <thead className="text-xs text-gray-700 uppercase bg-gray-50">
                   <tr>
                     {arrayTitle.map((item) => {
@@ -91,13 +92,8 @@ function Coupon() {
                         <td class="px-6 py-3">{item.experied}</td>
                         <td class="px-6 py-3">{item.usage}</td>
                         <td class="px-6 py-3">{item.status}</td>
-                        <td class="px-6 py-4">
-                          <Link
-                            to="#"
-                            class="font-medium text-white px-4 py-2 bg-green-700 rounded-lg hover:bg-green-500 transition-colors"
-                          >
-                            •••
-                          </Link>
+                        <td class="px-6 py-4 w-44">
+                          <ButtonDashBoard />
                         </td>
                       </tr>
                     )
@@ -124,23 +120,18 @@ function Coupon() {
                         </tr>
                       </thead>
                       <tbody>
-                        <tr className="bg-white flex flex-col justify-between">
+                        <tr className="bg-white flex flex-col justify-between text-center">
                           <td className="px-5 py-[10px] font-medium text-gray-900 whitespace-nowrap dark:text-white">
                             {item.image}
                           </td>
-                          <td class="px-5 py-4 w-full">{item.code}</td>
-                          <td class="px-5 py-4 w-full">{item.desc}</td>
-                          <td class="px-5 py-4 w-full">{item.date}</td>
-                          <td class="px-5 py-4 w-full">{item.experied}</td>
-                          <td class="px-5 py-4 w-full">{item.usage}</td>
-                          <td class="px-5 py-4 w-full">{item.status}</td>
-                          <td class="px-5 py-4 w-full">
-                            <Link
-                              to="#"
-                              class="font-medium text-white px-4 py-2 bg-green-700 rounded-lg hover:bg-green-500 transition-colors"
-                            >
-                              •••
-                            </Link>
+                          <td class="px-5 py-4">{item.code}</td>
+                          <td class="px-5 py-4">{item.desc}</td>
+                          <td class="px-5 py-4">{item.date}</td>
+                          <td class="px-5 py-4">{item.experied}</td>
+                          <td class="px-5 py-4">{item.usage}</td>
+                          <td class="px-5 py-4">{item.status}</td>
+                          <td class="px-5 py-4">
+                            <ButtonDashBoard />
                           </td>
                         </tr>
                       </tbody>
