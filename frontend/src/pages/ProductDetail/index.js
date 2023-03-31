@@ -10,41 +10,59 @@ import {
 
 import ButtonPill from '../../components/Button/ButtonPill'
 import { star } from '../../assets/images'
+import WindowSize from '../../components/WindowSize/WindowSize'
+import { useState } from 'react'
 
 function ProductDetail() {
+  const [windowSize, setWindowSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  })
+
+  const handleSizeChange = (size) => {
+    setWindowSize(size)
+  }
   return (
     <div className="pt-3 p-5 sm:pt-10 sm:p-12 md:p-25 md:pt-12 lg:p-36 lg:pt-20 box-border">
       {/* // ? option */}
       <div className="grid grid-cols-1 xl:grid-cols-2">
         <div
-          className="p-5 border border-solid border-gray-400 rounded-3xl box-border
+          className="lg:mr-5 p-5 border border-solid border-gray-400 rounded-3xl box-border
           flex justify-center
         "
         >
           <img className="h-full" src={infoBookDetail} alt="book_detail" />
         </div>
-        <div className="p-10 mt-5 lg:mt-0 w-auto h-auto border border-solid border-gray-400 rounded-3xl box-border">
-          <p className="p-1 mb-6 text-sm text-green-400 bg-gray-200 inline-block">
+        <div className="p-4 lg:p-10 mt-5 lg:mt-0 w-auto h-auto border border-solid border-gray-400 rounded-3xl box-border">
+          <p className="p-1 mb-2 md:mb-6 text-[11px] sm:text-sm text-green-400 bg-gray-200 inline-block">
             IN STOCK
           </p>
           <br />
-          <label className="text-4xl">DIRE WOLF STAKES</label>
+          <label className="text-2xl md:text-3xl lg:text-4xl">
+            DIRE WOLF STAKES
+          </label>
           <br />
-          <p className="mt-10 mb-10 mr-1 inline-block text-xs">Author :</p>
-          <p className="inline-block text-xs"> JESSICA MUNOZ</p>
-          <span className="ml-5">
-            <img className="inline-block" src={star} alt="" />
+          <p className="mt-4 sm:mt-8 md:mt-10 mr-1 inline-block text-[10px] sm:text-xs">
+            Author :
+          </p>
+          <p className="inline-block text-[10px] sm:text-xs"> JESSICA MUNOZ</p>
+          <span className="ml-5 inline-block">
+            <img className="w-12 sm:w-20 inline-block" src={star} alt="" />
           </span>
-          <p className="ml-5 mr-1 inline-block text-xs text-gray-400">BKU :</p>
-          <p className="inline-block text-xs">65377017</p>
-          <div className="border border-solid border-gray-400  box-border border-x-0">
-            <span className="text-green-800 text-3xl">150.000 VNĐ</span>
-            <p className="mt-8 text-xs">
+          <p className="ml-5 mr-1 inline-block text-[10px] sm:text-xs text-gray-400">
+            BKU :
+          </p>
+          <p className="mb-4 sm:mb-10 inline-block text-xs">65377017</p>
+          <div className="border border-solid border-gray-400 box-border border-x-0">
+            <span className="text-green-800 text-2xl sm:text-3xl">
+              150.000 VNĐ
+            </span>
+            <p className="mt-4 sm:mt-8 text-xs">
               Aliquid nesciunt molestiae totam. Nostrum quidem officia dolores
               quo ut. Autem conse quatur molestiae quos tempore sunt.
             </p>
-            <div className="mt-28 mb-10 flex flex-wrap sm:flex-row justify-around">
-              <div className="p-2 w-2/4 sm:w-3/12 flex justify-around border border-solid border-gray-400 rounded-3xl box-border">
+            <div className="mt-8 sm:mt-28 mb-6 sm:mb-10 flex flex-wrap sm:flex-row justify-around">
+              <div className=" p-2 w-2/5 sm:w-3/12 flex justify-around border border-solid border-gray-400 rounded-3xl box-border">
                 <button>-</button>
                 <span>1</span>
                 <button>+</button>
@@ -56,7 +74,8 @@ function ProductDetail() {
               <div className="p-2 w-2/4 sm:w-3/12 flex justify-around border border-solid border-gray-400 rounded-3xl box-border">
                 <FontAwesomeIcon className="pt-1" icon={faHeart} />
                 <a href="/wishlist" src="" alt="" className="pt-1 text-xs">
-                  Add to wishlist
+                  <WindowSize onSizeChange={handleSizeChange} />
+                  {window.innerWidth > 640 ? 'Add to wishlist' : ''}
                 </a>
               </div>
             </div>
