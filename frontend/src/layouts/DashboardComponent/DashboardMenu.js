@@ -12,11 +12,15 @@ import { Link } from 'react-router-dom'
 import { logo } from '../../assets/images'
 import { useState } from 'react'
 import { Tooltip } from '../../components/Tooltip/Tooltip'
-function DashboardMenu({ ...props }) {
+function DashboardMenu({ toggleMenu,...props }) {
   const [isIconsVisible, setIconsVisibility] = useState(false)
   const toggleIconsVisibility = () => {
     setIconsVisibility(!isIconsVisible)
   }
+  // console.log(toggleMenu)
+  // if(toggleMenu) {
+  //   setIconsVisibility(!toggleMenu)
+  // }
   const arrayDashboard = [
     { name: 'Dashboard', link: '/dashboard', icon: faBarsStaggered },
     {
@@ -46,7 +50,6 @@ function DashboardMenu({ ...props }) {
       icon: faTicket,
     },
   ]
-
   return (
     <div className=" xl:w-64 bg-white shadow-md">
       <div className="sticky top-0 hidden xl:block">

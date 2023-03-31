@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import WindowSize from '../../components/WindowSize/WindowSize'
 import { Link } from 'react-router-dom'
+import ButtonDashBoard from '../../components/Button/ButtonDashBoard'
 
 function Message() {
   const arrayTitle = [
@@ -40,11 +41,11 @@ function Message() {
       <div className="flex justify-between">
           <h1 className="text-xl font-bold">Comment Section</h1>
         </div>
-        <div className="table-product-statistics my-8 shadow-lg cursor-pointer rounded-2xl overflow-hidden bg-white">
+        <div className="table-product-statistics my-8 shadow-lg cursor-pointer rounded-2xl overflow-hidden bg-white ">
           <div className="relative">
             <WindowSize onSizeChange={handleSizeChange} />
             {window.innerWidth > 882 ? (
-              <table className="w-full text-sm text-left text-gray-500 rounded-2xl border-collapse overflow-hidden">
+              <table className="w-full text-sm text-center text-gray-500 rounded-2xl border-collapse overflow-hidden">
                 <thead className="text-xs text-gray-700 uppercase bg-gray-50">
                   <tr>
                     {arrayTitle.map((item) => {
@@ -74,13 +75,8 @@ function Message() {
                         <td class="px-5 py-4">{item.user}</td>
                         <td class="px-5 py-4">{item.content}</td>
                         <td class="px-5 py-4">{item.time}</td>
-                        <td class="px-6 py-4">
-                          <Link
-                            to="#"
-                            class="font-medium text-white px-4 py-2 bg-green-700 rounded-lg hover:bg-green-500 transition-colors"
-                          >
-                            •••
-                          </Link>
+                        <td class="px-6 py-4 w-44">
+                          <ButtonDashBoard />
                         </td>
                       </tr>
                     )
@@ -111,18 +107,13 @@ function Message() {
                         </tr>
                       </thead>
                       <tbody>
-                        <tr className="bg-white flex flex-col justify-between">
-                          <td class="px-5 py-4 w-full">{item.productName}</td>
-                          <td class="px-5 py-4 w-full">{item.user}</td>
-                          <td class="px-5 py-4 w-full">{item.content}</td>
-                          <td class="px-5 py-4 w-full">{item.time}</td>
-                          <td class="px-5 py-4 w-full">
-                            <Link
-                              to="#"
-                              class="font-medium text-white px-4 py-2 bg-green-700 rounded-lg hover:bg-green-500 transition-colors"
-                            >
-                              •••
-                            </Link>
+                        <tr className="bg-white flex flex-col justify-between text-center">
+                          <td class="px-5 py-4">{item.productName}</td>
+                          <td class="px-5 py-4">{item.user}</td>
+                          <td class="px-5 py-4">{item.content}</td>
+                          <td class="px-5 py-4">{item.time}</td>
+                          <td class="px-5 py-4">
+                            <ButtonDashBoard />
                           </td>
                         </tr>
                       </tbody>

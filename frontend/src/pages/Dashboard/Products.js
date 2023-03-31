@@ -3,6 +3,7 @@ import { useState } from 'react'
 import WindowSize from '../../components/WindowSize/WindowSize'
 import { productData } from './Data'
 import { Link } from 'react-router-dom'
+import ButtonDashBoard from '../../components/Button/ButtonDashBoard'
 function Product({ ...props }) {
   const arrayTitle = [
     { name: 'Products' },
@@ -60,7 +61,7 @@ function Product({ ...props }) {
           <div className="relative">
             <WindowSize onSizeChange={handleSizeChange} />
             {window.innerWidth > 882 ? (
-              <table className="w-full text-sm text-left text-gray-500 rounded-2xl border-collapse overflow-hidden">
+              <table className="w-full text-sm text-center text-gray-500 rounded-2xl border-collapse overflow-hidden">
                 <thead className="text-xs text-gray-700 uppercase bg-gray-50">
                   <tr>
                     {arrayTitle.map((item) => {
@@ -92,13 +93,8 @@ function Product({ ...props }) {
                         <td class="px-6 py-3">{item.remaining}</td>
                         <td class="px-6 py-3">{item.status}</td>
                         <td class="px-6 py-3">{item.amount}</td>
-                        <td class="px-6 py-4">
-                          <Link
-                            to="#"
-                            class="font-medium text-white px-4 py-2 bg-green-700 rounded-lg hover:bg-green-500 transition-colors"
-                          >
-                            •••
-                          </Link>
+                        <td class="px-6 py-4 w-44">
+                          <ButtonDashBoard />
                         </td>
                       </tr>
                     )
@@ -125,22 +121,17 @@ function Product({ ...props }) {
                         </tr>
                       </thead>
                       <tbody>
-                        <tr className="bg-white flex flex-col justify-between">
+                        <tr className="bg-white flex flex-col justify-between text-center">
                           <td className="px-5 py-[10px] font-medium text-gray-900 whitespace-nowrap dark:text-white">
                             {item.image}
                           </td>
-                          <td class="px-5 py-4 w-full">{item.category}</td>
-                          <td class="px-5 py-4 w-full">{item.entered}</td>
-                          <td class="px-5 py-4 w-full">{item.remaining}</td>
-                          <td class="px-5 py-4 w-full">{item.status}</td>
-                          <td class="px-5 py-4 w-full">{item.amount}</td>
-                          <td class="px-5 py-4 w-full">
-                            <Link
-                              to="#"
-                              class="font-medium text-white px-4 py-2 bg-green-700 rounded-lg hover:bg-green-500 transition-colors"
-                            >
-                              •••
-                            </Link>
+                          <td class="px-5 py-4">{item.category}</td>
+                          <td class="px-5 py-4">{item.entered}</td>
+                          <td class="px-5 py-4">{item.remaining}</td>
+                          <td class="px-5 py-4">{item.status}</td>
+                          <td class="px-5 py-4">{item.amount}</td>
+                          <td class="px-5 py-4 w-44">
+                            <ButtonDashBoard />
                           </td>
                         </tr>
                       </tbody>

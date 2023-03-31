@@ -14,6 +14,7 @@ import { Link } from 'react-router-dom'
 
 import { dashboardData, productData } from '../Dashboard/Data'
 import WindowSize from '../../components/WindowSize/WindowSize'
+import ButtonDashBoard from '../../components/Button/ButtonDashBoard'
 function Dashboard() {
   const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,
@@ -165,7 +166,7 @@ function Dashboard() {
             <div className="relative">
               <WindowSize onSizeChange={handleSizeChange} />
               {window.innerWidth > 882 ? (
-                <table className="w-full text-sm text-left text-gray-500 rounded-2xl border-collapse overflow-hidden">
+                <table className="w-full text-sm text-center text-gray-500 rounded-2xl border-collapse overflow-hidden">
                   <thead className="text-xs text-gray-700 uppercase bg-gray-50">
                     <tr>
                       {tableThead.map((item) => {
@@ -193,13 +194,8 @@ function Dashboard() {
                           <td class="px-6 py-3">{item.name}</td>
                           <td class="px-6 py-3">{item.status}</td>
                           <td class="px-6 py-3">{item.amount}</td>
-                          <td class="px-6 py-4">
-                            <Link
-                              to="#"
-                              class="font-medium text-white px-4 py-2 bg-green-700 rounded-lg hover:bg-green-500 transition-colors"
-                            >
-                              •••
-                            </Link>
+                          <td class="px-6 py-4 w-44">
+                            <ButtonDashBoard />
                           </td>
                         </tr>
                       )
@@ -226,24 +222,19 @@ function Dashboard() {
                           </tr>
                         </thead>
                         <tbody>
-                          <tr className="bg-white flex flex-col justify-between items-center">
+                          <tr className="bg-white flex flex-col justify-between items-center text-center">
                             <td className="px-5 py-[10px] font-medium text-gray-900 whitespace-nowrap dark:text-white">
                               {item.products}
                             </td>
-                            <td class="px-5 py-[10px] w-full">
+                            <td class="px-5 py-[10px]">
                               {item.order_id}
                             </td>
-                            <td class="px-5 py-[10px] w-full">{item.date}</td>
-                            <td class="px-5 py-[10px] w-full">{item.name}</td>
-                            <td class="px-5 py-[10px] w-full">{item.status}</td>
-                            <td class="px-5 py-[10px] w-full">{item.amount}</td>
-                            <td class="px-5 py-[10px] w-full">
-                              <Link
-                                to="#"
-                                class="font-medium text-white px-4 py-2 bg-green-700 rounded-lg hover:bg-green-500 transition-colors"
-                              >
-                                •••
-                              </Link>
+                            <td class="px-5 py-[10px]">{item.date}</td>
+                            <td class="px-5 py-[10px]">{item.name}</td>
+                            <td class="px-5 py-[10px]">{item.status}</td>
+                            <td class="px-5 py-[10px]">{item.amount}</td>
+                            <td class="px-5 py-[10px] w-44">
+                              <ButtonDashBoard />
                             </td>
                           </tr>
                         </tbody>

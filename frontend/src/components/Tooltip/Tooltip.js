@@ -3,7 +3,7 @@ import React, { ReactNode, useState } from "react";
 export const Tooltip = ({ message, children }) => {
   const [show, setShow] = useState(false);
   return (
-    <div className="relative flex flex-col items-center group">
+    <div className="relative flex flex-col items-center group z-10">
       <span className="flex justify-center" onMouseEnter={() => setShow(true)} onMouseLeave={() => setShow(false)}>
         {children}
       </span>

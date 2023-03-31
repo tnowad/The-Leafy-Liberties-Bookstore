@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { author } from '../../assets/images'
 import Dropdown from '../../components/Dropdown/Dropdown'
 import { Link } from 'react-router-dom'
-function DashboardHeader() {
+function DashboardHeader({handleTrigger}) {
   const arrayName = [
     { name: 'Dashboard', link: '/dashboard' },
     { name: 'Statistics', link: '/dashboard/statistics' },
@@ -33,6 +33,7 @@ function DashboardHeader() {
             icon={faBarsStaggered}
             className="mr-4 cursor-pointer "
             size="xl"
+            onClick={() => handleTrigger()}
           />
           {arrayName.map((item) => {
             return (
